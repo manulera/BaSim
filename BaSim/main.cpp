@@ -6,6 +6,7 @@
 //  Copyright © 2016 Manuel Lera Ramirez. All rights reserved.
 //
 //  Added a new comment, just to prove that versioning is properly working
+//  Added a new comment, to test branching
 /* BaSim, the simulation that I used to start learning */
 
 // Basic Libraries
