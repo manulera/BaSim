@@ -9,10 +9,30 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>BaSimTarget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Hello.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>328219301D93C51200278D68</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3295FDB41DA4F881000A02A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32D8739E1D9986D000244DA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

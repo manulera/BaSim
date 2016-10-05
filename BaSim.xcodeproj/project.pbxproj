@@ -8,7 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		328219351D93C51200278D68 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 328219341D93C51200278D68 /* main.cpp */; };
+		3282193C1D93C53000278D68 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193B1D93C53000278D68 /* OpenGL.framework */; };
+		3282193E1D93C58600278D68 /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */; };
+		328219401D93C5A600278D68 /* libglfw3.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32D873A61D99873800244DA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 328219291D93C51200278D68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 328219301D93C51200278D68;
+			remoteInfo = BaSim;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3282192F1D93C51200278D68 /* CopyFiles */ = {
@@ -20,15 +33,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		3295FDB31DA4F881000A02A8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		32D8739D1D9986D000244DA9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		322A17431D95550C0010C78C /* params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = params.h; sourceTree = "<group>"; };
 		328219311D93C51200278D68 /* BaSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		328219341D93C51200278D68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3282193B1D93C53000278D68 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
+		3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw3/3.2.1/lib/libglfw3.3.2.dylib; sourceTree = "<group>"; };
+		3295FDB51DA4F881000A02A8 /* BaSimTarget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSimTarget; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D873991D955CE200244DA9 /* MT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MT.h; sourceTree = "<group>"; };
+		32D8739A1D9926BC00244DA9 /* checkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checkers.h; sourceTree = "<group>"; };
+		32D8739F1D9986D000244DA9 /* Hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hello; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D873AA1D9BD9CB00244DA9 /* display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
+		32EC3B4F1D9514EE00F892E4 /* ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3282192E1D93C51200278D68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				328219401D93C5A600278D68 /* libglfw3.3.2.dylib in Frameworks */,
+				3282193E1D93C58600278D68 /* libGLEW.2.0.0.dylib in Frameworks */,
+				3282193C1D93C53000278D68 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3295FDB21DA4F881000A02A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D8739C1D9986D000244DA9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +99,10 @@
 		328219281D93C51200278D68 = {
 			isa = PBXGroup;
 			children = (
+				3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */,
+				3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */,
 				328219331D93C51200278D68 /* BaSim */,
+				3282193B1D93C53000278D68 /* OpenGL.framework */,
 				328219321D93C51200278D68 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				328219311D93C51200278D68 /* BaSim */,
+				32D8739F1D9986D000244DA9 /* Hello */,
+				3295FDB51DA4F881000A02A8 /* BaSimTarget */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				328219341D93C51200278D68 /* main.cpp */,
+				32EC3B4F1D9514EE00F892E4 /* ball.h */,
+				322A17431D95550C0010C78C /* params.h */,
+				32D873991D955CE200244DA9 /* MT.h */,
+				32D8739A1D9926BC00244DA9 /* checkers.h */,
+				32D873AA1D9BD9CB00244DA9 /* display.h */,
 			);
 			path = BaSim;
 			sourceTree = "<group>";
@@ -82,16 +150,61 @@
 			productReference = 328219311D93C51200278D68 /* BaSim */;
 			productType = "com.apple.product-type.tool";
 		};
+		3295FDB41DA4F881000A02A8 /* BaSimTarget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3295FDB91DA4F881000A02A8 /* Build configuration list for PBXNativeTarget "BaSimTarget" */;
+			buildPhases = (
+				3295FDB11DA4F881000A02A8 /* Sources */,
+				3295FDB21DA4F881000A02A8 /* Frameworks */,
+				3295FDB31DA4F881000A02A8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaSimTarget;
+			productName = BaSimTarget;
+			productReference = 3295FDB51DA4F881000A02A8 /* BaSimTarget */;
+			productType = "com.apple.product-type.tool";
+		};
+		32D8739E1D9986D000244DA9 /* Hello */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32D873A31D9986D000244DA9 /* Build configuration list for PBXNativeTarget "Hello" */;
+			buildPhases = (
+				32D8739B1D9986D000244DA9 /* Sources */,
+				32D8739C1D9986D000244DA9 /* Frameworks */,
+				32D8739D1D9986D000244DA9 /* CopyFiles */,
+				32D873A81D99874200244DA9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32D873A71D99873800244DA9 /* PBXTargetDependency */,
+			);
+			name = Hello;
+			productName = Hello;
+			productReference = 32D8739F1D9986D000244DA9 /* Hello */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		328219291D93C51200278D68 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Manuel Lera Ramirez";
 				TargetAttributes = {
 					328219301D93C51200278D68 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					3295FDB41DA4F881000A02A8 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					32D8739E1D9986D000244DA9 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -109,9 +222,27 @@
 			projectRoot = "";
 			targets = (
 				328219301D93C51200278D68 /* BaSim */,
+				32D8739E1D9986D000244DA9 /* Hello */,
+				3295FDB41DA4F881000A02A8 /* BaSimTarget */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32D873A81D99874200244DA9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "GIT_RELEASE_VERSION=$(git describe --tags --always --dirty)\nCOMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\ndefaults write \"${/Users/Manu/Desktop/BaSim/Version}/${INFOPLIST_PATH%.*}\" \"CFBundleShortVersionString\" \"${1.0#*v}\"\ndefaults write \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH%.*}\" \"CFBundleVersion\" \"${COMMITS}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3282192D1D93C51200278D68 /* Sources */ = {
@@ -122,7 +253,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3295FDB11DA4F881000A02A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D8739B1D9986D000244DA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32D873A71D99873800244DA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 328219301D93C51200278D68 /* BaSim */;
+			targetProxy = 32D873A61D99873800244DA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		328219361D93C51200278D68 /* Debug */ = {
@@ -207,14 +360,72 @@
 		328219391D93C51200278D68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					opt/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw3/3.2.1/lib,
+					/usr/local/lib,
+					/opt/local/lib,
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		3282193A1D93C51200278D68 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					opt/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw3/3.2.1/lib,
+					/usr/local/lib,
+					/opt/local/lib,
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		3295FDBA1DA4F881000A02A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3295FDBB1DA4F881000A02A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		32D873A41D9986D000244DA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		32D873A51D9986D000244DA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -237,6 +448,24 @@
 				3282193A1D93C51200278D68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3295FDB91DA4F881000A02A8 /* Build configuration list for PBXNativeTarget "BaSimTarget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3295FDBA1DA4F881000A02A8 /* Debug */,
+				3295FDBB1DA4F881000A02A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		32D873A31D9986D000244DA9 /* Build configuration list for PBXNativeTarget "Hello" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D873A41D9986D000244DA9 /* Debug */,
+				32D873A51D9986D000244DA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
