@@ -25,6 +25,8 @@ float t = 0.0; float t_old=0.0; float dt=0.0;
 #include "MT.h"
 #include "ball.h"
 #include "display.h"
+#include "Integration.h"
+
 MT mt[ntubs];
 Ball ball[nballs];
 // Initialize internal variables for the simulation
@@ -108,6 +110,7 @@ void display()
 }
 
 int main() {
+    std::cout << a << std::endl;
     if (!glfwInit())
     {
         return -1;

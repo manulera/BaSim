@@ -55,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		322A17431D95550C0010C78C /* params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = params.h; sourceTree = "<group>"; };
+		327A170F1DA54825008854A7 /* Integration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integration.h; sourceTree = "<group>"; };
 		328219311D93C51200278D68 /* BaSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		328219341D93C51200278D68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3282193B1D93C53000278D68 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -126,6 +127,7 @@
 				32D873991D955CE200244DA9 /* MT.h */,
 				32D8739A1D9926BC00244DA9 /* checkers.h */,
 				32D873AA1D9BD9CB00244DA9 /* display.h */,
+				327A170F1DA54825008854A7 /* Integration.h */,
 			);
 			path = BaSim;
 			sourceTree = "<group>";
@@ -457,6 +459,7 @@
 				3295FDBB1DA4F881000A02A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32D873A31D9986D000244DA9 /* Build configuration list for PBXNativeTarget "Hello" */ = {
 			isa = XCConfigurationList;

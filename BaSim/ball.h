@@ -44,8 +44,8 @@ public:
         {
             //check if something close and if binding to it.
             float distval = 0.0;
-            int wherebind=within(100, mti, &distval);
-            if (wherebind && rand01()>(1-binding_rate))
+            int wherebind=within(binding_range, mti, &distval);
+            if (wherebind && rand01()>(1-binding_rate)*dt)
             {
                 attached=j+1;
                 bind(wherebind, mti , distval);
