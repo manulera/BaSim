@@ -15,7 +15,7 @@ public:
     
     void reset() {
         speed = motor_speed;
-        x=srand()*xBound;
+        x=(rand01()*0.5+0.5)*xBound;
         y=srand()*yBound;
         attached = 0;
     }

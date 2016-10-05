@@ -43,7 +43,7 @@ int CountArea()
     int counter=0;
     for(int i = 0; i < nballs; i++)
     {
-        counter+=ball[i].x>0;
+        counter+=ball[i].x<0;
     }
     return counter;
 }
@@ -108,7 +108,6 @@ void display()
 }
 
 int main() {
-    for (int i=0;i<20;i++) std::cout << srand()<<std::endl;
     if (!glfwInit())
     {
         return -1;

@@ -6,7 +6,7 @@
 #include <cmath>
 
 const float PI = 3.14159265358979323846264338327950288;
-float diff     = 10000000;       // diffusion constant in pixel units
+float diff     = 5000000;       // diffusion constant in pixel units
 unsigned long seed = 1;   // seed for random number generator
 float alpha    = 0;       //diffusive motion within interval dt
 
@@ -50,7 +50,7 @@ GLFWwindow *graphs;
 
 std::vector <float> time_vect = {0.0};
 std::vector <float> bound_vect = {0.0};
-std::vector <float> region_vect = {0.0};
+std::vector <float> region_vect = {0.0}; //sloppy
 
 float time_lim = 60.0; // In seconds
 float y_lim = 1.0;
