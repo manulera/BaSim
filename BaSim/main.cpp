@@ -5,9 +5,7 @@
 //  Created by Manuel Lera Ramirez on 22/09/16.
 //  Copyright © 2016 Manuel Lera Ramirez. All rights reserved.
 //
-//  Added a new comment, just to prove that versioning is properly working
-//  Added a new comment, to test branching
-/* BaSim, the simulation that I used to start learning */
+/* BaSim, the simulation that I used to start learning C++ */
 
 // Basic Libraries
 #include <iostream>
@@ -22,7 +20,6 @@
 #include <cmath>
 float t = 0.0; float t_old=0.0; float dt=0.0;
 
-//float ycorrection = static_cast<float>(yBound)/static_cast<float>(xBound);
 // Import the objects of the simulation
 #include "params.h"
 #include "MT.h"
@@ -41,7 +38,15 @@ int CountBound()
     }
     return counter;
 }
-
+int CountArea()
+{
+    int counter=0;
+    for(int i = 0; i < nballs; i++)
+    {
+        counter+=ball[i].x>0;
+    }
+    return counter;
+}
 
 void display()
 {
@@ -98,6 +103,7 @@ void display()
     // Update the graphs
     time_vect.push_back(time_vect.at(time_vect.size()-1)+dt);
     bound_vect.push_back(static_cast<float>(CountBound())/static_cast<float>(nballs));
+    region_vect.push_back(static_cast<float>(CountArea())/static_cast<float>(nballs));
     graphsRefresh();
 }
 
@@ -115,8 +121,7 @@ int main() {
     }
     if (!glewInit()) return -1;
     
-        //glEnable(GL_PROGRAM_POINT_SIZE_EXT);
-    //glPointSize(1000);
+    //glEnable(GL_PROGRAM_POINT_SIZE_EXT);
     glfwMakeContextCurrent(win);
     glfwGetFramebufferSize(win, &xBound, &yBound);
     while (!glfwWindowShouldClose(win)){

@@ -11,7 +11,7 @@ unsigned long seed = 1;   // seed for random number generator
 float alpha    = 0;       //diffusive motion within interval dt
 
 float motor_speed = 4;
-float binding_rate = 0.01;
+float binding_rate = 0.0;
 
 float mt_length = 100;
 
@@ -50,6 +50,7 @@ GLFWwindow *graphs;
 
 std::vector <float> time_vect = {0.0};
 std::vector <float> bound_vect = {0.0};
+std::vector <float> region_vect = {0.0};
 
 float time_lim = 60.0; // In seconds
 float y_lim = 1.0;
