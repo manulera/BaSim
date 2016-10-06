@@ -43,11 +43,12 @@ std::vector<float> range(float min, float max, size_t N)
     return range;
 }
 
-std::vector <float> x_vect = range(0.0,60.0,0.01);
-std::vector <float> y_vect = {};
-void EulerIntegration (float v, Params p, Values (*myStepFun)(float*,Params,float), std::vector<float> &x, std::vector<float> *y) //why???
+std::vector <float> x_vect = {};
+std::vector <float> A_vect = {};
+std::vector <float> B_vect = {};
+void EulerIntegration(float start, float end, float step, float v, Params p, Values (*myStepFun)(float*,Params,float))
 {
-    for (int i=0;i<x.size();i++)
+    for (float x=start; x<end; x+=step)
     {
         myStepFun(&v,p,step);
     }
