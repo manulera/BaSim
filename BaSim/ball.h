@@ -116,8 +116,8 @@ public:
         }
         else if (where==3) //Bind to body
         {
-            int a = dist(x,y,mti.posx,mti.posy); //Distance from the minus end
-            int dist0 = sqrt(std::abs(a*a-distval*distval)); // There are cases where this is negative
+            float a = dist(x,y,mti.posx,mti.posy); //Distance from the minus end
+            float dist0 = sqrt(std::abs(a*a-distval*distval)); // There are cases where this is negative
             x=mti.posx+dist0*cos(mti.orientation);
             y=mti.posy+dist0*sin(mti.orientation);
         }

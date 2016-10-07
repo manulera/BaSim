@@ -37,7 +37,7 @@ void graphsRefresh()
     {
         DrawAxis();
         live_plot(time_vect,bound_vect,0.0,1.0,1.0);
-        live_plot(time_vect,region_vect,1.0,1.0,0.0);
+        //live_plot(time_vect,region_vect,1.0,1.0,0.0);
         live_plot(x_out,y_out,1.0,0.0,1.0);
         
         glfwSwapBuffers(graphs);
