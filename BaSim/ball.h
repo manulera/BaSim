@@ -66,8 +66,8 @@ public:
     {
         // calibrate diffusion:
         float alpha = sqrt( 2 * diff * dt );
-        x+=alpha*srand()*dt;
-        y+=alpha*srand()*dt;
+        x+=alpha*srand();
+        y+=alpha*srand();
     }
     
     int within(float range, MT mti, float *distval)

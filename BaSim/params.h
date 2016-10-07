@@ -6,7 +6,7 @@
 #include <cmath>
 
 const float PI = 3.14159265358979323846264338327950288;
-float diff     = 500000;       // diffusion constant in pixel units
+float diff     = 500;       // diffusion constant in pixel units
 unsigned long seed = 1;   // seed for random number generator
 float alpha    = 0;       //diffusive motion within interval dt
 
