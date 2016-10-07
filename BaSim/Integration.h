@@ -8,14 +8,8 @@ struct Params{
 };
 Params pars;
 
-struct Values{
-    float balls_A = nballs*(pars.S_A/(pars.S_A+pars.S_B));
-    float balls_B = nballs-balls_A;
-};
-Values vals;
-
-float ini_vals[2] = {nballs*(pars.S_A/(pars.S_A+pars.S_B)),
-                     nballs-nballs*(pars.S_A/(pars.S_A+pars.S_B))};
+float vals[2] = {static_cast<float>(nballs)*(pars.S_A/(pars.S_A+pars.S_B)),
+                     static_cast<float>(nballs)-static_cast<float>(nballs)*(pars.S_A/(pars.S_A+pars.S_B))};
 
 
 
@@ -24,10 +18,11 @@ void stepFun(float *v, Params p, float step)
     float balls_A = v[0];
     float balls_B = v[1];
     float dA = p.L_I*diff*(balls_B/p.S_B-balls_A/p.S_A);
-    float dB = -dA-balls_B*binding_rate;
+    float dB = -dA-balls_B*binding_rate*step;
     
     v[0]+=dA*step;
     v[1]+=dB*step;
+    std::cout << dA << "," <<dB << std::endl;
 }
 
 // Euler method
@@ -43,17 +38,40 @@ std::vector<float> range(float min, float max, size_t N)
     return range;
 }
 
-std::vector <float> x_vect = {};
-std::vector <float> A_vect = {};
-std::vector <float> B_vect = {};
-void EulerIntegration(float start, float end, float step, float v, Params p, Values (*myStepFun)(float*,Params,float))
+
+float start = 0.0;
+float end = 60.0;
+float step_int = 0.01;
+float step_out = 50.0;
+
+std::vector <float> x_out = {};
+std::vector <float> y_out = {};
+
+// This function is far from perfect, but for now will do the job
+void EulerIntegration(float start, float end,float step_int, float step_out, float *v, Params p)
 {
-    for (float x=start; x<end; x+=step)
+    std::cout << v[0] << "," <<v[1] << std::endl;
+    int count_steps = 0;
+    
+    for (float x=start; x<end; x+=step_int)
     {
-        myStepFun(&v,p,step);
+        stepFun(v,p,step_int);
+        count_steps++;
+        if (count_steps==step_out)
+        {
+            count_steps=0;
+            x_out.push_back(x);
+            //std::cout << v[0] << "," <<v[1] << std::endl;
+            y_out.push_back((v[0]+v[1])/nballs);
+        }
     }
 
+    for (int i=0;i<y_out.size();i++)
+    {
+        //std::cout<<y_out.at(i) << std::endl;
+    }
 }
 
 
-float a = EulerIntegration(0.0,60.0,0.01,&vals,pars, &dB_dt);
+
+//float a = EulerIntegration(0.0,60.0,0.01,&vals,pars, &dB_dt);

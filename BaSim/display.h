@@ -1,6 +1,6 @@
 
 
-void plot( std::vector<float> x, std::vector<float> y, float c1, float c2, float c3)
+void live_plot( std::vector<float> x, std::vector<float> y, float c1, float c2, float c3)
 {
     // This is sloppy and needs to be changed, we could make the graph not be draw again every time, rather keep previous drawings and add the new points, same for the axis, and we could add text
     
@@ -36,8 +36,10 @@ void graphsRefresh()
     glfwMakeContextCurrent(graphs);
     {
         DrawAxis();
-        plot(time_vect,bound_vect,0.0,1.0,1.0);
-        plot(time_vect,region_vect,1.0,1.0,0.0);
+        live_plot(time_vect,bound_vect,0.0,1.0,1.0);
+        live_plot(time_vect,region_vect,1.0,1.0,0.0);
+        live_plot(x_out,y_out,1.0,0.0,1.0);
+        
         glfwSwapBuffers(graphs);
         glfwPollEvents();
     }

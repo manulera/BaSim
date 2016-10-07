@@ -24,8 +24,8 @@ float t = 0.0; float t_old=0.0; float dt=0.0;
 #include "params.h"
 #include "MT.h"
 #include "ball.h"
-#include "display.h"
 #include "Integration.h"
+#include "display.h"
 
 MT mt[ntubs];
 Ball ball[nballs];
@@ -110,7 +110,11 @@ void display()
 }
 
 int main() {
-    std::cout << a << std::endl;
+    for (int i=0;i<20;i++)
+    {
+        std::cout << rand01()<< std::endl;
+    }
+    EulerIntegration(start, end, step_int, step_out, vals, pars);
     if (!glfwInit())
     {
         return -1;
