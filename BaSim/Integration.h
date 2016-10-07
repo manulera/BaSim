@@ -59,7 +59,6 @@ void EulerIntegration(float start, float end,float step_int, int step_out, float
             count_steps=0;
             x_out.push_back(x);
             y_out.push_back(1-(v[0]+v[1])/nballs);
-            std::cout << v[1] << " / "<< v[1]+v[0] <<" / " << v[1]*binding_rate*step_int << std::endl;
         }
     }
 
