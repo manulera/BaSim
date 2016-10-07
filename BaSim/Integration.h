@@ -23,8 +23,6 @@ void stepFun(float *v, Params p, float step)
     
     v[0]+=dA*step;
     v[1]+=dB*step;
-    //std::cout << balls_B/p.S_B << ";" << balls_A/p.S_A<< "/"<< balls_B/p.S_B-balls_A/p.S_A<< std::endl;
-    //std::cout << balls_B+balls_A << std::endl;
 }
 
 // Euler method
@@ -52,7 +50,6 @@ std::vector <float> y_out = {};
 // This function is far from perfect, but for now will do the job
 void EulerIntegration(float start, float end,float step_int, int step_out, float *v, Params p)
 {
-    //std::cout << v[0] << "," <<v[1] << std::endl;
     int count_steps = 0;
     
     for (float x=start; x<end; x+=step_int)
@@ -63,17 +60,9 @@ void EulerIntegration(float start, float end,float step_int, int step_out, float
         {
             count_steps=0;
             x_out.push_back(x);
-            //std::cout << v[0] << "," <<v[1] << std::endl;
             y_out.push_back((v[0]+v[1])/nballs);
         }
     }
 
-    for (int i=0;i<y_out.size();i++)
-    {
-        //std::cout<<y_out.at(i) << std::endl;
-    }
 }
 
-
-
-//float a = EulerIntegration(0.0,60.0,0.01,&vals,pars, &dB_dt);

@@ -47,7 +47,6 @@ public:
             int wherebind=within(binding_range, mti, &distval);
             if (wherebind && rand01()>1.0-binding_rate*dt)
             {
-                //std::cout <<1-binding_rate << ","<<dt <<std::endl;
                 attached=j+1;
                 bind(wherebind, mti , distval);
             }
