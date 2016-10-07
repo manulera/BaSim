@@ -18,8 +18,7 @@ void stepFun(float *v, Params p, float step)
     float balls_A = v[0];
     float balls_B = v[1];
     float dA = p.L_I*diff*(balls_B/p.S_B-balls_A/p.S_A);
-    float dB = -dA;
-    //-balls_B*binding_rate*step;
+    float dB = -dA-balls_B*binding_rate;
     
     v[0]+=dA*step;
     v[1]+=dB*step;
@@ -41,8 +40,8 @@ std::vector<float> range(float min, float max, size_t N)
 
 float start = 0.0;
 float end = 60.0;
-float step_int = 0.0001;
-int step_out = 5000;
+float step_int = 0.00001;
+int step_out =end/step_int/500;
 
 std::vector <float> x_out = {};
 std::vector <float> y_out = {};
@@ -60,7 +59,7 @@ void EulerIntegration(float start, float end,float step_int, int step_out, float
         {
             count_steps=0;
             x_out.push_back(x);
-            y_out.push_back((v[0]+v[1])/nballs);
+            y_out.push_back(1-(v[0]+v[1])/nballs);
         }
     }
 
