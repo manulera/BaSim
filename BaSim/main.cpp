@@ -110,10 +110,6 @@ void display()
 }
 
 int main() {
-    for (int i=0;i<20;i++)
-    {
-        std::cout << rand01()<< std::endl;
-    }
     EulerIntegration(start, end, step_int, step_out, vals, pars);
     if (!glfwInit())
     {

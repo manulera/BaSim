@@ -15,7 +15,7 @@ public:
     
     void reset() {
         speed = motor_speed;
-        x=(rand01()*0.5+0.5)*xBound;
+        x=srand()*xBound;
         y=srand()*yBound;
         attached = 0;
     }
@@ -45,8 +45,9 @@ public:
             //check if something close and if binding to it.
             float distval = 0.0;
             int wherebind=within(binding_range, mti, &distval);
-            if (wherebind && rand01()>(1-binding_rate)*dt)
+            if (wherebind && rand01()>1.0-binding_rate*dt)
             {
+                //std::cout <<1-binding_rate << ","<<dt <<std::endl;
                 attached=j+1;
                 bind(wherebind, mti , distval);
             }
