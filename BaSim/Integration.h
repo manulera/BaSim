@@ -8,8 +8,9 @@ struct Params{
 };
 Params pars;
 
-float vals[2] = {static_cast<float>(nballs)*(pars.S_A/(pars.S_A+pars.S_B)),
-                     static_cast<float>(nballs)-static_cast<float>(nballs)*(pars.S_A/(pars.S_A+pars.S_B))};
+float vals[3] = {static_cast<float>(nballs)*(pars.S_A/(pars.S_A+pars.S_B)),
+                 static_cast<float>(nballs)-static_cast<float>(nballs)*(pars.S_A/(pars.S_A+pars.S_B)),
+                 0.0};
 
 
 
@@ -17,10 +18,13 @@ void stepFun(float *v, Params p, float step)
 {
     float balls_A = v[0];
     float balls_B = v[1];
+    float balls_bound = v[2];
     float dA = p.L_I*diff*(balls_B/p.S_B-balls_A/p.S_A);
-    float dB = -dA-balls_B*binding_rate;
+    float dbound = balls_B*binding_rate - balls_bound*unbinding_rate;
+    float dB = -dA-dbound;
     v[0]+=dA*step;
     v[1]+=dB*step;
+    v[2]+=dbound*step;
 }
 
 // Euler method

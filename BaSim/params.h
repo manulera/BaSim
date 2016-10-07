@@ -13,6 +13,7 @@ float alpha    = 0;       //diffusive motion within interval dt
 float motor_speed = 0.0;
 float binding_rate = 0.5;
 float binding_range = 5;
+float unbinding_rate = 0.05;
 float mt_length = 100;
 
 const int nballs = 500;

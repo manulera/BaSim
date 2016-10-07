@@ -58,6 +58,7 @@ public:
         else if (attached==j+1) //The attached, +1 because of 0 indexing of the arrays
         {
             move(mti);
+            unbind();
         }
         boundary();
     }
@@ -125,7 +126,14 @@ public:
         }
         glEnd();
     }
-    
+    void unbind()
+    {
+        if (rand01()>1.0-unbinding_rate*dt)
+        {
+            std::cout << "ciao"<< std::endl;
+            attached=0;
+        }
+    }
     void move(MT mti)
     {
         float dist0=speed*dt;
