@@ -10,11 +10,12 @@ float diff     = 5000;       // diffusion constant in pixel units
 unsigned long seed = 1;   // seed for random number generator
 float alpha    = 0;       //diffusive motion within interval dt
 
-float motor_speed = 0.0;
-float binding_rate = 0.5;
-float binding_range = 5;
+float motor_speed = 10.0;
+float binding_rate = 10;
+float binding_range = 1;
 float unbinding_rate = 0.05;
 float mt_length = 100;
+float release_rate = motor_speed*2/mt_length;
 
 const int nballs = 500;
 const int ntubs = 100;

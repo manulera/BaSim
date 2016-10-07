@@ -20,7 +20,7 @@ void stepFun(float *v, Params p, float step)
     float balls_B = v[1];
     float balls_bound = v[2];
     float dA = p.L_I*diff*(balls_B/p.S_B-balls_A/p.S_A);
-    float dbound = balls_B*binding_rate - balls_bound*unbinding_rate;
+    float dbound = balls_B*binding_rate - balls_bound*(unbinding_rate+release_rate);
     float dB = -dA-dbound;
     v[0]+=dA*step;
     v[1]+=dB*step;
