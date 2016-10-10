@@ -43,6 +43,8 @@ void stepFun(float *v, Params p, float step, int ind)
     float balls_A = v[0];
     float balls_B = v[1];
     
+    float dx=-;
+    float dteta=;
     float sumB = suma-balls_bound_t.at(ind);
     
     float dA = (p.L_I*diff*(balls_B/p.S_B-balls_A/p.S_A))*step;
