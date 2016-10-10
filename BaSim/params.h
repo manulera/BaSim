@@ -17,7 +17,7 @@ float unbinding_rate = 0.00;
 float mt_length = 100;
 float release_rate = motor_speed*2/mt_length;
 
-const int nballs = 500;
+const int nballs = 1000;
 const int ntubs = 100;
 
 //Useful functions
