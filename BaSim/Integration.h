@@ -32,7 +32,9 @@ int step_out =end/step_int/500;
 
 // In order to have balls_B(t) we are going to store all of them in a circular list, with capacity for n elements, where n is the time that it takes the motors to go through the length of the MTs, divided by the integration step.
 
-int circ_length=mt_length/(motor_speed*step_int);
+//int circ_length=mt_length/(motor_speed*step_int);
+float k_comb = motor_speed/mt_length+unbinding_rate;
+int circ_length=1/(k_comb*step_int);
 std::vector<float>balls_bound_t(circ_length);
 float suma=0.0;
 void stepFun(float *v, Params p, float step, int ind)
@@ -40,14 +42,13 @@ void stepFun(float *v, Params p, float step, int ind)
     
     float balls_A = v[0];
     float balls_B = v[1];
-    float balls_bound = v[2];
     
     float sumB = suma-balls_bound_t.at(ind);
     
     float dA = (p.L_I*diff*(balls_B/p.S_B-balls_A/p.S_A))*step;
-    float dbound = (balls_B*binding_rate - balls_bound*unbinding_rate - sumB*binding_rate*motor_speed/mt_length*step)*step;
+    float dbound = (balls_B*binding_rate - sumB*binding_rate*k_comb*step)*step;
     float dB = -dA-dbound;
-    suma+=balls_B-balls_bound_t.at(ind); //not certain about this -1
+    suma+=balls_B-balls_bound_t.at(ind);
     balls_bound_t.at(ind)=balls_B;
     v[0]+=dA;
     v[1]+=dB;

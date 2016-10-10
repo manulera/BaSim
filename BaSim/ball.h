@@ -130,7 +130,6 @@ public:
     {
         if (rand01()>1.0-unbinding_rate*dt)
         {
-            std::cout << "ciao"<< std::endl;
             attached=0;
         }
     }
