@@ -13,7 +13,7 @@ float alpha    = 0;       //diffusive motion within interval dt
 float motor_speed = 10.0;
 float binding_rate = 10;
 float binding_range = 1;
-float unbinding_rate = 0.05;
+float unbinding_rate = 0.00;
 float mt_length = 100;
 float release_rate = motor_speed*2/mt_length;
 
