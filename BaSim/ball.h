@@ -45,7 +45,7 @@ public:
             //check if something close and if binding to it.
             float distval = 0.0;
             int wherebind=within(binding_range, mti, &distval);
-            if (wherebind && rand01()>1.0-binding_rate*dt)
+            if (wherebind && rand01()<binding_rate*dt)
             {
                 attached=j+1;
                 bind(wherebind, mti , distval);
@@ -103,7 +103,7 @@ public:
         glLineWidth(1);
         glBegin(GL_LINES);
         {
-        glVertex2f(x/xBound, y/yBound);
+        //glVertex2f(x/xBound, y/yBound);
         if (where==1) //Bind to minus end
         {
             x=mti.posx;
@@ -122,13 +122,13 @@ public:
             x=mti.posx+dist0*cos(mti.orientation);
             y=mti.posy+dist0*sin(mti.orientation);
         }
-        glVertex2f(x/xBound, y/yBound);
+        //glVertex2f(x/xBound, y/yBound);
         }
         glEnd();
     }
     void unbind()
     {
-        if (rand01()>1.0-unbinding_rate*dt)
+        if (rand01()<unbinding_rate*dt)
         {
             std::cout << "ciao"<< std::endl;
             attached=0;

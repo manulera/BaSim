@@ -27,6 +27,10 @@ float t = 0.0; float t_old=0.0; float dt=0.0;
 #include "Integration.h"
 #include "display.h"
 
+// Import input file parser and ouput file writer
+#include "input.h"
+#include "output.h"
+
 MT mt[ntubs];
 Ball ball[nballs];
 // Initialize internal variables for the simulation
