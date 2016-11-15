@@ -61,72 +61,26 @@ std::string errorMessage(int code)
  This is necessarily a token starting with an alphabetical character,
  and containing alpha-numeric characters or the underscore character ('_').
  */
-
-
-std::string readKey(std::istream& is, bool isval)
+std::string readKey(std::istream& is)
 {
-    // isval is a boolean that is one in case that the key that we are reading corresponds to a value. In that case it can start with a number, otherwise, if it is either the name of a property or set/new, etc. it should start with a
     std::string res;
     int c = is.get();
     
     // name should start with alpha:
-    if (!isval && !isalpha(c) )
+    if ( !isalpha(c) )
         return res;
     
-    // accept alpha nums and underscore and dots(for numbers)
+    // accept alpha nums and underscore
     do
     {
         res.push_back((char)c);
         c = is.get();
-    } while ( isalnum(c) || c == '_' || c=='.');
+    } while ( isalnum(c) || c == '_' );
     
     is.putback(c);
     return res;
 }
 
-
-bool skip_spaces(std::istream& is, std::streampos& pos)
-{
-    int c = is.peek();
-    while ( isspace(c) )
-    {
-        is.get();
-        c = is.peek();
-    }
-    pos = is.tellg();
-    if ( c == EOF )
-        return 1;
-    else
-        return 0;
-
-}
-
-int get3keys(std::istream& is, std::streampos& pos,std::string (&keys)[3])
-{
-    for (int i=0; i<3; i++)
-    {
-        if (skip_spaces(is,pos)==1)
-            return 1;
-        keys[i] = readKey(is,0);
-    }
-    return 0;
-}
-
-int get1key(std::istream& is, std::streampos& pos,std::string& key, bool isval)
-{
-    if (skip_spaces(is,pos)==1)
-        return 1;
-    key = readKey(is,isval);
-    return 0;
-}
-
-int get_sign(std::istream& is, std::streampos& pos,std::string& key)
-{
-    if (skip_spaces(is,pos)==1)
-        return 1;
-    key = readKey(is,1);
-    return 0;
-}
 
 
 /**
@@ -274,67 +228,45 @@ public:
     }
     
     /// read values
-    int read1(std::istream& is, std::streampos& pos, std::string (&keys) [3])
-    {
-        std::string key;
-        if (keys[0] == "set")
-        {
-            std::string prop_val;
-
-            if (get1key(is, pos, key,1)) return GOOD_READ;
-            if (key != "{") return NO_EQUAL;
-            
-            while (true)
-            {
-                
-                if (get1key(is, pos, key,1)) return GOOD_READ;
-                //std::cout<< "key1 is: " << key << std::endl;
-                if (key=="}")
-                {
-                    prop_val.pop_back();
-                    break;
-                }
-                prop_val.append(key);
- 
-                if (get1key(is, pos, key,1)) return GOOD_READ;
-                if (key != "=") return NO_EQUAL;
-                prop_val.append(",");
-                
-                if (get1key(is, pos, key,1)) return GOOD_READ;
-                prop_val.append(key);
-                prop_val.append(",");
-            }
-            //std::cout << prop_val << std::endl;
-            BallMaker(keys[2], prop_val);
-        }
-        
-        //MORE_PARAMETERS
-        return NO_MATCH;
-    }
-    
-    /// read values
     int read(std::istream& is, std::string key)
     {
-        if ( key == "set" )    return readValue(is, nb_steps);
+        if ( key == "nb_steps" )    return readValue(is, nb_steps);
         if ( key == "time_step" )   return readValue(is, time_step);
         if ( key == "rate" )        return readValue(is, rate);
         //MORE_PARAMETERS
         return NO_MATCH;
     }
-
     
     
     /// read one assignement from an input stream
     int parseOne(std::istream& is, std::streampos& pos)
     {
-        std::string keys[3];
-        if (get3keys(is, pos, keys))
+        // skip spaces:
+        int c = is.peek();
+        while ( isspace(c) )
         {
-            return GOOD_READ;
+            is.get();
+            c = is.peek();
         }
-        std::cout << keys[0] << keys[1] << keys[2] << std::endl;
+        if ( c == EOF )
+            return GOOD_READ;
         
-        return read1(is,pos, keys);
+        pos = is.tellg();
+        std::string key = readKey(is);
+        
+       	if ( key.empty() )
+            return NO_KEY;
+        //std::cerr << "found key |" << key << "|" << std::endl;
+        
+        // skip space to find operator:
+        do {
+            c = is.get();
+        } while ( isspace(c) );
+        
+        if ( c != '=' )
+            return NO_EQUAL;
+        
+        return read(is, key);
     }
     
     
@@ -379,14 +311,14 @@ public:
 };
 
 
-//int main(int argc, char* argv[])
-//{
-//    Parameters param;
-//    param.parseFile("config.bs");
-//    for( int i = 1; i < argc; ++i )
-//        param.parse(argv[i]);
-//    param.print(std::cout);
-//    return EXIT_SUCCESS;
-//}
-
-
+#ifdef MAIN
+int main(int argc, char* argv[])
+{
+    Parameters param;
+    param.parseFile("parameters.txt");
+    for( int i = 1; i < argc; ++i )
+        param.parse(argv[i]);
+    param.print(std::cout);
+    return EXIT_SUCCESS;
+}
+#endif

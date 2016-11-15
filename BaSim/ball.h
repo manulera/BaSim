@@ -1,5 +1,17 @@
 
 
+class Ballprops{
+public:
+    std::string name;
+    int number;
+    // They must be specified
+    float speed, bind_rate, bind_range, unbind;
+    // They can be calculated from the others
+    float release_rate, x , y;
+    
+};
+
+
 float dist(float x1, float y1, float x2, float y2)
 {
     return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
@@ -14,9 +26,9 @@ public:
     int attached;
     
     void reset() {
-        speed = motor_speed;
-        x=srand()*xBound;
-        y=srand()*yBound;
+        speed = 0;
+        x=0;
+        y=0;
         attached = 0;
     }
     
@@ -130,7 +142,6 @@ public:
     {
         if (rand01()<unbinding_rate*dt)
         {
-            std::cout << "ciao"<< std::endl;
             attached=0;
         }
     }
@@ -144,4 +155,10 @@ public:
     }
 };
 
-
+void BallMaker(std::string name, std::string prop_val, Ball ball)
+{
+    ball[1];
+    using namespace std;
+    vector<string> tokens = split(prop_val, ',');
+    
+}

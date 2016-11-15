@@ -58,6 +58,9 @@
 		323A589E1DD9C82E003BDC7A /* output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output.h; sourceTree = "<group>"; };
 		323A589F1DD9CA6B003BDC7A /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
 		323A58A01DD9CBCF003BDC7A /* config.bs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.bs; sourceTree = "<group>"; };
+		323A58A11DDA2354003BDC7A /* config.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.txt; sourceTree = "<group>"; };
+		323A58A31DDB0EE8003BDC7A /* CytoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CytoParser.h; sourceTree = "<group>"; };
+		323A58A61DDB499E003BDC7A /* ProveOfConceptParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProveOfConceptParsing.h; sourceTree = "<group>"; };
 		327A170F1DA54825008854A7 /* Integration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integration.h; sourceTree = "<group>"; };
 		328219311D93C51200278D68 /* BaSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		328219341D93C51200278D68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -130,10 +133,13 @@
 				323A58A01DD9CBCF003BDC7A /* config.bs */,
 				323A589E1DD9C82E003BDC7A /* output.h */,
 				323A589F1DD9CA6B003BDC7A /* input.h */,
+				323A58A11DDA2354003BDC7A /* config.txt */,
 				32D873991D955CE200244DA9 /* MT.h */,
 				32D8739A1D9926BC00244DA9 /* checkers.h */,
 				32D873AA1D9BD9CB00244DA9 /* display.h */,
 				327A170F1DA54825008854A7 /* Integration.h */,
+				323A58A31DDB0EE8003BDC7A /* CytoParser.h */,
+				323A58A61DDB499E003BDC7A /* ProveOfConceptParsing.h */,
 			);
 			path = BaSim;
 			sourceTree = "<group>";

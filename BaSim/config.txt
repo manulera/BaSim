@@ -1,0 +1,25 @@
+
+set simulation
+{
+diffusion = 50
+time = 20
+dt = 0.01
+}
+
+set ball motor1
+{
+motor_speed = 10.0
+binding_rate = 10
+binding_range = 1
+unbinding_rate = 0.00
+}
+
+set mt tube
+{
+length = 100
+}
+
+% --------------------
+
+new 400 motor1
+new 30 tube
