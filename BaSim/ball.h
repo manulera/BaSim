@@ -1,35 +1,25 @@
-
-
-class Ballprops{
-public:
-    std::string name;
-    int number;
-    // They must be specified
-    float speed, bind_rate, bind_range, unbind;
-    // They can be calculated from the others
-    float release_rate, x , y;
-    
-};
-
-
-float dist(float x1, float y1, float x2, float y2)
-{
-    return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
-}
-
-
 class Ball{
 public:
-    
-    float range, speed;
+    bool active;
+    float speed, bind_rate, bind_range, unbind_rate;
     float x,y;
     int attached;
     
     void reset() {
+        active = 0;
         speed = 0;
         x=0;
         y=0;
         attached = 0;
+        bind_range = 1.0;
+        unbind_rate = 0;
+        bind_rate=0;
+    }
+    
+    void shuffle()
+    {
+        x = srand()*xBound;
+        y = srand()*yBound;
     }
     
     Ball()
@@ -155,10 +145,16 @@ public:
     }
 };
 
-void BallMaker(std::string name, std::string prop_val, Ball ball)
-{
-    ball[1];
-    using namespace std;
-    vector<string> tokens = split(prop_val, ',');
-    
-}
+Ball ball[1024];
+
+
+
+
+
+
+
+
+
+
+
+

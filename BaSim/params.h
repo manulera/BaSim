@@ -21,6 +21,12 @@ const int nballs = 1000;
 const int ntubs = 100;
 
 //Useful functions
+//Calculate distance
+float dist(float x1, float y1, float x2, float y2)
+{
+    return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+}
+
 /// signed random real in [-1, 1]
 float srand()
 {

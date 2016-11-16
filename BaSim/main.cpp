@@ -28,11 +28,12 @@ float t = 0.0; float t_old=0.0; float dt=0.0;
 #include "display.h"
 
 // Import input file parser and ouput file writer...
+#include "object_handling.h"
 #include "input.h"
 #include "output.h"
 
 MT mt[250];
-Ball ball[1024];
+
 // Initialize internal variables for the simulation
 
 int CountBound()
@@ -115,7 +116,9 @@ void display()
 
 int main() {
     Parameters param;
+    
     param.parseFile("config.bs");
+    
     
     EulerIntegration(start, end, step_int, step_out, vals, pars);
     if (!glfwInit())

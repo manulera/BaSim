@@ -61,6 +61,7 @@
 		323A58A11DDA2354003BDC7A /* config.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.txt; sourceTree = "<group>"; };
 		323A58A31DDB0EE8003BDC7A /* CytoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CytoParser.h; sourceTree = "<group>"; };
 		323A58A61DDB499E003BDC7A /* ProveOfConceptParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProveOfConceptParsing.h; sourceTree = "<group>"; };
+		323A58A81DDC89B2003BDC7A /* object_handling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object_handling.h; sourceTree = "<group>"; };
 		327A170F1DA54825008854A7 /* Integration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integration.h; sourceTree = "<group>"; };
 		328219311D93C51200278D68 /* BaSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		328219341D93C51200278D68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 				327A170F1DA54825008854A7 /* Integration.h */,
 				323A58A31DDB0EE8003BDC7A /* CytoParser.h */,
 				323A58A61DDB499E003BDC7A /* ProveOfConceptParsing.h */,
+				323A58A81DDC89B2003BDC7A /* object_handling.h */,
 			);
 			path = BaSim;
 			sourceTree = "<group>";

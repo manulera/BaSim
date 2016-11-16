@@ -55,7 +55,6 @@ std::string errorMessage(int code)
     }
 }
 
-
 /**
  Reads the identifier of a variable.
  This is necessarily a token starting with an alphabetical character,
@@ -107,7 +106,8 @@ int get3keys(std::istream& is, std::streampos& pos,std::string (&keys)[3])
     {
         if (skip_spaces(is,pos)==1)
             return 1;
-        keys[i] = readKey(is,0);
+        keys[i] = readKey(is,1);
+        //std::cout << "One key read: " <<keys[i] << std::endl;
     }
     return 0;
 }
@@ -291,6 +291,7 @@ public:
                 //std::cout<< "key1 is: " << key << std::endl;
                 if (key=="}")
                 {
+                    //std::cout<< "correct break "<< key << std::endl;
                     prop_val.pop_back();
                     break;
                 }
@@ -305,11 +306,20 @@ public:
                 prop_val.append(",");
             }
             //std::cout << prop_val << std::endl;
-            BallMaker(keys[2], prop_val);
+            std::cout << "set is called";
+            object_list.set(keys, prop_val);
         }
         
+        if (keys[0] == "new")
+        {
+            //Something needs to be changed here
+            //std::cout << keys[2];
+            object_list.make(keys[2], std::stoi(keys[1]));
+        }
+
+        
         //MORE_PARAMETERS
-        return NO_MATCH;
+        return GOOD_READ;
     }
     
     /// read values
@@ -332,7 +342,7 @@ public:
         {
             return GOOD_READ;
         }
-        std::cout << keys[0] << keys[1] << keys[2] << std::endl;
+        //std::cout<< "3 keys read: " << keys[0] << keys[1] << keys[2] << std::endl;
         
         return read1(is,pos, keys);
     }
