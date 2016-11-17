@@ -1,20 +1,13 @@
-class Ball{
+
+
+
+
+class Ball: public Object{
 public:
     bool active;
-    float speed, bind_rate, bind_range, unbind_rate;
-    float x,y;
+    float *speed, *bind_rate, *bind_range, *unbind_rate;
     int attached;
     
-    void reset() {
-        active = 0;
-        speed = 0;
-        x=0;
-        y=0;
-        attached = 0;
-        bind_range = 1.0;
-        unbind_rate = 0;
-        bind_rate=0;
-    }
     
     void shuffle()
     {
@@ -22,9 +15,30 @@ public:
         y = srand()*yBound;
     }
     
-    Ball()
+    void make(Ballprops& props)
     {
-        reset();
+        std::cout << "ball maker is reached"<< std::endl;
+        active = 1;
+        speed = &props.speed;
+        x = 0;
+        y = 0;
+        attached = 0;
+        bind_range = &props.bind_range;
+        unbind_rate = &props.unbind_rate;
+        bind_rate = &props.bind_rate;
+        type = &props.type;
+        name = &props.name;
+    }
+    Ball(Props& props): Object(props)
+    {
+       // make(props);
+    }
+    
+    void printinfo()
+    {
+        using namespace std;
+        cout << "The object "<<  name << "is a " << "with properties:"<<endl;
+        cout << "speed: " << speed << "bind_range" << &bind_range << endl;
     }
     
     void boundary()
@@ -83,16 +97,16 @@ public:
     {
         // This is based on the notes of the notebook
         
-        float a = dist(x,y,mti.posx,mti.posy); //Distance from the minus end
-        float b = dist(x,y,mti.posxp(),mti.posyp()); //Distance from the plus end
+        float a = dist(x,y,mti.x,mti.y); //Distance from the minus end
+        float b = dist(x,y,mti.xp(),mti.yp()); //Distance from the plus end
         float c = mti.length;
         float h = sqrt(a*a-pow((a*a-b*b+c*c)/2/c,2));
         
         if ((b*b+c*c<a*a) && (a>=b)) // Plus end
-            {*distval = dist(x,y,mti.posxp(),mti.posyp());
+            {*distval = dist(x,y,mti.xp(),mti.yp());
              return (*distval<range)*2;}
         else if ((a*a+c*c<b*b) && (a<=b)) // Minus end
-            {*distval = dist(x,y,mti.posx+mti.posx,mti.posy);
+            {*distval = dist(x,y,mti.x+mti.x,mti.y);
              return (*distval<range)*1;}
         else //Body of the microtubule
             {*distval = h;
@@ -108,21 +122,21 @@ public:
         //glVertex2f(x/xBound, y/yBound);
         if (where==1) //Bind to minus end
         {
-            x=mti.posx;
-            y=mti.posy;
+            x=mti.x;
+            y=mti.y;
         }
         else if (where==2) //Bind to plus end
         {
-            x=mti.posxp();
-            y=mti.posyp();
+            x=mti.xp();
+            y=mti.yp();
 
         }
         else if (where==3) //Bind to body
         {
-            float a = dist(x,y,mti.posx,mti.posy); //Distance from the minus end
+            float a = dist(x,y,mti.x,mti.y); //Distance from the minus end
             float dist0 = sqrt(std::abs(a*a-distval*distval)); // There are cases where this is negative
-            x=mti.posx+dist0*cos(mti.orientation);
-            y=mti.posy+dist0*sin(mti.orientation);
+            x=mti.x+dist0*cos(mti.orientation);
+            y=mti.y+dist0*sin(mti.orientation);
         }
         //glVertex2f(x/xBound, y/yBound);
         }
@@ -137,15 +151,13 @@ public:
     }
     void move(MT mti)
     {
-        float dist0=speed*dt;
+        float dist0=*speed * dt;
         x+=dist0*cos(mti.orientation);
         y+=dist0*sin(mti.orientation);
-        if (dist(x,y,mti.posx,mti.posy)>mti.length||dist(x,y,mti.posxp(),mti.posyp())>mti.length)
+        if (dist(x,y,mti.x,mti.y)>mti.length||dist(x,y,mti.xp(),mti.yp())>mti.length)
             attached=false;
     }
 };
-
-Ball ball[1024];
 
 
 

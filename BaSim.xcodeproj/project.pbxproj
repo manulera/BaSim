@@ -61,7 +61,7 @@
 		323A58A11DDA2354003BDC7A /* config.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.txt; sourceTree = "<group>"; };
 		323A58A31DDB0EE8003BDC7A /* CytoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CytoParser.h; sourceTree = "<group>"; };
 		323A58A61DDB499E003BDC7A /* ProveOfConceptParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProveOfConceptParsing.h; sourceTree = "<group>"; };
-		323A58A81DDC89B2003BDC7A /* object_handling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object_handling.h; sourceTree = "<group>"; };
+		323A58A81DDC89B2003BDC7A /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
 		327A170F1DA54825008854A7 /* Integration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integration.h; sourceTree = "<group>"; };
 		328219311D93C51200278D68 /* BaSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		328219341D93C51200278D68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -74,6 +74,10 @@
 		32D8739F1D9986D000244DA9 /* Hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hello; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D873AA1D9BD9CB00244DA9 /* display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
 		32EC3B4F1D9514EE00F892E4 /* ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball.h; sourceTree = "<group>"; };
+		32EE90641DDDE90500035A9F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		32EE90651DDDEDA900035A9F /* Interactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interactions.h; sourceTree = "<group>"; };
+		32EE90661DDDEF0C00035A9F /* object_maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object_maker.h; sourceTree = "<group>"; };
+		32EE90691DDDF48700035A9F /* SubclassesExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesExample.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		328219331D93C51200278D68 /* BaSim */ = {
 			isa = PBXGroup;
 			children = (
+				32EE90671DDDF44000035A9F /* Useful Examples */,
 				328219341D93C51200278D68 /* main.cpp */,
 				32EC3B4F1D9514EE00F892E4 /* ball.h */,
 				322A17431D95550C0010C78C /* params.h */,
@@ -141,9 +146,20 @@
 				327A170F1DA54825008854A7 /* Integration.h */,
 				323A58A31DDB0EE8003BDC7A /* CytoParser.h */,
 				323A58A61DDB499E003BDC7A /* ProveOfConceptParsing.h */,
-				323A58A81DDC89B2003BDC7A /* object_handling.h */,
+				323A58A81DDC89B2003BDC7A /* Properties.h */,
+				32EE90641DDDE90500035A9F /* Object.h */,
+				32EE90651DDDEDA900035A9F /* Interactions.h */,
+				32EE90661DDDEF0C00035A9F /* object_maker.h */,
 			);
 			path = BaSim;
+			sourceTree = "<group>";
+		};
+		32EE90671DDDF44000035A9F /* Useful Examples */ = {
+			isa = PBXGroup;
+			children = (
+				32EE90691DDDF48700035A9F /* SubclassesExample.h */,
+			);
+			name = "Useful Examples";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -272,7 +272,7 @@ public:
         os << " rate      = " << rate << std::endl;
         //MORE_PARAMETERS
     }
-    
+    Props* prop;
     /// read values
     int read1(std::istream& is, std::streampos& pos, std::string (&keys) [3])
     {
@@ -306,15 +306,21 @@ public:
                 prop_val.append(",");
             }
             //std::cout << prop_val << std::endl;
-            std::cout << "set is called";
-            object_list.set(keys, prop_val);
+            std::cout << "set is called"<<std::endl;
+            
+            prop = makeProps(keys, prop_val);
+            Props::type;
+            Object* aball;
+            new Ball(*prop);
+            aball->printinfo();
         }
         
         if (keys[0] == "new")
         {
+            //new Object()
             //Something needs to be changed here
             //std::cout << keys[2];
-            object_list.make(keys[2], std::stoi(keys[1]));
+     //       object_list.make(keys[2], std::stoi(keys[1]));
         }
 
         
