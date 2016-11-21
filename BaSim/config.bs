@@ -2,9 +2,16 @@
 set ball motor1
 {
     speed = 10.0
-    binding_rate = 10
-    binding_range = 1
+    binding_rate = 1000
+    binding_range = 100
     unbinding_rate = 0.00
 }
+
+set MT mt1
+{
+    length = 100
+}
+
+new 30 mt1
 
 new 400 motor1

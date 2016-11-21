@@ -4,20 +4,14 @@
 class MT: public Object{
 public:
     
-    float length, orientation; //From minus end
+    float length, orientation; // This properties should be able to change in time, that is why they are not pointerss
     
-    void set()
+    void shuffle()
     {
         x = xBound*srand()*0.8;
         y = yBound*srand()*0.8;
-        length = mt_length;
         orientation = 2*PI*srand();
     }
-//    
-//    MT(): Object()
-//    {
-//        set();
-//    }
     
     float xp()
     {

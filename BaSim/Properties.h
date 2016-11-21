@@ -1,58 +1,9 @@
-#include <unordered_map>
 #include <array>
-class Props{
-public:
-    // This member variables will be present in all the different objects name
-    
-    std::string name;
-    std::string type;
-    
-    float  x , y;
 
-};
 
-class Ballprops: public Props{
-public:
-    int number;
-    // They must be specified
-    float attached,speed, bind_rate, bind_range, unbind_rate;
-    
-    Ballprops(std::string (&keys) [3], std::string prop_val): Props()
-    {
-        using namespace std;
-        vector<string> pairs = split(prop_val, ',');
-        type = keys[1];
-        name = keys[2];
-        string propname;
-        string value;
-        for (int i = 0;i <= pairs.size()-1;i+=2)
-        {
-            propname = pairs.at(i);
-            std::cout << "propname written: "<< propname << std::endl;
-            value = pairs.at(i+1);
-            if (propname == "speed") speed=stof(value); continue;
-            if (propname == "binding_rate") bind_rate=stof(value); continue;
-            if (propname == "binding_range") bind_range=stof(value); continue;
-            if (propname == "unbinding_rate") unbind_rate=stof(value); continue;
-            
-        }
-    }
-//    void make(Ball& myball) // Probably this could be set as a virtual function once all objects are also made hyerarchical
-//    {
-//        myball.speed = speed; // Instead of calling the whole list, use a pointer
-//        myball.bind_range = bind_range; // The object properties are set by a pointer that points to a set of properties
-//        myball.bind_rate = bind_rate;
-//        myball.unbind_rate = unbind_rate;
-//        myball.active = 1;
-//        myball.shuffle();
-//    }
-};
 
-Props* makeProps(std::string (&keys) [3], std::string prop_val)
-{
-    if (keys[1]=="ball") return new Ballprops(keys,prop_val);
-    return 0;
-}
+
+
 
 //class Tubeprops{
 //public:

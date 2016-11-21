@@ -307,20 +307,17 @@ public:
             }
             //std::cout << prop_val << std::endl;
             std::cout << "set is called"<<std::endl;
-            
-            prop = makeProps(keys, prop_val);
-            Props::type;
-            Object* aball;
-            new Ball(*prop);
-            aball->printinfo();
+            //Props * p = makeProps(keys, prop_val);
+            sim.add_prop(*makeProps(keys, prop_val));
         }
         
         if (keys[0] == "new")
         {
-            //new Object()
-            //Something needs to be changed here
-            //std::cout << keys[2];
-     //       object_list.make(keys[2], std::stoi(keys[1]));
+            int num_objects = std::stoi(keys[1]);
+            for (int i; i< num_objects; i++)
+            {
+                sim.add_object(keys[2]);
+            }
         }
 
         

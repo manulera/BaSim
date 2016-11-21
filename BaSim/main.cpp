@@ -8,6 +8,7 @@
 /* BaSim, the simulation that I used to start learning C++ */
 
 // Basic Libraries
+int id_master = 0;
 #include <iostream>
 #include <sstream>
 
@@ -22,18 +23,29 @@ float t = 0.0; float t_old=0.0; float dt=0.0;
 
 // Import the objects of the simulation
 #include "params.h"
-#include "Properties.h"
 #include "Object.h"
+#include "Properties.h"
+
+
+
 #include "MT.h"
 #include "ball.h"
+#include "ball_prop.h"
+#include "mt_prop.h"
 #include "Integration.h"
 #include "display.h"
 
 // Import input file parser and ouput file writer...
+#include "props_maker.h"
+#include "Interactions.h"
+#include "Simulation.h"
+Simulation sim;
 
+#include "object_step.h"
+#include "ball_step.h"
 #include "input.h"
 #include "output.h"
-#include "object_maker.h"
+
 
 //MT mt[250];
 
@@ -119,37 +131,12 @@ float t = 0.0; float t_old=0.0; float dt=0.0;
 
 int main() {
 //    EulerIntegration(start, end, step_int, step_out, vals, pars);
-//    if (!glfwInit())
-//    {
-//        return -1;
-//    }
-//    graphs = glfwCreateWindow(xGraphs, yGraphs, "Graphs", NULL, NULL);
-//    win = glfwCreateWindow(xBound, yBound, "BaSim", NULL, NULL);
-//    if (!win){
-//        glfwTerminate();
-//        exit(EXIT_FAILURE);
-//    }
-//    if (!glewInit()) return -1;
-//    
-//    //glEnable(GL_PROGRAM_POINT_SIZE_EXT);
-//    glfwMakeContextCurrent(win);
-//    glfwGetFramebufferSize(win, &xBound, &yBound);
-//    while (!glfwWindowShouldClose(win)){
-//        t = glfwGetTime();
-//        dt = t - t_old;
-//        t_old = t;
-//        display();
-//        
-//        glfwSwapBuffers(win);
-//        glfwPollEvents();
-//    }
-//    
-//    glfwTerminate();
-//    exit(EXIT_SUCCESS);
+
     Parameters param;
-    
     param.parseFile("config.bs");
-    return 0;
+    std::cout << sim.mts.size() << std::endl;
+    //std::cout << sim.objects.at(0)->x << std::endl;
+    return sim.run();
 }
 
 
