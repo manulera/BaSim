@@ -79,12 +79,10 @@ void EulerIntegration(float start, float end,float step_int, int step_out, float
     int count_steps = 0;
     for (float x=start; x<end; x+=step_int)
     {
-        //std::cout << count_steps<<" / "<< circ_length <<std::endl;
         stepFun(v,p,step_int,count_steps%circ_length);
         count_steps++;
         if (count_steps%step_out==0)
         {
-            //std::cout << count_steps*step_int<<" / " << v[2]<<std::endl;
             x_out.push_back(x);
             y_out.push_back(1-(v[0]+v[1])/nballs);
         }

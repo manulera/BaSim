@@ -1,6 +1,4 @@
 
-
-
 #include <cstdlib>
 #include <vector>
 #include <cmath>

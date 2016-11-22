@@ -107,7 +107,6 @@ int get3keys(std::istream& is, std::streampos& pos,std::string (&keys)[3])
         if (skip_spaces(is,pos)==1)
             return 1;
         keys[i] = readKey(is,1);
-        //std::cout << "One key read: " <<keys[i] << std::endl;
     }
     return 0;
 }
@@ -288,10 +287,8 @@ public:
             {
                 
                 if (get1key(is, pos, key,1)) return GOOD_READ;
-                //std::cout<< "key1 is: " << key << std::endl;
                 if (key=="}")
                 {
-                    //std::cout<< "correct break "<< key << std::endl;
                     prop_val.pop_back();
                     break;
                 }
@@ -305,9 +302,6 @@ public:
                 prop_val.append(key);
                 prop_val.append(",");
             }
-            //std::cout << prop_val << std::endl;
-            std::cout << "set is called"<<std::endl;
-            //Props * p = makeProps(keys, prop_val);
             sim.add_prop(*makeProps(keys, prop_val));
         }
         
@@ -345,8 +339,6 @@ public:
         {
             return GOOD_READ;
         }
-        //std::cout<< "3 keys read: " << keys[0] << keys[1] << keys[2] << std::endl;
-        
         return read1(is,pos, keys);
     }
     
@@ -390,16 +382,4 @@ public:
         return 1;
     }
 };
-
-
-//int main(int argc, char* argv[])
-//{
-//    Parameters param;
-//    param.parseFile("config.bs");
-//    for( int i = 1; i < argc; ++i )
-//        param.parse(argv[i]);
-//    param.print(std::cout);
-//    return EXIT_SUCCESS;
-//}
-
 

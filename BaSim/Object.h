@@ -15,13 +15,3 @@ public:
     virtual void boundary();
 };
 
-class Props{
-public:
-    
-    // This member variables will be present in all the different objects name
-    std::string name;
-    std::string type;
-    
-    float  x , y;
-    virtual Object* make(){return 0;};
-};

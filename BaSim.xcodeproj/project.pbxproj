@@ -58,13 +58,9 @@
 		323A589E1DD9C82E003BDC7A /* output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output.h; sourceTree = "<group>"; };
 		323A589F1DD9CA6B003BDC7A /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
 		323A58A01DD9CBCF003BDC7A /* config.bs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.bs; sourceTree = "<group>"; };
-		323A58A11DDA2354003BDC7A /* config.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.txt; sourceTree = "<group>"; };
-		323A58A31DDB0EE8003BDC7A /* CytoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CytoParser.h; sourceTree = "<group>"; };
-		323A58A61DDB499E003BDC7A /* ProveOfConceptParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProveOfConceptParsing.h; sourceTree = "<group>"; };
 		323A58A81DDC89B2003BDC7A /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
 		326CF6E91DE2FEA800AD2A50 /* props_maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = props_maker.h; sourceTree = "<group>"; };
 		326CF6EA1DE2FEF800AD2A50 /* Simulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Simulation.h; sourceTree = "<group>"; };
-		326CF6EB1DE30F5900AD2A50 /* ball_step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball_step.h; sourceTree = "<group>"; };
 		326CF6ED1DE32E0900AD2A50 /* object_step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object_step.h; sourceTree = "<group>"; };
 		327A170F1DA54825008854A7 /* Integration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integration.h; sourceTree = "<group>"; };
 		328219311D93C51200278D68 /* BaSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSim; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +74,7 @@
 		32D8739F1D9986D000244DA9 /* Hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hello; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D873AA1D9BD9CB00244DA9 /* display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
 		32E101AE1DE3636400A6A8E0 /* mt_prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mt_prop.h; sourceTree = "<group>"; };
+		32E101B01DE483BC00A6A8E0 /* read_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = read_output.h; sourceTree = "<group>"; };
 		32EC3B4F1D9514EE00F892E4 /* ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball.h; sourceTree = "<group>"; };
 		32EE90641DDDE90500035A9F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		32EE90651DDDEDA900035A9F /* Interactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interactions.h; sourceTree = "<group>"; };
@@ -138,28 +135,25 @@
 			isa = PBXGroup;
 			children = (
 				32EE90671DDDF44000035A9F /* Useful Examples */,
-				328219341D93C51200278D68 /* main.cpp */,
-				32EC3B4F1D9514EE00F892E4 /* ball.h */,
-				322A17431D95550C0010C78C /* params.h */,
-				323A58A01DD9CBCF003BDC7A /* config.bs */,
-				323A589E1DD9C82E003BDC7A /* output.h */,
-				323A589F1DD9CA6B003BDC7A /* input.h */,
-				323A58A11DDA2354003BDC7A /* config.txt */,
-				32D873991D955CE200244DA9 /* MT.h */,
-				32D8739A1D9926BC00244DA9 /* checkers.h */,
-				32D873AA1D9BD9CB00244DA9 /* display.h */,
 				327A170F1DA54825008854A7 /* Integration.h */,
-				323A58A31DDB0EE8003BDC7A /* CytoParser.h */,
-				323A58A61DDB499E003BDC7A /* ProveOfConceptParsing.h */,
-				323A58A81DDC89B2003BDC7A /* Properties.h */,
+				322A17431D95550C0010C78C /* params.h */,
 				32EE90641DDDE90500035A9F /* Object.h */,
-				32EE90651DDDEDA900035A9F /* Interactions.h */,
+				323A58A81DDC89B2003BDC7A /* Properties.h */,
+				32D873991D955CE200244DA9 /* MT.h */,
+				32EC3B4F1D9514EE00F892E4 /* ball.h */,
 				32EE90B01DDF64FB00035A9F /* ball_prop.h */,
-				326CF6E91DE2FEA800AD2A50 /* props_maker.h */,
-				326CF6EA1DE2FEF800AD2A50 /* Simulation.h */,
-				326CF6EB1DE30F5900AD2A50 /* ball_step.h */,
-				326CF6ED1DE32E0900AD2A50 /* object_step.h */,
 				32E101AE1DE3636400A6A8E0 /* mt_prop.h */,
+				326CF6E91DE2FEA800AD2A50 /* props_maker.h */,
+				32D873AA1D9BD9CB00244DA9 /* display.h */,
+				32EE90651DDDEDA900035A9F /* Interactions.h */,
+				326CF6EA1DE2FEF800AD2A50 /* Simulation.h */,
+				326CF6ED1DE32E0900AD2A50 /* object_step.h */,
+				323A589F1DD9CA6B003BDC7A /* input.h */,
+				323A589E1DD9C82E003BDC7A /* output.h */,
+				323A58A01DD9CBCF003BDC7A /* config.bs */,
+				32D8739A1D9926BC00244DA9 /* checkers.h */,
+				32E101B01DE483BC00A6A8E0 /* read_output.h */,
+				328219341D93C51200278D68 /* main.cpp */,
 			);
 			path = BaSim;
 			sourceTree = "<group>";

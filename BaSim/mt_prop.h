@@ -14,7 +14,6 @@ public:
         for (int i = 0;i <= pairs.size()-1;i+=2)
         {
             propname = pairs.at(i);
-            std::cout << "propname written: "<< propname << std::endl;
             value = pairs.at(i+1);
             if (propname == "length") length=stof(value); continue;
             if (propname == "orientation") orientation=stof(value); continue;
@@ -24,6 +23,8 @@ public:
     Object* make()
     {
         MT* newmt = new MT;
+        ids.push_back(id_master);
+        newmt->type = &type;
         newmt->name = &name;
         newmt->length = length;
         newmt->shuffle();

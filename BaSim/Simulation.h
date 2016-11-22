@@ -5,6 +5,12 @@ public:
     std::unordered_map<std::string, Props*> prop_dict;
     std::vector<Ball*> balls;
     std::vector<MT*> mts;
+    FILE * file;
+    float t;
+    float t_old;
+    float t_max;
+    float dt;
+    unsigned int fcounter;
     //std::unordered_map<std::string, std::vector<int>> obj_dict;
     
     void add_prop(Props& prop)
@@ -34,8 +40,18 @@ public:
     void step();
     void display_mts();
     void display_balls();
+    void play_mts();
+    void play_balls();
+    void play();
     void display();
-    int run();
+    int run_write();
+    int run_play();
+    void write();
+    void inifile();
+    int populate();
+    int populate_props();
+    int populate_objs();
+    int show();
 };
 
 void Simulation::step()
@@ -46,13 +62,13 @@ void Simulation::step()
     {
         for (int i_m = 0; i_m < mts.size(); i_m++)
         {
-            interaction(balls.at(i_b),mts.at(i_m),i_m);
+            interaction(balls.at(i_b),mts.at(i_m),i_m,dt);
         }
         
     }
 }
 
-void Simulation::display_mts()
+void Simulation::play_mts()
 {
     for (int j=0; j<mts.size(); j++)
     {
@@ -68,7 +84,7 @@ void Simulation::display_mts()
 
 }
 
-void Simulation::display_balls()
+void Simulation::play_balls()
 {
     for (int i=0; i<balls.size(); i++)
     {
@@ -95,7 +111,7 @@ void Simulation::display_balls()
     }
 }
 
-void Simulation::display()
+void Simulation::play()
 {
     glClearColor(0.0f, 0.0f,0.0f,1.0f);
     glfwMakeContextCurrent(graphs);
@@ -105,10 +121,10 @@ void Simulation::display()
     glPointSize(5);
     
     //MT
-    display_mts();
+    play_mts();
     
     //Motors
-    display_balls();
+    play_balls();
     
     // Update the graphs
     //    time_vect.push_back(time_vect.at(time_vect.size()-1)+dt);
@@ -117,7 +133,7 @@ void Simulation::display()
     //    graphsRefresh();
 }
 
-int Simulation::run()
+int Simulation::run_play()
 {
     if (!glfwInit())
     {
@@ -134,18 +150,39 @@ int Simulation::run()
     //glEnable(GL_PROGRAM_POINT_SIZE_EXT);
     glfwMakeContextCurrent(win);
     glfwGetFramebufferSize(win, &xBound, &yBound);
-
     while (!glfwWindowShouldClose(win)){
         t = glfwGetTime();
         dt = t - t_old;
         t_old = t;
         step();
-        display();
+        play();
         glfwSwapBuffers(win);
         glfwPollEvents();
     }
-
+    fclose(file);
     glfwTerminate();
     exit(EXIT_SUCCESS);
+    return 0;
+}
+
+int Simulation::run_write()
+{
+    unsigned int counter = 0;
+    t = 0.0;
+    dt = 0.015625;
+    t_max = 10;
+    inifile();
+    while (t < t_max)
+    {
+        if (counter++%10==0)
+        {
+            std::cout << t << std::endl;
+            write();
+        }
+    //t = dt*(float)counter;
+        t += dt;
+        step();
+        
+    }
     return 0;
 }

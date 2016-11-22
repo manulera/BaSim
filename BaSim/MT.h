@@ -6,6 +6,11 @@ public:
     
     float length, orientation; // This properties should be able to change in time, that is why they are not pointerss
     
+    std::string str_spec()
+    {
+        
+        return "";
+    }
     void shuffle()
     {
         x = xBound*srand()*0.8;

@@ -24,7 +24,7 @@ int within(Ball* balli, MT* mti , float* distval)
         return (*distval < *(balli->bind_range))*3;}
 }
 
-void move_along(Ball* balli,MT* mti)
+void move_along(Ball* balli,MT* mti, float dt)
 {
     // dist0 is the distance that the motors travels in dt
     float dist0 = *(balli->speed) * dt;
@@ -36,8 +36,8 @@ void move_along(Ball* balli,MT* mti)
 
 void bind(Ball* balli, MT* mti, int where, float distval)
 {
-    glLineWidth(1);
-    glBegin(GL_LINES);
+    //glLineWidth(1);
+    //glBegin(GL_LINES);
     {
         //glVertex2f(x/xBound, y/yBound);
         if (where==1) //Bind to minus end
@@ -60,17 +60,16 @@ void bind(Ball* balli, MT* mti, int where, float distval)
         }
         //glVertex2f(x/xBound, y/yBound);
     }
-    glEnd();
+    //glEnd();
 }
 
-void interaction(Ball* balli,MT* mti, int i_m)
+void interaction(Ball* balli,MT* mti, int i_m, float dt)
 {
     if (!balli->attached)
     {
         float distval;
         int wherebind = within(balli,mti,&distval);
-        std::cout << wherebind << std::endl;
-
+        
         if (wherebind && rand01()<binding_rate*dt)
         {
             balli->attached=i_m+1;
@@ -83,7 +82,7 @@ void interaction(Ball* balli,MT* mti, int i_m)
     }
     else if (balli->attached - 1 ==i_m)
     {
-        move_along(balli,mti);
+        move_along(balli,mti,dt);
     }
     
 }

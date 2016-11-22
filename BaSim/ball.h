@@ -4,7 +4,6 @@
 
 class Ball: public Object{
 public:
-    bool active;
     float *speed, *bind_rate, *bind_range, *unbind_rate;
     int attached;
     
