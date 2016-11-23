@@ -6,7 +6,7 @@ public:
     std::string type;
     std::vector<int> ids;
     float  x , y;
-    virtual Object* make(){return 0;};
+    virtual Object* make(std::string prop_val){return 0;};
     virtual std::string str_spec(){return "";};
     std::string str()
     {

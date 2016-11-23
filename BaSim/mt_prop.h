@@ -5,29 +5,53 @@ public:
     
     MTprops(std::string (&keys) [3], std::string prop_val): Props()
     {
-        using namespace std;
-        vector<string> pairs = split(prop_val, ',');
         type = keys[1];
         name = keys[2];
-        string propname;
-        string value;
-        for (int i = 0;i <= pairs.size()-1;i+=2)
+
+        if (!prop_val.empty())
         {
-            propname = pairs.at(i);
-            value = pairs.at(i+1);
-            if (propname == "length") length=stof(value); continue;
-            if (propname == "orientation") orientation=stof(value); continue;
+            using namespace std;
+            string propname;
+            string value;
+            vector<string> pairs = split(prop_val, ',');
+            for (int i = 0;i < pairs.size();i+=2)
+            {
+                propname = pairs.at(i);
+                value = pairs.at(i+1);
+                // No props yet
+            }
         }
     }
     
-    Object* make()
+    Object* make(std::string prop_val)
     {
         MT* newmt = new MT;
         ids.push_back(id_master);
+        
+        // Properties of the object
         newmt->type = &type;
         newmt->name = &name;
-        newmt->length = length;
+        
+        // Initialize default values
+        newmt->length = 100;
         newmt->shuffle();
+        // If the user gave values
+        if (!prop_val.empty())
+        {
+            using namespace std;
+            string propname;
+            string value;
+            vector<string> pairs = split(prop_val, ',');
+            for (int i = 0;i <= pairs.size()-1;i+=2)
+            {
+                propname = pairs.at(i);
+                value = pairs.at(i+1);
+                if (propname == "x") {newmt->x=stof(value); continue;}
+                if (propname == "y") {newmt->y=stof(value); continue;}
+                if (propname == "attached") {newmt->length=stof(value); continue;}
+                if (propname == "orientation") {newmt->orientation=stof(value); continue;}
+            }
+        }
         return newmt;
     }
     

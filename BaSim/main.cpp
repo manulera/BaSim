@@ -20,6 +20,17 @@ int id_master = 0;
 #include <cstdlib>
 #include <cmath>
 
+//Two functions useful for debugging
+void reached()
+{
+    std::cout << "reached" << std::endl;
+}
+
+void reached(int i)
+{
+    std::cout << "reached: "<< i << std::endl;
+}
+
 // Import the objects of the simulation
 #include "params.h"
 #include "Object.h"
@@ -42,10 +53,12 @@ Simulation sim;
 #include "output.h"
 #include "read_output.h"
 
+
 int main() {
 //    EulerIntegration(start, end, step_int, step_out, vals, pars);
-    Parameters param;
-    param.parseFile("config.bs");
+    Parser pars;
+    std::fstream fs("config.bs");
+    pars.readfile(fs);
     Simulation sim2;
     sim.run_write();
     sim2.show();

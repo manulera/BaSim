@@ -13,5 +13,7 @@ public:
     }
     virtual void diffuse();
     virtual void boundary();
+    virtual void populate(std::string){};
+    virtual void display(){};
 };
 

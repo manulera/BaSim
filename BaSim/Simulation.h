@@ -3,6 +3,7 @@ class Simulation{
 
 public:
     std::unordered_map<std::string, Props*> prop_dict;
+    std::vector<Object*> all;
     std::vector<Ball*> balls;
     std::vector<MT*> mts;
     FILE * file;
@@ -23,19 +24,27 @@ public:
     {
         return prop_dict[name];
     }
-    void add_object(std::string name)
+    void add_object(std::string keys[3], std::string prop_val)
     {
-        using namespace std;
-        Props* p = get_prop(name);
+        Props* p = get_prop(keys[2]);
+        std::cout << "\"new\" statement reached for " << keys[2] <<std::endl;
         if (p->type=="ball")
         {
-            balls.push_back(static_cast<Ball*>(p->make()));
+            for (int i = 0; i < std::stoi(keys[1]); i++)
+            {
+                balls.push_back(static_cast<Ball*>(p->make(prop_val)));
+                //This way there is a way to reference the object from the id, by all.at(id)
+                all.push_back(balls.at(balls.size()-1));
+            }
         }
         if (p->type=="MT")
         {
-            mts.push_back(static_cast<MT*>(p->make()));
+            for (int i = 0; i < std::stoi(keys[1]); i++)
+            {
+                mts.push_back(static_cast<MT*>(p->make(prop_val)));
+                all.push_back(mts.at(mts.size()-1));
+            }
         }
-            
     }
     void step();
     void display_mts();
@@ -68,49 +77,6 @@ void Simulation::step()
     }
 }
 
-void Simulation::play_mts()
-{
-    for (int j=0; j<mts.size(); j++)
-    {
-        glLineWidth(2.0f);
-        glBegin(GL_LINES);
-        {
-            glColor3f(0.0, 0.0, 1.0);
-            glVertex2f(mts.at(j)->x/xBound, mts.at(j)->y/yBound);
-            glVertex2f(mts.at(j)->xp()/xBound, mts.at(j)->yp()/yBound);
-        }
-        glEnd();
-    }
-
-}
-
-void Simulation::play_balls()
-{
-    for (int i=0; i<balls.size(); i++)
-    {
-        glBegin(GL_POINTS);
-        {
-            if (!balls.at(i)->attached)
-            {
-                glColor3f(1.0,0.0,0.0);
-            }
-            else
-            {
-                glColor3f(0.0,1.0,0.0);
-            }
-            glVertex2f(balls.at(i)->x/xBound, balls.at(i)->y/yBound);
-        }
-        glEnd();
-        //        glBegin(GL_POINTS);
-        //        {
-        //            glColor3f(1.0,1.0,0.0);
-        //            glVertex2f(xBound,yBound);
-        //        }
-        //        glEnd();
-        
-    }
-}
-
 void Simulation::play()
 {
     glClearColor(0.0f, 0.0f,0.0f,1.0f);
@@ -120,12 +86,11 @@ void Simulation::play()
     glClear(GL_COLOR_BUFFER_BIT);
     glPointSize(5);
     
-    //MT
-    play_mts();
     
-    //Motors
-    play_balls();
-    
+    for (int j=0; j<all.size(); j++)
+    {
+        all.at(j)->display();
+    }
     // Update the graphs
     //    time_vect.push_back(time_vect.at(time_vect.size()-1)+dt);
     //    bound_vect.push_back(static_cast<float>(CountBound())/static_cast<float>(nballs));
@@ -144,10 +109,7 @@ int Simulation::run_play()
     if (!win){
         glfwTerminate();
         exit(EXIT_FAILURE);
-    }
-    if (!glewInit()) return -1;
-    
-    //glEnable(GL_PROGRAM_POINT_SIZE_EXT);
+    }    
     glfwMakeContextCurrent(win);
     glfwGetFramebufferSize(win, &xBound, &yBound);
     while (!glfwWindowShouldClose(win)){
@@ -176,7 +138,7 @@ int Simulation::run_write()
     {
         if (counter++%10==0)
         {
-            std::cout << t << std::endl;
+            //std::cout << t << std::endl;
             write();
         }
     //t = dt*(float)counter;

@@ -27,6 +27,17 @@ public:
     {
         return y+length*sin(orientation);
     }
-    
+    void populate(std::string);
+    void display()
+    {
+        glLineWidth(2.0f);
+        glBegin(GL_LINES);
+        {
+            glColor3f(0.0, 0.0, 1.0);
+            glVertex2f(x/xBound, y/yBound);
+            glVertex2f(xp()/xBound, yp()/yBound);
+        }
+        glEnd();
+    }
 };
 
