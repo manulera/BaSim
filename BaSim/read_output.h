@@ -1,4 +1,6 @@
 
+#include <thread>
+#include <chrono>
 int Simulation::populate_props()
 {
     using namespace std;
@@ -21,16 +23,71 @@ int Simulation::populate_props()
     return 0;
 }
 
+int Simulation::populate_objs()
+{
+    using namespace std;
+    fstream fs("Output_objs.bs");
+    string line;
+    string type;
+    int idnum;
+    int idmax = 0;
+    char temp[10];
+    bool ended=false;
+    int num = 0;
+    // store the objects in the vectors
+    while(getline (fs, line)&&!glfwWindowShouldClose(win))
+    {
+        num++;
+        if (line=="") continue;
+        if (sscanf(line.c_str(), "%u", &idnum))
+        {
+            if (idmax<idnum) {idmax=idnum;}
+            if (type=="balls")
+            {
+                balls.push_back(new Ball);
+                balls.at(balls.size()-1)->populate(line);
+            }
+            if (type=="mts")
+            {
+                mts.push_back(new MT);
+                mts.at(mts.size()-1)->populate(line);
+            }
+        }
+        else
+        {
+            sscanf(line.c_str(), "%s",temp);
+            type = temp;
+            type.pop_back();//remove the ":"
+            if (type.substr(0,5)=="frame")
+            {
+                if (ended == 1) break;
+                ended = 1;
+            }
+        }
+    }
+    all.resize(idmax+1);
+    for (int i =0; i < balls.size(); i++)
+    {
+        all.at(balls.at(i)->identifier)=balls.at(i);
+    }
+    for (int i =0; i < mts.size(); i++)
+    {
+        all.at(mts.at(i)->identifier)=mts.at(i);
+    }
+    cout << "length of ball: " << balls.size()<<endl;
+    cout << "length of mt: " << mts.size()<<endl;
+    cout << "length of all: " << all.size()<<endl;
+    return 0;
+}
+
 void Ball::populate(std::string line)
 {
-    int dummy;
-    std::scanf(line.c_str(),"%u %f %f %u",dummy,x,y,attached);
+    sscanf(line.c_str(),"%u %f %f %u",&identifier,&x,&y,&attached);
 }
 
 void MT::populate(std::string line)
 {
-    int dummy;
-    std::scanf(line.c_str(),"%u %f %f %f",dummy,x,y,length);
+    sscanf(line.c_str(),"%u %f %f %f %f",&identifier,&x,&y,&orientation,&length);
 }
 
 int Simulation::show()
@@ -51,32 +108,22 @@ int Simulation::show()
 
     using namespace std;
     populate_props();
+    populate_objs();
     fstream fs("Output_objs.bs");
     string line;
-    unsigned int counter=0;
-    int idnum = -1;
+    int idnum;
     while(getline (fs, line)&&!glfwWindowShouldClose(win))
     {
-        std::cout << line.c_str() <<std::endl;
-        //scanf(line.c_str(), "%u",idnum); reached(idnum);
+        if (line=="") continue;
+        if (sscanf(line.c_str(), "%u", &idnum))
         {
-//            reached();
-//            Object* obj= all.at(idnum);
-//            if (*obj->type=="ball") obj=static_cast<Ball*>(obj);
-//            if (*obj->type=="MT") obj=static_cast<MT*>(obj);
-//            all.at(idnum)->populate(line);
+            all.at(idnum)->populate(line);
         }
-        
-      //  else if (scanf(line.c_str(), "frame_",temp) && counter%10==1)
+        else if ((line.find("frame")!=std::string::npos))
         {
-//            reached();
-//            play();
-//            glfwSwapBuffers(win);
-//            glfwPollEvents();
+            play();
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
-        reached(counter);
-        counter++;
-        idnum = -1;
     }
     
     fclose(file);

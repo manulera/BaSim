@@ -91,11 +91,14 @@ void Simulation::play()
     {
         all.at(j)->display();
     }
+    
     // Update the graphs
     //    time_vect.push_back(time_vect.at(time_vect.size()-1)+dt);
     //    bound_vect.push_back(static_cast<float>(CountBound())/static_cast<float>(nballs));
     //    region_vect.push_back(static_cast<float>(CountArea())/static_cast<float>(nballs));
     //    graphsRefresh();
+    glfwSwapBuffers(win);
+    glfwPollEvents();
 }
 
 int Simulation::run_play()
@@ -118,8 +121,6 @@ int Simulation::run_play()
         t_old = t;
         step();
         play();
-        glfwSwapBuffers(win);
-        glfwPollEvents();
     }
     fclose(file);
     glfwTerminate();

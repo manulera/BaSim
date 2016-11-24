@@ -62,6 +62,7 @@ int main() {
     Simulation sim2;
     sim.run_write();
     sim2.show();
+//    sim.run_play();
     return 0;
 }
 
