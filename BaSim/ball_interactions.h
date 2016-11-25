@@ -74,16 +74,18 @@ void Ball::iterate_mts(std::vector<MT*> mts,float dt)
     float distval;
     for (int i = 0; i<mts.size(); i++)
     {
-        int wherebind = within(mts.at(i),&distval);
-        if (wherebind && rand01()<binding_rate*dt)
+        if (rand01()<binding_rate*dt)
         {
-            bind(mts.at(i),wherebind, distval);
+            int wherebind = within(mts.at(i),&distval);
+            if (wherebind && rand01()<binding_rate*dt)
+            {
+                bind(mts.at(i),wherebind, distval);
+            }
         }
         else
         {
             diffuse(dt);
         }
-
     }
 }
 
