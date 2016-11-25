@@ -1,6 +1,6 @@
 
 
-
+class MT;
 
 class Ball: public Object{
 public:

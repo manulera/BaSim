@@ -75,6 +75,7 @@
 		32D873AA1D9BD9CB00244DA9 /* display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
 		32E101AE1DE3636400A6A8E0 /* mt_prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mt_prop.h; sourceTree = "<group>"; };
 		32E101B01DE483BC00A6A8E0 /* read_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = read_output.h; sourceTree = "<group>"; };
+		32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = BaSim_timer.sh; sourceTree = "<group>"; };
 		32EC3B4F1D9514EE00F892E4 /* ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball.h; sourceTree = "<group>"; };
 		32EE90641DDDE90500035A9F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		32EE90651DDDEDA900035A9F /* Interactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interactions.h; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		328219281D93C51200278D68 = {
 			isa = PBXGroup;
 			children = (
+				32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */,
 				3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */,
 				3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */,
 				328219331D93C51200278D68 /* BaSim */,

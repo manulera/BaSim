@@ -133,7 +133,7 @@ int Simulation::run_write()
     unsigned int counter = 0;
     t = 0.0;
     dt = 0.015625;
-    t_max = 10;
+    t_max = 60;
     inifile();
     while (t < t_max)
     {

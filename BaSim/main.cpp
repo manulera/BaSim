@@ -54,14 +54,15 @@ Simulation sim;
 #include "read_output.h"
 
 
-int main() {
+int main(int argc, char* argv[]) {
 //    EulerIntegration(start, end, step_int, step_out, vals, pars);
+    std::string filename = argv[1];
     Parser pars;
-    std::fstream fs("config.bs");
+    std::fstream fs(filename);
     pars.readfile(fs);
     Simulation sim2;
     sim.run_write();
-    sim2.show();
+//    sim2.show();
 //    sim.run_play();
     return 0;
 }

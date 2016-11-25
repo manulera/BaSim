@@ -3,6 +3,7 @@ public:
     // They must be specified
     float attached,speed, bind_rate, bind_range, unbind_rate;
     
+    
     std::string str_spec()
     {
         using namespace std;

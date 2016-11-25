@@ -1,0 +1,70 @@
+config0000.bs
+
+real	0m0.121s
+user	0m0.115s
+sys	0m0.003s
+
+
+config0001.bs
+
+real	0m0.392s
+user	0m0.387s
+sys	0m0.004s
+
+
+config0002.bs
+
+real	0m0.791s
+user	0m0.787s
+sys	0m0.004s
+
+
+config0003.bs
+
+real	0m1.285s
+user	0m1.275s
+sys	0m0.005s
+
+
+config0004.bs
+
+real	0m1.715s
+user	0m1.703s
+sys	0m0.006s
+
+
+config0005.bs
+
+real	0m2.254s
+user	0m2.238s
+sys	0m0.007s
+
+
+config0006.bs
+
+real	0m2.889s
+user	0m2.881s
+sys	0m0.007s
+
+
+config0007.bs
+
+real	0m3.394s
+user	0m3.386s
+sys	0m0.006s
+
+
+config0008.bs
+
+real	0m4.015s
+user	0m4.007s
+sys	0m0.007s
+
+
+config0009.bs
+
+real	0m4.705s
+user	0m4.696s
+sys	0m0.007s
+
+
