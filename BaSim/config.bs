@@ -2,16 +2,7 @@
 set ball motor1
 {
     speed = 10.0
-    bind_rate = 10
-    bind_range = 10
-    unbind_rate = 1
-}
-
-
-set ball motor2
-{
-    speed = 50.0
-    bind_rate = 40
+    bind_rate = 1
     bind_range = 10
     unbind_rate = 1
 }
@@ -24,4 +15,3 @@ new 30 mt1
 }
 
 new 400 motor1
-new 200 motor2

@@ -39,7 +39,7 @@ void reached(int i)
 #include "ball.h"
 #include "ball_prop.h"
 #include "mt_prop.h"
-#include "Integration.h"
+//#include "Integration.h"
 #include "display.h"
 #include "props_maker.h"
 #include "ball_interactions.h"

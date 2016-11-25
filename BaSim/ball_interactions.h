@@ -74,10 +74,10 @@ void Ball::iterate_mts(std::vector<MT*> mts,float dt)
     float distval;
     for (int i = 0; i<mts.size(); i++)
     {
-        if (rand01()<binding_rate*dt)
+        if (rand01()<*bind_rate*8*dt)
         {
             int wherebind = within(mts.at(i),&distval);
-            if (wherebind && rand01()<binding_rate*dt)
+            if (wherebind&&rand01()<0.125)
             {
                 bind(mts.at(i),wherebind, distval);
             }
