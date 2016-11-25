@@ -70,7 +70,7 @@ public:
                 value = pairs.at(i+1);
                 if (propname == "x") {newball->x=stof(value); continue;}
                 if (propname == "y") {newball->y=stof(value); continue;}
-                if (propname == "attached") {newball->attached=stof(value); continue;}
+                //if (propname == "attached") {newball->attached=stof(value); continue;} We will have to think about how to set to which mt we attach the objects
             }
         }
         return newball;

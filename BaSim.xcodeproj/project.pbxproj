@@ -76,10 +76,27 @@
 		32E101AE1DE3636400A6A8E0 /* mt_prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mt_prop.h; sourceTree = "<group>"; };
 		32E101B01DE483BC00A6A8E0 /* read_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = read_output.h; sourceTree = "<group>"; };
 		32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = BaSim_timer.sh; sourceTree = "<group>"; };
+		32E101C41DE8432F00A6A8E0 /* Output_objs.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_objs.bs; sourceTree = "<group>"; };
+		32E101C51DE8432F00A6A8E0 /* Output_props.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_props.bs; sourceTree = "<group>"; };
+		32E101C91DE843B500A6A8E0 /* config.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.bs; sourceTree = "<group>"; };
+		32E101CA1DE843B500A6A8E0 /* config0000.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0000.bs; sourceTree = "<group>"; };
+		32E101CB1DE843B500A6A8E0 /* config0001.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0001.bs; sourceTree = "<group>"; };
+		32E101CC1DE843B500A6A8E0 /* config0002.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0002.bs; sourceTree = "<group>"; };
+		32E101CD1DE843B500A6A8E0 /* config0003.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0003.bs; sourceTree = "<group>"; };
+		32E101CE1DE843B500A6A8E0 /* config0004.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0004.bs; sourceTree = "<group>"; };
+		32E101CF1DE843B500A6A8E0 /* config0005.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0005.bs; sourceTree = "<group>"; };
+		32E101D01DE843B500A6A8E0 /* config0006.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0006.bs; sourceTree = "<group>"; };
+		32E101D11DE843B500A6A8E0 /* config0007.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0007.bs; sourceTree = "<group>"; };
+		32E101D21DE843B500A6A8E0 /* config0008.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0008.bs; sourceTree = "<group>"; };
+		32E101D31DE843B500A6A8E0 /* config0009.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0009.bs; sourceTree = "<group>"; };
+		32E101D41DE843B500A6A8E0 /* Output_objs.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_objs.bs; sourceTree = "<group>"; };
+		32E101D51DE843B500A6A8E0 /* Output_props.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_props.bs; sourceTree = "<group>"; };
+		32E101D61DE843B500A6A8E0 /* Plot_Time.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = Plot_Time.py; sourceTree = "<group>"; };
+		32E101D71DE843B500A6A8E0 /* results.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = results.txt; sourceTree = "<group>"; };
+		32E101D91DE8455200A6A8E0 /* ball_interactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball_interactions.h; sourceTree = "<group>"; };
 		32EC3B4F1D9514EE00F892E4 /* ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball.h; sourceTree = "<group>"; };
 		32EE90641DDDE90500035A9F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		32EE90651DDDEDA900035A9F /* Interactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interactions.h; sourceTree = "<group>"; };
-		32EE90691DDDF48700035A9F /* SubclassesExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesExample.h; sourceTree = "<group>"; };
 		32EE90B01DDF64FB00035A9F /* ball_prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball_prop.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */,
+				32E101C81DE843B500A6A8E0 /* ConfigFiles */,
 				3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */,
 				3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */,
 				328219331D93C51200278D68 /* BaSim */,
@@ -136,7 +154,6 @@
 		328219331D93C51200278D68 /* BaSim */ = {
 			isa = PBXGroup;
 			children = (
-				32EE90671DDDF44000035A9F /* Useful Examples */,
 				327A170F1DA54825008854A7 /* Integration.h */,
 				322A17431D95550C0010C78C /* params.h */,
 				32EE90641DDDE90500035A9F /* Object.h */,
@@ -146,8 +163,11 @@
 				32EE90B01DDF64FB00035A9F /* ball_prop.h */,
 				32E101AE1DE3636400A6A8E0 /* mt_prop.h */,
 				326CF6E91DE2FEA800AD2A50 /* props_maker.h */,
+				32E101C41DE8432F00A6A8E0 /* Output_objs.bs */,
+				32E101C51DE8432F00A6A8E0 /* Output_props.bs */,
 				32D873AA1D9BD9CB00244DA9 /* display.h */,
 				32EE90651DDDEDA900035A9F /* Interactions.h */,
+				32E101D91DE8455200A6A8E0 /* ball_interactions.h */,
 				326CF6EA1DE2FEF800AD2A50 /* Simulation.h */,
 				326CF6ED1DE32E0900AD2A50 /* object_step.h */,
 				323A589F1DD9CA6B003BDC7A /* input.h */,
@@ -160,12 +180,26 @@
 			path = BaSim;
 			sourceTree = "<group>";
 		};
-		32EE90671DDDF44000035A9F /* Useful Examples */ = {
+		32E101C81DE843B500A6A8E0 /* ConfigFiles */ = {
 			isa = PBXGroup;
 			children = (
-				32EE90691DDDF48700035A9F /* SubclassesExample.h */,
+				32E101C91DE843B500A6A8E0 /* config.bs */,
+				32E101CA1DE843B500A6A8E0 /* config0000.bs */,
+				32E101CB1DE843B500A6A8E0 /* config0001.bs */,
+				32E101CC1DE843B500A6A8E0 /* config0002.bs */,
+				32E101CD1DE843B500A6A8E0 /* config0003.bs */,
+				32E101CE1DE843B500A6A8E0 /* config0004.bs */,
+				32E101CF1DE843B500A6A8E0 /* config0005.bs */,
+				32E101D01DE843B500A6A8E0 /* config0006.bs */,
+				32E101D11DE843B500A6A8E0 /* config0007.bs */,
+				32E101D21DE843B500A6A8E0 /* config0008.bs */,
+				32E101D31DE843B500A6A8E0 /* config0009.bs */,
+				32E101D41DE843B500A6A8E0 /* Output_objs.bs */,
+				32E101D51DE843B500A6A8E0 /* Output_props.bs */,
+				32E101D61DE843B500A6A8E0 /* Plot_Time.py */,
+				32E101D71DE843B500A6A8E0 /* results.txt */,
 			);
-			name = "Useful Examples";
+			path = ConfigFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

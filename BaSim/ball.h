@@ -1,13 +1,9 @@
 
-
-class MT;
-
 class Ball: public Object{
 public:
     float *speed, *bind_rate, *bind_range, *unbind_rate;
-    int attached;
-    
-    
+    MT* attached = nullptr;
+    int attached_id = 0; // this is a bit redundant, but useful for output
     void shuffle()
     {
         x = srand()*xBound;
@@ -25,11 +21,16 @@ public:
         cout << "speed: " << speed << "bind_range" << &bind_range << endl;
     }
     void populate(std::string);
+    void move_along(float dt);
+    void bind(MT*,int where,float distval);
+    int within(MT*, float * distval);
+    void interact(std::vector<MT*> mts,float dt);
+    void iterate_mts(std::vector<MT*> mts,float dt);
     void display()
     {
         glBegin(GL_POINTS);
         {
-            if (attached)
+            if (attached_id)
             {
                 glColor3f(1.0,0.0,0.0);
             }

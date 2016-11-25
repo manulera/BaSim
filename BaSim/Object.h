@@ -11,9 +11,11 @@ public:
     {
         identifier = id_master++;
     }
-    virtual void diffuse();
+    virtual void diffuse(float dt);
     virtual void boundary();
     virtual void populate(std::string){};
     virtual void display(){};
 };
+class MT;
+class Ball;
 

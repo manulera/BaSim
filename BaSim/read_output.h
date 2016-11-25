@@ -65,24 +65,24 @@ int Simulation::populate_objs()
             }
         }
     }
-    all.resize(idmax+1);
+    all.resize(idmax);
     for (int i =0; i < balls.size(); i++)
     {
-        all.at(balls.at(i)->identifier)=balls.at(i);
+        all.at(balls.at(i)->identifier-1)=balls.at(i);
     }
     for (int i =0; i < mts.size(); i++)
     {
-        all.at(mts.at(i)->identifier)=mts.at(i);
+        all.at(mts.at(i)->identifier-1)=mts.at(i);
     }
-    cout << "length of ball: " << balls.size()<<endl;
-    cout << "length of mt: " << mts.size()<<endl;
-    cout << "length of all: " << all.size()<<endl;
+//    cout << "length of ball: " << balls.size()<<endl;
+//    cout << "length of mt: " << mts.size()<<endl;
+//    cout << "length of all: " << all.size()<<endl;
     return 0;
 }
 
 void Ball::populate(std::string line)
 {
-    sscanf(line.c_str(),"%u %f %f %u",&identifier,&x,&y,&attached);
+    sscanf(line.c_str(),"%u %f %f %u",&identifier,&x,&y,&attached_id);
 }
 
 void MT::populate(std::string line)
@@ -117,7 +117,7 @@ int Simulation::show()
         if (line=="") continue;
         if (sscanf(line.c_str(), "%u", &idnum))
         {
-            all.at(idnum)->populate(line);
+            all.at(idnum-1)->populate(line);
         }
         else if ((line.find("frame")!=std::string::npos))
         {

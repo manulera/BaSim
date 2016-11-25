@@ -170,7 +170,6 @@ int Parser::get3keys()
         if (skip_spaces()==1)
             return 1;
         keys[i] = readkey(1);
-        std::cout<<"key: "<< keys[i] <<std::endl;
     }
     return 0;
 }

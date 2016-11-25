@@ -1,7 +1,7 @@
-void Object::diffuse()
+void Object::diffuse(float dt)
 {
     // calibrate diffusion, I will have to include also the mass at some point
-    float alpha = sqrt( 2 * diff * sim.dt );
+    float alpha = sqrt( 2 * diff * dt );
     x+=alpha*srand();
     y+=alpha*srand();
 }

@@ -24,7 +24,7 @@ void Simulation::write()
     for (int i=0; i < balls.size();i++)
     {
         Ball* b = balls.at(i);
-        fprintf(file, "%u %f %f %u \n", b->identifier, b->x, b->y, b->attached);
+        fprintf(file, "%u %f %f %u \n", b->identifier, b->x, b->y, b->attached_id);
     }
     fprintf(file, "\nmts:\n");
     for (int i=0; i < mts.size();i++)

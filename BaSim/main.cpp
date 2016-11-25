@@ -8,7 +8,7 @@
 /* BaSim, the simulation that I used to start learning C++ */
 
 // Basic Libraries
-int id_master = 0;
+int id_master = 1;
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -42,6 +42,7 @@ void reached(int i)
 #include "Integration.h"
 #include "display.h"
 #include "props_maker.h"
+#include "ball_interactions.h"
 #include "Interactions.h"
 #include "Simulation.h"
 
@@ -57,12 +58,13 @@ Simulation sim;
 int main(int argc, char* argv[]) {
 //    EulerIntegration(start, end, step_int, step_out, vals, pars);
     std::string filename = argv[1];
+    float maxtime = std::stof(argv[2]);
     Parser pars;
     std::fstream fs(filename);
     pars.readfile(fs);
     Simulation sim2;
-    sim.run_write();
-//    sim2.show();
+    sim.run_write(maxtime);
+    sim2.show();
 //    sim.run_play();
     return 0;
 }

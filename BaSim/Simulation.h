@@ -3,6 +3,7 @@ class Simulation{
 
 public:
     std::unordered_map<std::string, Props*> prop_dict;
+    std::unordered_map<int, Object*> ids_dict;
     std::vector<Object*> all;
     std::vector<Ball*> balls;
     std::vector<MT*> mts;
@@ -12,40 +13,12 @@ public:
     float t_max;
     float dt;
     unsigned int fcounter;
-    //std::unordered_map<std::string, std::vector<int>> obj_dict;
-    
-    void add_prop(Props& prop)
-    {
-        using namespace std;
-        pair<string, Props*> newkey (prop.name,&prop);
-        prop_dict.insert(newkey);
-    }
     Props* get_prop(std::string name)
     {
         return prop_dict[name];
     }
-    void add_object(std::string keys[3], std::string prop_val)
-    {
-        Props* p = get_prop(keys[2]);
-        std::cout << "\"new\" statement reached for " << keys[2] <<std::endl;
-        if (p->type=="ball")
-        {
-            for (int i = 0; i < std::stoi(keys[1]); i++)
-            {
-                balls.push_back(static_cast<Ball*>(p->make(prop_val)));
-                //This way there is a way to reference the object from the id, by all.at(id)
-                all.push_back(balls.at(balls.size()-1));
-            }
-        }
-        if (p->type=="MT")
-        {
-            for (int i = 0; i < std::stoi(keys[1]); i++)
-            {
-                mts.push_back(static_cast<MT*>(p->make(prop_val)));
-                all.push_back(mts.at(mts.size()-1));
-            }
-        }
-    }
+    void add_object(std::string keys[3], std::string prop_val);
+    void add_prop(Props&);
     void step();
     void display_mts();
     void display_balls();
@@ -53,7 +26,7 @@ public:
     void play_balls();
     void play();
     void display();
-    int run_write();
+    int run_write(float);
     int run_play();
     void write();
     void inifile();
@@ -63,17 +36,44 @@ public:
     int show();
 };
 
+void Simulation::add_object(std::string keys[3], std::string prop_val)
+{
+    Props* p = get_prop(keys[2]);
+    if (p->type=="ball")
+    {
+        for (int i = 0; i < std::stoi(keys[1]); i++)
+        {
+            Ball* obj = static_cast<Ball*>(p->make(prop_val));
+            balls.push_back(obj);
+            all.push_back(obj);
+            std::pair<int, Object*> newkey (obj->identifier,obj);
+        }
+    }
+    if (p->type=="MT")
+    {
+        for (int i = 0; i < std::stoi(keys[1]); i++)
+        {
+            MT* obj = static_cast<MT*>(p->make(prop_val));
+            mts.push_back(obj);
+            all.push_back(obj);
+            std::pair<int, Object*> newkey (obj->identifier,obj);
+        }
+    }
+}
+
+void Simulation::add_prop(Props& prop)
+{
+    using namespace std;
+    pair<string, Props*> newkey (prop.name,&prop);
+    prop_dict.insert(newkey);
+}
+
+
 void Simulation::step()
 {
-    // Find pairs of possible interacting MTs and balls
-    
-    for (int i_b = 0; i_b < balls.size(); i_b++)
+    for (int i = 0; i < balls.size(); i++)
     {
-        for (int i_m = 0; i_m < mts.size(); i_m++)
-        {
-            interaction(balls.at(i_b),mts.at(i_m),i_m,dt);
-        }
-        
+        balls.at(i)->interact(mts,dt);
     }
 }
 
@@ -97,6 +97,7 @@ void Simulation::play()
     //    bound_vect.push_back(static_cast<float>(CountBound())/static_cast<float>(nballs));
     //    region_vect.push_back(static_cast<float>(CountArea())/static_cast<float>(nballs));
     //    graphsRefresh();
+    
     glfwSwapBuffers(win);
     glfwPollEvents();
 }
@@ -128,24 +129,32 @@ int Simulation::run_play()
     return 0;
 }
 
-int Simulation::run_write()
+int Simulation::run_write(float maxt)
 {
     unsigned int counter = 0;
     t = 0.0;
     dt = 0.015625;
-    t_max = 60;
+    t_max = maxt;
+    float percent = t_max/10;
+    int percent_i = 1;
     inifile();
     while (t < t_max)
     {
         if (counter++%10==0)
         {
-            //std::cout << t << std::endl;
             write();
+        }
+        if (t>percent*percent_i)
+        {
+            std::cout << percent_i<< "0% completed " << std::endl;
+            percent_i++;
         }
     //t = dt*(float)counter;
         t += dt;
         step();
         
     }
+    fclose(file);
+    std::cout << "Succesfully finished" << std::endl;
     return 0;
 }
