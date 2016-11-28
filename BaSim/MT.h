@@ -1,33 +1,43 @@
 
 #include <cmath>
 
-class MT{
+class MT: public Object{
 public:
     
-    float posx, posy, length, orientation; //From minus end
+    float length, orientation; // This properties should be able to change in time, that is why they are not pointerss
     
-    void set()
+    std::string str_spec()
     {
-        posx = xBound*srand()*0.8;
-        posy = yBound*srand()*0.8;
-        length = mt_length;
+        
+        return "";
+    }
+    void shuffle()
+    {
+        x = xBound*srand()*0.8;
+        y = yBound*srand()*0.8;
         orientation = 2*PI*srand();
     }
     
-    MT()
+    float xp()
     {
-        set();
+        return x+length*cos(orientation);
     }
     
-    float posxp()
+    float yp()
     {
-        return posx+length*cos(orientation);
+        return y+length*sin(orientation);
     }
-    
-    float posyp()
+    void populate(std::string);
+    void display()
     {
-        return posy+length*sin(orientation);
+        glLineWidth(2.0f);
+        glBegin(GL_LINES);
+        {
+            glColor3f(0.0, 0.0, 1.0);
+            glVertex2f(x/xBound, y/yBound);
+            glVertex2f(xp()/xBound, yp()/yBound);
+        }
+        glEnd();
     }
-    
 };
 

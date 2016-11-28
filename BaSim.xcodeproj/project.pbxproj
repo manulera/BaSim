@@ -10,7 +10,7 @@
 		328219351D93C51200278D68 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 328219341D93C51200278D68 /* main.cpp */; };
 		3282193C1D93C53000278D68 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193B1D93C53000278D68 /* OpenGL.framework */; };
 		3282193E1D93C58600278D68 /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */; };
-		328219401D93C5A600278D68 /* libglfw3.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */; };
+		328219401D93C5A600278D68 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,18 +55,49 @@
 
 /* Begin PBXFileReference section */
 		322A17431D95550C0010C78C /* params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = params.h; sourceTree = "<group>"; };
+		323A589E1DD9C82E003BDC7A /* output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output.h; sourceTree = "<group>"; };
+		323A589F1DD9CA6B003BDC7A /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
+		323A58A01DD9CBCF003BDC7A /* config.bs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.bs; sourceTree = "<group>"; };
+		323A58A81DDC89B2003BDC7A /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
+		326CF6E91DE2FEA800AD2A50 /* props_maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = props_maker.h; sourceTree = "<group>"; };
+		326CF6EA1DE2FEF800AD2A50 /* Simulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Simulation.h; sourceTree = "<group>"; };
+		326CF6ED1DE32E0900AD2A50 /* object_step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object_step.h; sourceTree = "<group>"; };
 		327A170F1DA54825008854A7 /* Integration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integration.h; sourceTree = "<group>"; };
 		328219311D93C51200278D68 /* BaSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		328219341D93C51200278D68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3282193B1D93C53000278D68 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
-		3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw3/3.2.1/lib/libglfw3.3.2.dylib; sourceTree = "<group>"; };
+		3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../../usr/local/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
+		3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		3295FDB51DA4F881000A02A8 /* BaSimTarget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSimTarget; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D873991D955CE200244DA9 /* MT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MT.h; sourceTree = "<group>"; };
 		32D8739A1D9926BC00244DA9 /* checkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checkers.h; sourceTree = "<group>"; };
 		32D8739F1D9986D000244DA9 /* Hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hello; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D873AA1D9BD9CB00244DA9 /* display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
+		32E101AE1DE3636400A6A8E0 /* mt_prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mt_prop.h; sourceTree = "<group>"; };
+		32E101B01DE483BC00A6A8E0 /* read_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = read_output.h; sourceTree = "<group>"; };
+		32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = BaSim_timer.sh; sourceTree = "<group>"; };
+		32E101C41DE8432F00A6A8E0 /* Output_objs.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_objs.bs; sourceTree = "<group>"; };
+		32E101C51DE8432F00A6A8E0 /* Output_props.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_props.bs; sourceTree = "<group>"; };
+		32E101C91DE843B500A6A8E0 /* config.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.bs; sourceTree = "<group>"; };
+		32E101CA1DE843B500A6A8E0 /* config0000.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0000.bs; sourceTree = "<group>"; };
+		32E101CB1DE843B500A6A8E0 /* config0001.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0001.bs; sourceTree = "<group>"; };
+		32E101CC1DE843B500A6A8E0 /* config0002.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0002.bs; sourceTree = "<group>"; };
+		32E101CD1DE843B500A6A8E0 /* config0003.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0003.bs; sourceTree = "<group>"; };
+		32E101CE1DE843B500A6A8E0 /* config0004.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0004.bs; sourceTree = "<group>"; };
+		32E101CF1DE843B500A6A8E0 /* config0005.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0005.bs; sourceTree = "<group>"; };
+		32E101D01DE843B500A6A8E0 /* config0006.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0006.bs; sourceTree = "<group>"; };
+		32E101D11DE843B500A6A8E0 /* config0007.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0007.bs; sourceTree = "<group>"; };
+		32E101D21DE843B500A6A8E0 /* config0008.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0008.bs; sourceTree = "<group>"; };
+		32E101D31DE843B500A6A8E0 /* config0009.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0009.bs; sourceTree = "<group>"; };
+		32E101D41DE843B500A6A8E0 /* Output_objs.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_objs.bs; sourceTree = "<group>"; };
+		32E101D51DE843B500A6A8E0 /* Output_props.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_props.bs; sourceTree = "<group>"; };
+		32E101D61DE843B500A6A8E0 /* Plot_Time.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = Plot_Time.py; sourceTree = "<group>"; };
+		32E101D71DE843B500A6A8E0 /* results.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = results.txt; sourceTree = "<group>"; };
+		32E101D91DE8455200A6A8E0 /* ball_interactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball_interactions.h; sourceTree = "<group>"; };
 		32EC3B4F1D9514EE00F892E4 /* ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball.h; sourceTree = "<group>"; };
+		32EE90641DDDE90500035A9F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		32EE90651DDDEDA900035A9F /* Interactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interactions.h; sourceTree = "<group>"; };
+		32EE90B01DDF64FB00035A9F /* ball_prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ball_prop.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				328219401D93C5A600278D68 /* libglfw3.3.2.dylib in Frameworks */,
+				328219401D93C5A600278D68 /* libglfw.3.2.dylib in Frameworks */,
 				3282193E1D93C58600278D68 /* libGLEW.2.0.0.dylib in Frameworks */,
 				3282193C1D93C53000278D68 /* OpenGL.framework in Frameworks */,
 			);
@@ -100,7 +131,9 @@
 		328219281D93C51200278D68 = {
 			isa = PBXGroup;
 			children = (
-				3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */,
+				32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */,
+				32E101C81DE843B500A6A8E0 /* ConfigFiles */,
+				3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */,
 				3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */,
 				328219331D93C51200278D68 /* BaSim */,
 				3282193B1D93C53000278D68 /* OpenGL.framework */,
@@ -121,15 +154,52 @@
 		328219331D93C51200278D68 /* BaSim */ = {
 			isa = PBXGroup;
 			children = (
-				328219341D93C51200278D68 /* main.cpp */,
-				32EC3B4F1D9514EE00F892E4 /* ball.h */,
-				322A17431D95550C0010C78C /* params.h */,
-				32D873991D955CE200244DA9 /* MT.h */,
-				32D8739A1D9926BC00244DA9 /* checkers.h */,
-				32D873AA1D9BD9CB00244DA9 /* display.h */,
 				327A170F1DA54825008854A7 /* Integration.h */,
+				322A17431D95550C0010C78C /* params.h */,
+				32EE90641DDDE90500035A9F /* Object.h */,
+				323A58A81DDC89B2003BDC7A /* Properties.h */,
+				32D873991D955CE200244DA9 /* MT.h */,
+				32EC3B4F1D9514EE00F892E4 /* ball.h */,
+				32EE90B01DDF64FB00035A9F /* ball_prop.h */,
+				32E101AE1DE3636400A6A8E0 /* mt_prop.h */,
+				326CF6E91DE2FEA800AD2A50 /* props_maker.h */,
+				32E101C41DE8432F00A6A8E0 /* Output_objs.bs */,
+				32E101C51DE8432F00A6A8E0 /* Output_props.bs */,
+				32D873AA1D9BD9CB00244DA9 /* display.h */,
+				32EE90651DDDEDA900035A9F /* Interactions.h */,
+				32E101D91DE8455200A6A8E0 /* ball_interactions.h */,
+				326CF6EA1DE2FEF800AD2A50 /* Simulation.h */,
+				326CF6ED1DE32E0900AD2A50 /* object_step.h */,
+				323A589F1DD9CA6B003BDC7A /* input.h */,
+				323A589E1DD9C82E003BDC7A /* output.h */,
+				323A58A01DD9CBCF003BDC7A /* config.bs */,
+				32D8739A1D9926BC00244DA9 /* checkers.h */,
+				32E101B01DE483BC00A6A8E0 /* read_output.h */,
+				328219341D93C51200278D68 /* main.cpp */,
 			);
 			path = BaSim;
+			sourceTree = "<group>";
+		};
+		32E101C81DE843B500A6A8E0 /* ConfigFiles */ = {
+			isa = PBXGroup;
+			children = (
+				32E101C91DE843B500A6A8E0 /* config.bs */,
+				32E101CA1DE843B500A6A8E0 /* config0000.bs */,
+				32E101CB1DE843B500A6A8E0 /* config0001.bs */,
+				32E101CC1DE843B500A6A8E0 /* config0002.bs */,
+				32E101CD1DE843B500A6A8E0 /* config0003.bs */,
+				32E101CE1DE843B500A6A8E0 /* config0004.bs */,
+				32E101CF1DE843B500A6A8E0 /* config0005.bs */,
+				32E101D01DE843B500A6A8E0 /* config0006.bs */,
+				32E101D11DE843B500A6A8E0 /* config0007.bs */,
+				32E101D21DE843B500A6A8E0 /* config0008.bs */,
+				32E101D31DE843B500A6A8E0 /* config0009.bs */,
+				32E101D41DE843B500A6A8E0 /* Output_objs.bs */,
+				32E101D51DE843B500A6A8E0 /* Output_props.bs */,
+				32E101D61DE843B500A6A8E0 /* Plot_Time.py */,
+				32E101D71DE843B500A6A8E0 /* results.txt */,
+			);
+			path = ConfigFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

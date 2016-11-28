@@ -1,14 +1,11 @@
 
-
-
 #include <cstdlib>
 #include <vector>
 #include <cmath>
 
 const float PI = 3.14159265358979323846264338327950288;
-float diff     = 5000;       // diffusion constant in pixel units
+float diff     = 50;       // diffusion constant in pixel units
 unsigned long seed = 1;   // seed for random number generator
-float alpha    = 0;       //diffusive motion within interval dt
 
 float motor_speed = 10.0;
 float binding_rate = 10;
@@ -17,10 +14,15 @@ float unbinding_rate = 0.1;
 float mt_length = 100;
 float release_rate = motor_speed*2/mt_length;
 
-const int nballs = 1000;
-const int ntubs = 100;
+//float release_rate = motor_speed*2/mt_length;
 
 //Useful functions
+//Calculate distance
+float dist(float x1, float y1, float x2, float y2)
+{
+    return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+}
+
 /// signed random real in [-1, 1]
 float srand()
 {
@@ -59,3 +61,22 @@ float y_lim = 1.0;
 float graph_xBound = 0.1;
 float graph_yBound = 0.1;
 
+
+void split(const std::string &s, char delim, std::vector<std::string> &elems) {
+    std::stringstream ss;
+    ss.str(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
+}
+
+
+std::vector<std::string> split(const std::string &s, char delim) {
+    std::vector<std::string> elems;
+    if (!s.empty())
+    {
+        split(s, delim, elems);
+    }
+    return elems;
+}
