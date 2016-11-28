@@ -69,37 +69,37 @@ void Ball::bind(MT * mti, int where, float distval)
     //glEnd();
 }
 // BaSim_2
-//void Ball::iterate_mts(std::vector<MT*> mts,float dt)
-//{
-//    float distval;
-//    for (int i = 0; i<mts.size(); i++)
-//    {
-//        if (rand01()<*bind_rate*8*dt)
-//        {
-//            int wherebind = within(mts.at(i),&distval);
-//            if (wherebind&&rand01()<0.125)
-//            {
-//                bind(mts.at(i),wherebind, distval);
-//            }
-//        }
-//        else
-//        {
-//            diffuse(dt);
-//        }
-//    }
-//}
-//
-//void Ball::interact(std::vector<MT*> mts,float dt)
-//{
-//    if (attached)
-//    {
-//        move_along(dt);
-//    }
-//    else
-//    {
-//        iterate_mts(mts, dt);
-//    }
-//}
+void Ball::iterate_mts(std::vector<MT*> mts,float dt)
+{
+    float distval;
+    for (int i = 0; i<mts.size(); i++)
+    {
+        if (rand01()<*bind_rate*8*dt)
+        {
+            int wherebind = within(mts.at(i),&distval);
+            if (wherebind&&rand01()<0.125)
+            {
+                bind(mts.at(i),wherebind, distval);
+            }
+        }
+        else
+        {
+            diffuse(dt);
+        }
+    }
+}
+
+void Ball::interact(std::vector<MT*> mts,float dt)
+{
+    if (attached)
+    {
+        move_along(dt);
+    }
+    else
+    {
+        iterate_mts(mts, dt);
+    }
+}
 // BaSim_1
 //void Ball::iterate_mts(std::vector<MT*> mts,float dt)
 //{
@@ -131,35 +131,35 @@ void Ball::bind(MT * mti, int where, float distval)
 //}
 
 //// BaSim_Old
-void Ball::iterate_mts(std::vector<MT*> mts,float dt)
-{
-    float distval;
-    for (int i = 0; i<mts.size(); i++)
-    {
-        if (attached)
-        {
-            if (attached_id==mts.at(i)->identifier) move_along(dt);
-        }
-        else
-        {
-            int wherebind = within(mts.at(i),&distval);
-            if (wherebind && rand01()<*bind_rate*dt)
-            {
-                bind(mts.at(i),wherebind, distval);
-            }
-            else
-            {
-                diffuse(dt);
-            }
-        }
-    }
-}
-
-void Ball::interact(std::vector<MT*> mts,float dt)
-{
-    iterate_mts(mts, dt);
-}
-
+//void Ball::iterate_mts(std::vector<MT*> mts,float dt)
+//{
+//    float distval;
+//    for (int i = 0; i<mts.size(); i++)
+//    {
+//        if (attached)
+//        {
+//            if (attached_id==mts.at(i)->identifier) move_along(dt);
+//        }
+//        else
+//        {
+//            int wherebind = within(mts.at(i),&distval);
+//            if (wherebind && rand01()<*bind_rate*dt)
+//            {
+//                bind(mts.at(i),wherebind, distval);
+//            }
+//            else
+//            {
+//                diffuse(dt);
+//            }
+//        }
+//    }
+//}
+//
+//void Ball::interact(std::vector<MT*> mts,float dt)
+//{
+//    iterate_mts(mts, dt);
+//}
+//
 
 
 
