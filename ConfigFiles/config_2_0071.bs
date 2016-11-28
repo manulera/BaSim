@@ -1,0 +1,18 @@
+
+
+set ball motor1
+{
+    speed = 10.0
+    bind_rate = 3
+    bind_range = 10
+    unbind_rate = 1
+}
+
+set MT mt1
+
+new 360 mt1
+{
+    length = 100
+}
+
+new 3600 motor1

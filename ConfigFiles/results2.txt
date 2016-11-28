@@ -1,0 +1,2401 @@
+
+config_2_0000.bs
+BaSim_old
+
+real	0m0.149s
+user	0m0.145s
+sys	0m0.003s
+
+real	0m0.845s
+user	0m0.838s
+sys	0m0.006s
+BaSim_1
+
+real	0m0.149s
+user	0m0.145s
+sys	0m0.003s
+
+real	0m0.847s
+user	0m0.841s
+sys	0m0.005s
+BaSim_2
+
+real	0m0.067s
+user	0m0.063s
+sys	0m0.003s
+
+real	0m0.356s
+user	0m0.351s
+sys	0m0.005s
+
+
+config_2_0001.bs
+BaSim_old
+
+real	0m0.149s
+user	0m0.146s
+sys	0m0.003s
+
+real	0m0.848s
+user	0m0.842s
+sys	0m0.006s
+BaSim_1
+
+real	0m0.145s
+user	0m0.141s
+sys	0m0.003s
+
+real	0m0.831s
+user	0m0.825s
+sys	0m0.005s
+BaSim_2
+
+real	0m0.087s
+user	0m0.083s
+sys	0m0.003s
+
+real	0m0.491s
+user	0m0.485s
+sys	0m0.006s
+
+
+config_2_0002.bs
+BaSim_old
+
+real	0m0.488s
+user	0m0.484s
+sys	0m0.004s
+
+real	0m2.922s
+user	0m2.911s
+sys	0m0.009s
+BaSim_1
+
+real	0m0.488s
+user	0m0.484s
+sys	0m0.004s
+
+real	0m2.879s
+user	0m2.870s
+sys	0m0.008s
+BaSim_2
+
+real	0m0.178s
+user	0m0.174s
+sys	0m0.003s
+
+real	0m1.025s
+user	0m1.016s
+sys	0m0.008s
+
+
+config_2_0003.bs
+BaSim_old
+
+real	0m0.486s
+user	0m0.481s
+sys	0m0.005s
+
+real	0m2.761s
+user	0m2.751s
+sys	0m0.009s
+BaSim_1
+
+real	0m0.470s
+user	0m0.465s
+sys	0m0.004s
+
+real	0m2.773s
+user	0m2.763s
+sys	0m0.008s
+BaSim_2
+
+real	0m0.267s
+user	0m0.263s
+sys	0m0.004s
+
+real	0m1.526s
+user	0m1.517s
+sys	0m0.007s
+
+
+config_2_0004.bs
+BaSim_old
+
+real	0m1.043s
+user	0m1.038s
+sys	0m0.004s
+
+real	0m6.056s
+user	0m6.044s
+sys	0m0.011s
+BaSim_1
+
+real	0m1.016s
+user	0m1.011s
+sys	0m0.005s
+
+real	0m6.144s
+user	0m6.118s
+sys	0m0.021s
+BaSim_2
+
+real	0m0.357s
+user	0m0.349s
+sys	0m0.006s
+
+real	0m2.023s
+user	0m2.010s
+sys	0m0.012s
+
+
+config_2_0005.bs
+BaSim_old
+
+real	0m0.963s
+user	0m0.955s
+sys	0m0.006s
+
+real	0m5.693s
+user	0m5.656s
+sys	0m0.031s
+BaSim_1
+
+real	0m0.970s
+user	0m0.964s
+sys	0m0.005s
+
+real	0m5.583s
+user	0m5.567s
+sys	0m0.015s
+BaSim_2
+
+real	0m0.524s
+user	0m0.519s
+sys	0m0.004s
+
+real	0m3.034s
+user	0m3.020s
+sys	0m0.013s
+
+
+config_2_0006.bs
+BaSim_old
+
+real	0m1.805s
+user	0m1.788s
+sys	0m0.015s
+
+real	0m10.371s
+user	0m10.337s
+sys	0m0.029s
+BaSim_1
+
+real	0m1.792s
+user	0m1.783s
+sys	0m0.007s
+
+real	0m10.297s
+user	0m10.278s
+sys	0m0.017s
+BaSim_2
+
+real	0m0.575s
+user	0m0.569s
+sys	0m0.004s
+
+real	0m3.364s
+user	0m3.352s
+sys	0m0.012s
+
+
+config_2_0007.bs
+BaSim_old
+
+real	0m1.631s
+user	0m1.625s
+sys	0m0.005s
+
+real	0m9.358s
+user	0m9.325s
+sys	0m0.030s
+BaSim_1
+
+real	0m1.569s
+user	0m1.562s
+sys	0m0.006s
+
+real	0m9.063s
+user	0m9.047s
+sys	0m0.015s
+BaSim_2
+
+real	0m0.867s
+user	0m0.861s
+sys	0m0.004s
+
+real	0m5.051s
+user	0m5.034s
+sys	0m0.016s
+
+
+config_2_0008.bs
+BaSim_old
+
+real	0m2.634s
+user	0m2.628s
+sys	0m0.006s
+
+real	0m15.357s
+user	0m15.324s
+sys	0m0.027s
+BaSim_1
+
+real	0m2.688s
+user	0m2.678s
+sys	0m0.008s
+
+real	0m15.291s
+user	0m15.262s
+sys	0m0.025s
+BaSim_2
+
+real	0m0.823s
+user	0m0.815s
+sys	0m0.007s
+
+real	0m4.623s
+user	0m4.607s
+sys	0m0.015s
+
+
+config_2_0009.bs
+BaSim_old
+
+real	0m2.172s
+user	0m2.165s
+sys	0m0.005s
+
+real	0m13.057s
+user	0m13.025s
+sys	0m0.025s
+BaSim_1
+
+real	0m2.245s
+user	0m2.231s
+sys	0m0.012s
+
+real	0m12.864s
+user	0m12.820s
+sys	0m0.035s
+BaSim_2
+
+real	0m1.185s
+user	0m1.179s
+sys	0m0.005s
+
+real	0m6.871s
+user	0m6.850s
+sys	0m0.016s
+
+
+config_2_0010.bs
+BaSim_old
+
+real	0m3.560s
+user	0m3.547s
+sys	0m0.011s
+
+real	0m20.415s
+user	0m20.381s
+sys	0m0.026s
+BaSim_1
+
+real	0m3.462s
+user	0m3.454s
+sys	0m0.007s
+
+real	0m19.986s
+user	0m19.959s
+sys	0m0.021s
+BaSim_2
+
+real	0m1.096s
+user	0m1.090s
+sys	0m0.005s
+
+real	0m6.335s
+user	0m6.313s
+sys	0m0.017s
+
+
+config_2_0011.bs
+BaSim_old
+
+real	0m2.941s
+user	0m2.930s
+sys	0m0.009s
+
+real	0m16.964s
+user	0m16.937s
+sys	0m0.020s
+BaSim_1
+
+real	0m2.945s
+user	0m2.933s
+sys	0m0.010s
+
+real	0m16.534s
+user	0m16.506s
+sys	0m0.023s
+BaSim_2
+
+real	0m1.544s
+user	0m1.537s
+sys	0m0.006s
+
+real	0m8.874s
+user	0m8.849s
+sys	0m0.019s
+
+
+config_2_0012.bs
+BaSim_old
+
+real	0m4.517s
+user	0m4.510s
+sys	0m0.007s
+
+real	0m26.218s
+user	0m26.182s
+sys	0m0.029s
+BaSim_1
+
+real	0m4.543s
+user	0m4.530s
+sys	0m0.011s
+
+real	0m25.909s
+user	0m25.875s
+sys	0m0.027s
+BaSim_2
+
+real	0m1.397s
+user	0m1.390s
+sys	0m0.006s
+
+real	0m8.151s
+user	0m8.128s
+sys	0m0.019s
+
+
+config_2_0013.bs
+BaSim_old
+
+real	0m3.749s
+user	0m3.741s
+sys	0m0.007s
+
+real	0m21.889s
+user	0m21.863s
+sys	0m0.025s
+BaSim_1
+
+real	0m3.839s
+user	0m3.827s
+sys	0m0.010s
+
+real	0m21.181s
+user	0m21.151s
+sys	0m0.023s
+BaSim_2
+
+real	0m2.021s
+user	0m2.011s
+sys	0m0.009s
+
+real	0m11.167s
+user	0m11.139s
+sys	0m0.022s
+
+
+config_2_0014.bs
+BaSim_old
+
+real	0m5.784s
+user	0m5.775s
+sys	0m0.009s
+
+real	0m33.020s
+user	0m32.986s
+sys	0m0.029s
+BaSim_1
+
+real	0m5.659s
+user	0m5.645s
+sys	0m0.012s
+
+real	0m33.184s
+user	0m33.146s
+sys	0m0.030s
+BaSim_2
+
+real	0m1.763s
+user	0m1.756s
+sys	0m0.006s
+
+real	0m10.184s
+user	0m10.157s
+sys	0m0.021s
+
+
+config_2_0015.bs
+BaSim_old
+
+real	0m4.577s
+user	0m4.569s
+sys	0m0.007s
+
+real	0m26.475s
+user	0m26.444s
+sys	0m0.028s
+BaSim_1
+
+real	0m4.445s
+user	0m4.434s
+sys	0m0.010s
+
+real	0m25.424s
+user	0m25.395s
+sys	0m0.026s
+BaSim_2
+
+real	0m2.479s
+user	0m2.471s
+sys	0m0.007s
+
+real	0m13.721s
+user	0m13.692s
+sys	0m0.023s
+
+
+config_2_0016.bs
+BaSim_old
+
+real	0m7.163s
+user	0m7.153s
+sys	0m0.009s
+
+real	0m41.041s
+user	0m41.000s
+sys	0m0.035s
+BaSim_1
+
+real	0m6.825s
+user	0m6.817s
+sys	0m0.008s
+
+real	0m40.203s
+user	0m40.164s
+sys	0m0.034s
+BaSim_2
+
+real	0m2.100s
+user	0m2.088s
+sys	0m0.011s
+
+real	0m12.418s
+user	0m12.387s
+sys	0m0.024s
+
+
+config_2_0017.bs
+BaSim_old
+
+real	0m5.611s
+user	0m5.603s
+sys	0m0.007s
+
+real	0m32.796s
+user	0m32.758s
+sys	0m0.031s
+BaSim_1
+
+real	0m5.480s
+user	0m5.471s
+sys	0m0.008s
+
+real	0m31.682s
+user	0m31.645s
+sys	0m0.034s
+BaSim_2
+
+real	0m2.843s
+user	0m2.835s
+sys	0m0.008s
+
+real	0m16.711s
+user	0m16.676s
+sys	0m0.027s
+
+
+config_2_0018.bs
+BaSim_old
+
+real	0m8.383s
+user	0m8.371s
+sys	0m0.010s
+
+real	0m49.731s
+user	0m49.684s
+sys	0m0.039s
+BaSim_1
+
+real	0m8.262s
+user	0m8.250s
+sys	0m0.010s
+
+real	0m49.670s
+user	0m49.624s
+sys	0m0.040s
+BaSim_2
+
+real	0m2.513s
+user	0m2.501s
+sys	0m0.011s
+
+real	0m14.659s
+user	0m14.630s
+sys	0m0.026s
+
+
+config_2_0019.bs
+BaSim_old
+
+real	0m6.654s
+user	0m6.642s
+sys	0m0.010s
+
+real	0m38.245s
+user	0m38.205s
+sys	0m0.033s
+BaSim_1
+
+real	0m6.306s
+user	0m6.289s
+sys	0m0.014s
+
+real	0m36.016s
+user	0m35.977s
+sys	0m0.035s
+BaSim_2
+
+real	0m3.430s
+user	0m3.420s
+sys	0m0.009s
+
+real	0m19.499s
+user	0m19.462s
+sys	0m0.029s
+
+
+config_2_0020.bs
+BaSim_old
+
+real	0m10.029s
+user	0m10.016s
+sys	0m0.011s
+
+real	0m57.302s
+user	0m57.256s
+sys	0m0.042s
+BaSim_1
+
+real	0m9.696s
+user	0m9.677s
+sys	0m0.015s
+
+real	0m57.067s
+user	0m57.019s
+sys	0m0.040s
+BaSim_2
+
+real	0m2.960s
+user	0m2.946s
+sys	0m0.012s
+
+real	0m17.042s
+user	0m17.002s
+sys	0m0.030s
+
+
+config_2_0021.bs
+BaSim_old
+
+real	0m7.643s
+user	0m7.631s
+sys	0m0.011s
+
+real	0m43.610s
+user	0m43.568s
+sys	0m0.036s
+BaSim_1
+
+real	0m7.366s
+user	0m7.350s
+sys	0m0.014s
+
+real	0m41.492s
+user	0m41.448s
+sys	0m0.040s
+BaSim_2
+
+real	0m3.875s
+user	0m3.863s
+sys	0m0.012s
+
+real	0m21.756s
+user	0m21.717s
+sys	0m0.034s
+
+
+config_2_0022.bs
+BaSim_old
+
+real	0m11.434s
+user	0m11.416s
+sys	0m0.015s
+
+real	1m7.201s
+user	1m7.145s
+sys	0m0.048s
+BaSim_1
+
+real	0m11.486s
+user	0m11.467s
+sys	0m0.015s
+
+real	1m6.076s
+user	1m6.030s
+sys	0m0.043s
+BaSim_2
+
+real	0m3.392s
+user	0m3.378s
+sys	0m0.012s
+
+real	0m19.551s
+user	0m19.523s
+sys	0m0.027s
+
+
+config_2_0023.bs
+BaSim_old
+
+real	0m8.957s
+user	0m8.947s
+sys	0m0.009s
+
+real	0m50.892s
+user	0m50.860s
+sys	0m0.032s
+BaSim_1
+
+real	0m8.677s
+user	0m8.664s
+sys	0m0.012s
+
+real	0m48.371s
+user	0m48.323s
+sys	0m0.036s
+BaSim_2
+
+real	0m4.498s
+user	0m4.484s
+sys	0m0.012s
+
+real	0m25.064s
+user	0m25.030s
+sys	0m0.029s
+
+
+config_2_0024.bs
+BaSim_old
+
+real	0m13.033s
+user	0m13.023s
+sys	0m0.010s
+
+real	1m16.793s
+user	1m16.749s
+sys	0m0.040s
+BaSim_1
+
+real	0m13.139s
+user	0m13.127s
+sys	0m0.012s
+
+real	1m16.794s
+user	1m16.749s
+sys	0m0.042s
+BaSim_2
+
+real	0m3.873s
+user	0m3.864s
+sys	0m0.009s
+
+real	0m22.366s
+user	0m22.329s
+sys	0m0.031s
+
+
+config_2_0025.bs
+BaSim_old
+
+real	0m10.115s
+user	0m10.102s
+sys	0m0.011s
+
+real	0m57.152s
+user	0m57.119s
+sys	0m0.034s
+BaSim_1
+
+real	0m9.340s
+user	0m9.319s
+sys	0m0.018s
+
+real	0m52.444s
+user	0m52.409s
+sys	0m0.035s
+BaSim_2
+
+real	0m5.120s
+user	0m5.104s
+sys	0m0.013s
+
+real	0m28.862s
+user	0m28.824s
+sys	0m0.035s
+
+
+config_2_0026.bs
+BaSim_old
+
+real	0m14.775s
+user	0m14.764s
+sys	0m0.010s
+
+real	1m26.590s
+user	1m26.546s
+sys	0m0.042s
+BaSim_1
+
+real	0m14.397s
+user	0m14.385s
+sys	0m0.012s
+
+real	1m26.664s
+user	1m26.618s
+sys	0m0.045s
+BaSim_2
+
+real	0m4.415s
+user	0m4.401s
+sys	0m0.011s
+
+real	0m25.847s
+user	0m25.814s
+sys	0m0.033s
+
+
+config_2_0027.bs
+BaSim_old
+
+real	0m11.358s
+user	0m11.346s
+sys	0m0.009s
+
+real	1m5.025s
+user	1m4.980s
+sys	0m0.041s
+BaSim_1
+
+real	0m10.588s
+user	0m10.577s
+sys	0m0.009s
+
+real	1m1.864s
+user	1m1.822s
+sys	0m0.038s
+BaSim_2
+
+real	0m5.620s
+user	0m5.609s
+sys	0m0.009s
+
+real	0m32.069s
+user	0m32.033s
+sys	0m0.034s
+
+
+config_2_0028.bs
+BaSim_old
+
+real	0m16.739s
+user	0m16.722s
+sys	0m0.015s
+
+real	1m39.276s
+user	1m39.230s
+sys	0m0.047s
+BaSim_1
+
+real	0m16.338s
+user	0m16.325s
+sys	0m0.011s
+
+real	1m37.679s
+user	1m37.628s
+sys	0m0.048s
+BaSim_2
+
+real	0m4.912s
+user	0m4.900s
+sys	0m0.010s
+
+real	0m28.856s
+user	0m28.820s
+sys	0m0.035s
+
+
+config_2_0029.bs
+BaSim_old
+
+real	0m12.712s
+user	0m12.695s
+sys	0m0.014s
+
+real	1m13.523s
+user	1m13.478s
+sys	0m0.041s
+BaSim_1
+
+real	0m11.940s
+user	0m11.926s
+sys	0m0.012s
+
+real	1m9.334s
+user	1m9.290s
+sys	0m0.041s
+BaSim_2
+
+real	0m6.333s
+user	0m6.322s
+sys	0m0.009s
+
+real	0m36.525s
+user	0m36.486s
+sys	0m0.039s
+
+
+config_2_0030.bs
+BaSim_old
+
+real	0m18.958s
+user	0m18.944s
+sys	0m0.012s
+
+real	1m52.024s
+user	1m51.976s
+sys	0m0.049s
+BaSim_1
+
+real	0m18.340s
+user	0m18.325s
+sys	0m0.014s
+
+real	1m49.346s
+user	1m49.293s
+sys	0m0.051s
+BaSim_2
+
+real	0m5.490s
+user	0m5.478s
+sys	0m0.010s
+
+real	0m32.672s
+user	0m32.628s
+sys	0m0.037s
+
+
+config_2_0031.bs
+BaSim_old
+
+real	0m13.693s
+user	0m13.677s
+sys	0m0.014s
+
+real	1m20.856s
+user	1m20.812s
+sys	0m0.044s
+BaSim_1
+
+real	0m13.208s
+user	0m13.196s
+sys	0m0.010s
+
+real	1m18.286s
+user	1m18.243s
+sys	0m0.044s
+BaSim_2
+
+real	0m6.965s
+user	0m6.946s
+sys	0m0.012s
+
+real	0m39.573s
+user	0m39.526s
+sys	0m0.041s
+
+
+config_2_0032.bs
+BaSim_old
+
+real	0m20.775s
+user	0m20.759s
+sys	0m0.015s
+
+real	2m3.385s
+user	2m3.330s
+sys	0m0.056s
+BaSim_1
+
+real	0m20.376s
+user	0m20.361s
+sys	0m0.013s
+
+real	2m2.995s
+user	2m2.945s
+sys	0m0.051s
+BaSim_2
+
+real	0m6.034s
+user	0m6.017s
+sys	0m0.014s
+
+real	0m35.781s
+user	0m35.737s
+sys	0m0.039s
+
+
+config_2_0033.bs
+BaSim_old
+
+real	0m15.331s
+user	0m15.318s
+sys	0m0.012s
+
+real	1m30.072s
+user	1m30.022s
+sys	0m0.047s
+BaSim_1
+
+real	0m14.580s
+user	0m14.561s
+sys	0m0.016s
+
+real	1m26.932s
+user	1m26.883s
+sys	0m0.047s
+BaSim_2
+
+real	0m7.516s
+user	0m7.503s
+sys	0m0.010s
+
+real	0m43.281s
+user	0m43.238s
+sys	0m0.041s
+
+
+config_2_0034.bs
+BaSim_old
+
+real	0m22.726s
+user	0m22.712s
+sys	0m0.013s
+
+real	2m16.227s
+user	2m16.171s
+sys	0m0.055s
+BaSim_1
+
+real	0m22.327s
+user	0m22.313s
+sys	0m0.013s
+
+real	2m15.141s
+user	2m15.085s
+sys	0m0.055s
+BaSim_2
+
+real	0m6.766s
+user	0m6.754s
+sys	0m0.011s
+
+real	0m39.853s
+user	0m39.809s
+sys	0m0.041s
+
+
+config_2_0035.bs
+BaSim_old
+
+real	0m16.454s
+user	0m16.440s
+sys	0m0.011s
+
+real	1m37.871s
+user	1m37.823s
+sys	0m0.049s
+BaSim_1
+
+real	0m15.515s
+user	0m15.496s
+sys	0m0.017s
+
+real	1m33.043s
+user	1m32.991s
+sys	0m0.050s
+BaSim_2
+
+real	0m8.185s
+user	0m8.174s
+sys	0m0.011s
+
+real	0m47.772s
+user	0m47.724s
+sys	0m0.043s
+
+
+config_2_0036.bs
+BaSim_old
+
+real	0m24.894s
+user	0m24.879s
+sys	0m0.014s
+
+real	2m30.830s
+user	2m30.775s
+sys	0m0.057s
+BaSim_1
+
+real	0m24.631s
+user	0m24.617s
+sys	0m0.013s
+
+real	2m28.926s
+user	2m28.870s
+sys	0m0.058s
+BaSim_2
+
+real	0m7.268s
+user	0m7.250s
+sys	0m0.015s
+
+real	0m44.018s
+user	0m43.973s
+sys	0m0.042s
+
+
+config_2_0037.bs
+BaSim_old
+
+real	0m17.983s
+user	0m17.967s
+sys	0m0.013s
+
+real	1m50.047s
+user	1m49.995s
+sys	0m0.052s
+BaSim_1
+
+real	0m17.173s
+user	0m17.158s
+sys	0m0.012s
+
+real	1m44.244s
+user	1m44.194s
+sys	0m0.052s
+BaSim_2
+
+real	0m8.991s
+user	0m8.972s
+sys	0m0.016s
+
+real	0m52.108s
+user	0m52.062s
+sys	0m0.045s
+
+
+config_2_0038.bs
+BaSim_old
+
+real	0m27.688s
+user	0m27.672s
+sys	0m0.015s
+
+real	2m47.308s
+user	2m47.245s
+sys	0m0.063s
+BaSim_1
+
+real	0m27.059s
+user	0m27.040s
+sys	0m0.016s
+
+real	2m40.460s
+user	2m40.387s
+sys	0m0.064s
+BaSim_2
+
+real	0m7.860s
+user	0m7.845s
+sys	0m0.011s
+
+real	0m46.458s
+user	0m46.406s
+sys	0m0.047s
+
+
+config_2_0039.bs
+BaSim_old
+
+real	0m19.941s
+user	0m19.921s
+sys	0m0.016s
+
+real	1m55.699s
+user	1m55.642s
+sys	0m0.056s
+BaSim_1
+
+real	0m18.369s
+user	0m18.356s
+sys	0m0.013s
+
+real	1m49.767s
+user	1m49.706s
+sys	0m0.057s
+BaSim_2
+
+real	0m9.877s
+user	0m9.865s
+sys	0m0.011s
+
+real	0m56.980s
+user	0m56.926s
+sys	0m0.049s
+
+
+config_2_0040.bs
+BaSim_old
+
+real	0m29.753s
+user	0m29.734s
+sys	0m0.016s
+
+real	2m57.793s
+user	2m57.721s
+sys	0m0.070s
+BaSim_1
+
+real	0m28.646s
+user	0m28.627s
+sys	0m0.016s
+
+real	2m55.732s
+user	2m55.665s
+sys	0m0.067s
+BaSim_2
+
+real	0m8.586s
+user	0m8.572s
+sys	0m0.012s
+
+real	0m51.146s
+user	0m51.091s
+sys	0m0.050s
+
+
+config_2_0041.bs
+BaSim_old
+
+real	0m21.776s
+user	0m21.758s
+sys	0m0.015s
+
+real	2m5.912s
+user	2m5.848s
+sys	0m0.061s
+BaSim_1
+
+real	0m19.700s
+user	0m19.686s
+sys	0m0.013s
+
+real	1m56.417s
+user	1m56.360s
+sys	0m0.057s
+BaSim_2
+
+real	0m10.427s
+user	0m10.412s
+sys	0m0.012s
+
+real	1m0.877s
+user	1m0.823s
+sys	0m0.050s
+
+
+config_2_0042.bs
+BaSim_old
+
+real	0m32.138s
+user	0m32.119s
+sys	0m0.016s
+
+real	3m11.792s
+user	3m11.714s
+sys	0m0.076s
+BaSim_1
+
+real	0m31.016s
+user	0m30.999s
+sys	0m0.016s
+
+real	3m10.211s
+user	3m10.143s
+sys	0m0.069s
+BaSim_2
+
+real	0m9.232s
+user	0m9.211s
+sys	0m0.017s
+
+real	0m54.950s
+user	0m54.896s
+sys	0m0.050s
+
+
+config_2_0043.bs
+BaSim_old
+
+real	0m22.970s
+user	0m22.952s
+sys	0m0.016s
+
+real	2m15.296s
+user	2m15.230s
+sys	0m0.063s
+BaSim_1
+
+real	0m21.082s
+user	0m21.065s
+sys	0m0.014s
+
+real	2m9.774s
+user	2m9.711s
+sys	0m0.062s
+BaSim_2
+
+real	0m11.127s
+user	0m11.112s
+sys	0m0.013s
+
+real	1m5.356s
+user	1m5.302s
+sys	0m0.052s
+
+
+config_2_0044.bs
+BaSim_old
+
+real	0m34.300s
+user	0m34.283s
+sys	0m0.016s
+
+real	3m28.131s
+user	3m28.051s
+sys	0m0.079s
+BaSim_1
+
+real	0m33.272s
+user	0m33.254s
+sys	0m0.016s
+
+real	3m21.903s
+user	3m21.826s
+sys	0m0.074s
+BaSim_2
+
+real	0m9.800s
+user	0m9.784s
+sys	0m0.013s
+
+real	0m59.761s
+user	0m59.700s
+sys	0m0.056s
+
+
+config_2_0045.bs
+BaSim_old
+
+real	0m24.802s
+user	0m24.785s
+sys	0m0.015s
+
+real	2m29.114s
+user	2m29.046s
+sys	0m0.067s
+BaSim_1
+
+real	0m22.665s
+user	0m22.649s
+sys	0m0.015s
+
+real	2m17.344s
+user	2m17.279s
+sys	0m0.064s
+BaSim_2
+
+real	0m12.022s
+user	0m12.008s
+sys	0m0.013s
+
+real	1m10.401s
+user	1m10.336s
+sys	0m0.061s
+
+
+config_2_0046.bs
+BaSim_old
+
+real	0m37.272s
+user	0m37.252s
+sys	0m0.018s
+
+real	3m44.716s
+user	3m44.632s
+sys	0m0.083s
+BaSim_1
+
+real	0m36.148s
+user	0m36.129s
+sys	0m0.018s
+
+real	3m43.363s
+user	3m43.282s
+sys	0m0.081s
+BaSim_2
+
+real	0m10.668s
+user	0m10.653s
+sys	0m0.013s
+
+real	1m6.160s
+user	1m6.097s
+sys	0m0.059s
+
+
+config_2_0047.bs
+BaSim_old
+
+real	0m26.801s
+user	0m26.785s
+sys	0m0.016s
+
+real	2m38.541s
+user	2m38.470s
+sys	0m0.071s
+BaSim_1
+
+real	0m25.347s
+user	0m25.329s
+sys	0m0.017s
+
+real	2m28.765s
+user	2m28.695s
+sys	0m0.069s
+BaSim_2
+
+real	0m12.925s
+user	0m12.903s
+sys	0m0.018s
+
+real	1m15.577s
+user	1m15.515s
+sys	0m0.059s
+
+
+config_2_0048.bs
+BaSim_old
+
+real	0m40.393s
+user	0m40.373s
+sys	0m0.019s
+
+real	4m2.076s
+user	4m1.991s
+sys	0m0.085s
+BaSim_1
+
+real	0m39.521s
+user	0m39.502s
+sys	0m0.018s
+
+real	4m0.128s
+user	4m0.042s
+sys	0m0.086s
+BaSim_2
+
+real	0m11.445s
+user	0m11.428s
+sys	0m0.014s
+
+real	1m9.117s
+user	1m9.053s
+sys	0m0.059s
+
+
+config_2_0049.bs
+BaSim_old
+
+real	0m28.302s
+user	0m28.282s
+sys	0m0.017s
+
+real	2m48.350s
+user	2m48.265s
+sys	0m0.076s
+BaSim_1
+
+real	0m26.378s
+user	0m26.361s
+sys	0m0.016s
+
+real	2m37.346s
+user	2m37.274s
+sys	0m0.072s
+BaSim_2
+
+real	0m13.858s
+user	0m13.839s
+sys	0m0.015s
+
+real	1m21.015s
+user	1m20.949s
+sys	0m0.062s
+
+
+config_2_0050.bs
+BaSim_old
+
+real	0m42.607s
+user	0m42.586s
+sys	0m0.020s
+
+real	4m13.103s
+user	4m13.018s
+sys	0m0.086s
+BaSim_1
+
+real	0m41.643s
+user	0m41.621s
+sys	0m0.019s
+
+real	4m13.410s
+user	4m13.322s
+sys	0m0.089s
+BaSim_2
+
+real	0m12.267s
+user	0m12.246s
+sys	0m0.016s
+
+real	1m13.571s
+user	1m13.507s
+sys	0m0.062s
+
+
+config_2_0051.bs
+BaSim_old
+
+real	0m29.770s
+user	0m29.751s
+sys	0m0.018s
+
+real	2m57.671s
+user	2m57.594s
+sys	0m0.078s
+BaSim_1
+
+real	0m27.808s
+user	0m27.790s
+sys	0m0.017s
+
+real	2m45.860s
+user	2m45.782s
+sys	0m0.077s
+BaSim_2
+
+real	0m14.675s
+user	0m14.658s
+sys	0m0.015s
+
+real	1m27.432s
+user	1m27.362s
+sys	0m0.065s
+
+
+config_2_0052.bs
+BaSim_old
+
+real	0m45.284s
+user	0m45.264s
+sys	0m0.020s
+
+real	4m35.352s
+user	4m35.260s
+sys	0m0.093s
+BaSim_1
+
+real	0m43.567s
+user	0m43.546s
+sys	0m0.020s
+
+real	4m33.409s
+user	4m33.312s
+sys	0m0.098s
+BaSim_2
+
+real	0m12.940s
+user	0m12.919s
+sys	0m0.016s
+
+real	1m19.089s
+user	1m19.023s
+sys	0m0.064s
+
+
+config_2_0053.bs
+BaSim_old
+
+real	0m31.592s
+user	0m31.574s
+sys	0m0.018s
+
+real	3m11.854s
+user	3m11.773s
+sys	0m0.079s
+BaSim_1
+
+real	0m30.376s
+user	0m30.355s
+sys	0m0.018s
+
+real	3m0.425s
+user	3m0.345s
+sys	0m0.079s
+BaSim_2
+
+real	0m15.267s
+user	0m15.248s
+sys	0m0.016s
+
+real	1m32.529s
+user	1m32.463s
+sys	0m0.065s
+
+
+config_2_0054.bs
+BaSim_old
+
+real	0m49.072s
+user	0m49.049s
+sys	0m0.021s
+
+real	4m51.416s
+user	4m51.316s
+sys	0m0.098s
+BaSim_1
+
+real	0m45.822s
+user	0m45.800s
+sys	0m0.021s
+
+real	4m46.964s
+user	4m46.866s
+sys	0m0.098s
+BaSim_2
+
+real	0m13.685s
+user	0m13.668s
+sys	0m0.015s
+
+real	1m24.402s
+user	1m24.335s
+sys	0m0.067s
+
+
+config_2_0055.bs
+BaSim_old
+
+real	0m34.091s
+user	0m34.071s
+sys	0m0.019s
+
+real	3m21.548s
+user	3m21.463s
+sys	0m0.084s
+BaSim_1
+
+real	0m31.284s
+user	0m31.261s
+sys	0m0.019s
+
+real	3m11.859s
+user	3m11.779s
+sys	0m0.082s
+BaSim_2
+
+real	0m16.148s
+user	0m16.128s
+sys	0m0.016s
+
+real	1m34.864s
+user	1m34.793s
+sys	0m0.071s
+
+
+config_2_0056.bs
+BaSim_old
+
+real	0m50.487s
+user	0m50.463s
+sys	0m0.022s
+
+real	5m10.198s
+user	5m10.101s
+sys	0m0.100s
+BaSim_1
+
+real	0m49.568s
+user	0m49.546s
+sys	0m0.021s
+
+real	5m6.594s
+user	5m6.492s
+sys	0m0.104s
+BaSim_2
+
+real	0m14.914s
+user	0m14.891s
+sys	0m0.018s
+
+real	1m30.204s
+user	1m30.129s
+sys	0m0.071s
+
+
+config_2_0057.bs
+BaSim_old
+
+real	0m35.139s
+user	0m35.118s
+sys	0m0.019s
+
+real	3m30.799s
+user	3m30.696s
+sys	0m0.093s
+BaSim_1
+
+real	0m32.251s
+user	0m32.229s
+sys	0m0.019s
+
+real	3m20.390s
+user	3m20.306s
+sys	0m0.086s
+BaSim_2
+
+real	0m16.976s
+user	0m16.951s
+sys	0m0.020s
+
+real	1m40.581s
+user	1m40.500s
+sys	0m0.073s
+
+
+config_2_0058.bs
+BaSim_old
+
+real	0m52.953s
+user	0m52.931s
+sys	0m0.022s
+
+real	5m24.776s
+user	5m24.672s
+sys	0m0.105s
+BaSim_1
+
+real	0m51.278s
+user	0m51.253s
+sys	0m0.022s
+
+real	5m21.496s
+user	5m21.397s
+sys	0m0.104s
+BaSim_2
+
+real	0m15.532s
+user	0m15.511s
+sys	0m0.016s
+
+real	1m35.077s
+user	1m35.007s
+sys	0m0.071s
+
+
+config_2_0059.bs
+BaSim_old
+
+real	0m36.804s
+user	0m36.783s
+sys	0m0.020s
+
+real	3m41.121s
+user	3m41.035s
+sys	0m0.087s
+BaSim_1
+
+real	0m34.421s
+user	0m34.399s
+sys	0m0.019s
+
+real	3m24.880s
+user	3m24.792s
+sys	0m0.087s
+BaSim_2
+
+real	0m17.833s
+user	0m17.816s
+sys	0m0.017s
+
+real	1m44.788s
+user	1m44.709s
+sys	0m0.076s
+
+
+config_2_0060.bs
+BaSim_old
+
+real	0m56.151s
+user	0m56.128s
+sys	0m0.023s
+
+real	5m48.084s
+user	5m47.970s
+sys	0m0.115s
+BaSim_1
+
+real	0m55.900s
+user	0m55.876s
+sys	0m0.024s
+
+real	5m48.359s
+user	5m48.251s
+sys	0m0.112s
+BaSim_2
+
+real	0m16.143s
+user	0m16.126s
+sys	0m0.017s
+
+real	1m39.279s
+user	1m39.201s
+sys	0m0.074s
+
+
+config_2_0061.bs
+BaSim_old
+
+real	0m39.932s
+user	0m39.909s
+sys	0m0.019s
+
+real	3m57.980s
+user	3m57.879s
+sys	0m0.097s
+BaSim_1
+
+real	0m36.179s
+user	0m36.153s
+sys	0m0.022s
+
+real	3m38.914s
+user	3m38.825s
+sys	0m0.091s
+BaSim_2
+
+real	0m18.756s
+user	0m18.733s
+sys	0m0.018s
+
+real	1m50.232s
+user	1m50.153s
+sys	0m0.077s
+
+
+config_2_0062.bs
+BaSim_old
+
+real	1m0.256s
+user	1m0.231s
+sys	0m0.024s
+
+real	6m11.169s
+user	6m11.052s
+sys	0m0.119s
+BaSim_1
+
+real	0m57.720s
+user	0m57.693s
+sys	0m0.024s
+
+real	6m5.834s
+user	6m5.719s
+sys	0m0.117s
+BaSim_2
+
+real	0m17.154s
+user	0m17.128s
+sys	0m0.017s
+
+real	1m44.098s
+user	1m44.018s
+sys	0m0.079s
+
+
+config_2_0063.bs
+BaSim_old
+
+real	0m41.395s
+user	0m41.373s
+sys	0m0.021s
+
+real	4m10.514s
+user	4m10.410s
+sys	0m0.103s
+BaSim_1
+
+real	0m38.396s
+user	0m38.372s
+sys	0m0.023s
+
+real	3m51.637s
+user	3m51.542s
+sys	0m0.095s
+BaSim_2
+
+real	0m19.635s
+user	0m19.612s
+sys	0m0.018s
+
+real	1m55.939s
+user	1m55.857s
+sys	0m0.079s
+
+
+config_2_0064.bs
+BaSim_old
+
+real	1m2.438s
+user	1m2.413s
+sys	0m0.025s
+
+real	6m22.510s
+user	6m22.394s
+sys	0m0.120s
+BaSim_1
+
+real	1m0.582s
+user	1m0.556s
+sys	0m0.024s
+
+real	6m17.091s
+user	6m16.974s
+sys	0m0.120s
+BaSim_2
+
+real	0m17.660s
+user	0m17.638s
+sys	0m0.018s
+
+real	1m50.848s
+user	1m50.772s
+sys	0m0.077s
+
+
+config_2_0065.bs
+BaSim_old
+
+real	0m43.027s
+user	0m43.004s
+sys	0m0.022s
+
+real	4m20.201s
+user	4m20.106s
+sys	0m0.099s
+BaSim_1
+
+real	0m39.547s
+user	0m39.523s
+sys	0m0.022s
+
+real	4m3.735s
+user	4m3.637s
+sys	0m0.098s
+BaSim_2
+
+real	0m20.214s
+user	0m20.194s
+sys	0m0.018s
+
+real	2m4.055s
+user	2m3.970s
+sys	0m0.083s
+
+
+config_2_0066.bs
+BaSim_old
+
+real	1m5.487s
+user	1m5.462s
+sys	0m0.025s
+
+real	6m48.821s
+user	6m48.701s
+sys	0m0.124s
+BaSim_1
+
+real	1m3.112s
+user	1m3.085s
+sys	0m0.026s
+
+real	6m42.736s
+user	6m42.613s
+sys	0m0.126s
+BaSim_2
+
+real	0m18.553s
+user	0m18.530s
+sys	0m0.019s
+
+real	1m58.061s
+user	1m57.974s
+sys	0m0.082s
+
+
+config_2_0067.bs
+BaSim_old
+
+real	0m44.953s
+user	0m44.928s
+sys	0m0.022s
+
+real	4m39.290s
+user	4m39.187s
+sys	0m0.106s
+BaSim_1
+
+real	0m40.586s
+user	0m40.563s
+sys	0m0.021s
+
+real	4m12.080s
+user	4m11.976s
+sys	0m0.102s
+BaSim_2
+
+real	0m21.241s
+user	0m21.215s
+sys	0m0.020s
+
+real	2m9.065s
+user	2m8.976s
+sys	0m0.084s
+
+
+config_2_0068.bs
+BaSim_old
+
+real	1m7.665s
+user	1m7.638s
+sys	0m0.027s
+
+real	7m5.765s
+user	7m5.640s
+sys	0m0.131s
+BaSim_1
+
+real	1m7.556s
+user	1m7.530s
+sys	0m0.026s
+
+real	7m11.387s
+user	7m11.260s
+sys	0m0.130s
+BaSim_2
+
+real	0m20.104s
+user	0m20.078s
+sys	0m0.021s
+
+real	2m5.532s
+user	2m5.439s
+sys	0m0.090s
+
+
+config_2_0069.bs
+BaSim_old
+
+real	0m47.089s
+user	0m47.066s
+sys	0m0.023s
+
+real	4m45.974s
+user	4m45.865s
+sys	0m0.109s
+BaSim_1
+
+real	0m43.013s
+user	0m42.989s
+sys	0m0.022s
+
+real	4m30.687s
+user	4m30.583s
+sys	0m0.106s
+BaSim_2
+
+real	0m22.661s
+user	0m22.641s
+sys	0m0.019s
+
+real	2m16.816s
+user	2m16.721s
+sys	0m0.091s
+
+
+config_2_0070.bs
+BaSim_old
+
+real	1m12.838s
+user	1m12.809s
+sys	0m0.028s
+
+real	7m35.783s
+user	7m35.655s
+sys	0m0.133s
+BaSim_1
+
+real	1m9.344s
+user	1m9.317s
+sys	0m0.027s
+
+real	7m21.893s
+user	7m21.763s
+sys	0m0.134s
+BaSim_2
+
+real	0m20.765s
+user	0m20.744s
+sys	0m0.020s
+
+real	2m11.372s
+user	2m11.285s
+sys	0m0.088s
+
+
+config_2_0071.bs
+BaSim_old
+
+real	0m48.772s
+user	0m48.747s
+sys	0m0.024s
+
+real	5m6.085s
+user	5m5.976s
+sys	0m0.112s
+BaSim_1
+
+real	0m46.115s
+user	0m46.088s
+sys	0m0.024s
+
+real	4m51.143s
+user	4m51.031s
+sys	0m0.113s
+BaSim_2
+
+real	0m23.275s
+user	0m23.253s
+sys	0m0.020s
+
+real	2m22.580s
+user	2m22.492s
+sys	0m0.090s
+
+
+config_2_0072.bs
+BaSim_old
+
+real	1m14.854s
+user	1m14.828s
+sys	0m0.027s
+
+real	7m52.470s
+user	7m52.330s
+sys	0m0.143s
+BaSim_1
+
+real	1m13.306s
+user	1m13.278s
+sys	0m0.028s
+
+real	7m51.584s
+user	7m51.446s
+sys	0m0.141s
+BaSim_2
+
+real	0m21.526s
+user	0m21.506s
+sys	0m0.019s
+
+real	2m15.542s
+user	2m15.444s
+sys	0m0.095s
+
+
+config_2_0073.bs
+BaSim_old
+
+real	0m51.564s
+user	0m51.537s
+sys	0m0.026s
+
+real	5m22.354s
+user	5m22.236s
+sys	0m0.120s
+BaSim_1
+
+real	0m46.660s
+user	0m46.635s
+sys	0m0.023s
+
+real	4m59.186s
+user	4m59.073s
+sys	0m0.113s
+BaSim_2
+
+real	0m24.362s
+user	0m24.337s
+sys	0m0.022s
+
+real	2m30.473s
+user	2m30.377s
+sys	0m0.094s
+
+
+config_2_0074.bs
+BaSim_old
+
+real	1m18.381s
+user	1m18.352s
+sys	0m0.029s
+
+real	8m11.164s
+user	8m11.028s
+sys	0m0.140s
+BaSim_1
+
+real	1m15.659s
+user	1m15.630s
+sys	0m0.028s
+
+real	8m6.224s
+user	8m6.087s
+sys	0m0.142s
+BaSim_2
+
+real	0m22.553s
+user	0m22.523s
+sys	0m0.026s
+
+real	2m21.387s
+user	2m21.289s
+sys	0m0.095s
+
+
+config_2_0075.bs
+BaSim_old
+
+real	0m52.897s
+user	0m52.872s
+sys	0m0.024s
+
+real	5m33.925s
+user	5m33.806s
+sys	0m0.122s
+BaSim_1
+
+real	0m48.956s
+user	0m48.932s
+sys	0m0.024s
+
+real	5m6.848s
+user	5m6.733s
+sys	0m0.117s
+BaSim_2
+
+real	0m24.936s
+user	0m24.913s
+sys	0m0.021s
+
+real	2m33.000s
+user	2m32.903s
+sys	0m0.096s
+
+
+config_2_0076.bs
+BaSim_old
+
+real	1m21.126s
+user	1m21.096s
+sys	0m0.030s
+
+real	8m33.439s
+user	8m33.291s
+sys	0m0.151s
+BaSim_1
+
+real	1m18.770s
+user	1m18.732s
+sys	0m0.033s
+
+real	8m29.732s
+user	8m29.591s
+sys	0m0.146s
+BaSim_2
+
+real	0m23.990s
+user	0m23.961s
+sys	0m0.022s
+
+real	2m28.590s
+user	2m28.490s
+sys	0m0.098s
+
+
+config_2_0077.bs
+BaSim_old
+
+real	0m55.469s
+user	0m55.442s
+sys	0m0.026s
+
+real	5m49.542s
+user	5m49.421s
+sys	0m0.124s
+BaSim_1
+
+real	0m50.631s
+user	0m50.602s
+sys	0m0.026s
+
+real	5m23.710s
+user	5m23.589s
+sys	0m0.123s
+BaSim_2
+
+real	0m26.057s
+user	0m26.032s
+sys	0m0.022s
+
+real	2m40.911s
+user	2m40.807s
+sys	0m0.100s
+
+
+config_2_0078.bs
+BaSim_old
+
+real	1m25.942s
+user	1m25.911s
+sys	0m0.032s
+
+real	9m4.623s
+user	9m4.469s
+sys	0m0.156s
+BaSim_1
+
+real	1m23.928s
+user	1m23.894s
+sys	0m0.033s
+
+real	9m6.443s
+user	9m6.294s
+sys	0m0.154s
+BaSim_2
+
+real	0m24.702s
+user	0m24.676s
+sys	0m0.023s
+
+real	2m34.251s
+user	2m34.146s
+sys	0m0.101s
+
+
+config_2_0079.bs
+BaSim_old
+
+real	0m58.089s
+user	0m58.060s
+sys	0m0.027s
+
+real	5m58.694s
+user	5m58.569s
+sys	0m0.127s
+BaSim_1
+
+real	0m52.243s
+user	0m52.214s
+sys	0m0.028s
+
+real	5m33.703s
+user	5m33.579s
+sys	0m0.125s
+BaSim_2
+
+real	0m27.740s
+user	0m27.715s
+sys	0m0.022s
+
+real	2m48.506s
+user	2m48.405s
+sys	0m0.101s
+
+
