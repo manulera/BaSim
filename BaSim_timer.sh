@@ -10,20 +10,40 @@
 
 # Run the program
 
-BINFOLDER=././bin/
-PROGRAM1=BaSim_old
+BINFOLDER=../bin/
+OLD=BaSim_old
+B1=BaSim_1
+B2=BaSim_2
 
 
 #time $PROGRAM config.bs
-touch results.txt
-# Erase the file 
-''>results.txt
+touch results2.txt
+# Erase the file
+echo ''>results2.txt
 
-for FILE in $(ls|grep config0)
+
+ROUNDS=$(ls|grep config_2_0 -c)
+echo $ROUNDS
+COUNTER=1;
+for FILE in $(ls|grep config_2_0)
 do
-	echo ${FILE} >> results.txt
-    echo ${PROGRAM1} >> results.txt
-	(time ${BINFOLDER}${PROGRAM1} ${FILE};) 2>> results.txt
+	echo ${FILE} >> results2.txt
 
-    echo "\n" >> results.txt
+    echo ${OLD} >> results2.txt
+	echo ${OLD}
+	(time ${BINFOLDER}${OLD} ${FILE} 10;) 2>> results2.txt
+	(time ${BINFOLDER}${OLD} ${FILE} 60;) 2>> results2.txt
+
+    echo ${B1} >> results2.txt
+	echo ${B1}
+	(time ${BINFOLDER}${B1} ${FILE} 10;) 2>> results2.txt
+	(time ${BINFOLDER}${B1} ${FILE} 60;) 2>> results2.txt
+
+    echo ${B2} >> results2.txt
+	echo ${B2}
+	(time ${BINFOLDER}${B2} ${FILE} 10;) 2>> results2.txt
+	(time ${BINFOLDER}${B2} ${FILE} 60;) 2>> results2.txt
+    echo "\n" >> results2.txt
+    echo "round "${COUNTER}" of "${ROUNDS}
+    COUNTER=$((COUNTER+1))
 done

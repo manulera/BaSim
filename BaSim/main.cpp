@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
     pars.readfile(fs);
     Simulation sim2;
     sim.run_write(maxtime);
-    sim2.show();
+//    sim2.show();
 //    sim.run_play();
     return 0;
 }
