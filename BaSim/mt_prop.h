@@ -46,10 +46,10 @@ public:
             {
                 propname = pairs.at(i);
                 value = pairs.at(i+1);
-                if (propname == "x") {newmt->x=stof(value); continue;}
-                if (propname == "y") {newmt->y=stof(value); continue;}
+                if (propname == "x") {newmt->position.XX=stof(value); continue;}
+                if (propname == "y") {newmt->position.YY=stof(value); continue;}
                 if (propname == "attached") {newmt->length=stof(value); continue;}
-                if (propname == "orientation") {newmt->orientation=stof(value); continue;}
+                if (propname == "orientation") {newmt->set_orientation(stof(value)); continue;}
             }
         }
         return newmt;

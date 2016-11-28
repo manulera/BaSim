@@ -33,7 +33,7 @@ public:
             value = pairs.at(i+1);
             if (propname == "speed") {speed=stof(value); continue;}
             if (propname == "bind_rate") {bind_rate=stof(value); continue;}
-            if (propname == "bind_range") {bind_range=stof(value); continue;}
+            if (propname == "bind_range") {bind_range=stof(value)*stof(value); continue;} // We pass the value squared, more useful like that
             if (propname == "unbind_rate") {unbind_rate=stof(value); continue;}
         }
     }
@@ -68,8 +68,8 @@ public:
             {
                 propname = pairs.at(i);
                 value = pairs.at(i+1);
-                if (propname == "x") {newball->x=stof(value); continue;}
-                if (propname == "y") {newball->y=stof(value); continue;}
+                if (propname == "x") {newball->position.XX=stof(value); continue;}
+                if (propname == "y") {newball->position.YY=stof(value); continue;}
                 //if (propname == "attached") {newball->attached=stof(value); continue;} We will have to think about how to set to which mt we attach the objects
             }
         }

@@ -4,8 +4,14 @@
 class MT: public Object{
 public:
     
-    float length, orientation; // This properties should be able to change in time, that is why they are not pointerss
+    Vector2 orientation;
+    float length; // This properties should be able to change in time, that is why they are not pointerss
     
+    void set_orientation(float angle)
+    {
+        orientation.XX = angle;
+        orientation.YY = sqrt(1-angle*angle);
+    }
     std::string str_spec()
     {
         
@@ -13,20 +19,16 @@ public:
     }
     void shuffle()
     {
-        x = xBound*srand()*0.8;
-        y = yBound*srand()*0.8;
-        orientation = 2*PI*srand();
+        position.shuffle(0.8);
+        orientation = Vector2(rand01(),1);
+        orientation.norm();
     }
     
-    float xp()
+    Vector2 plus_end()
     {
-        return x+length*cos(orientation);
+        return position + orientation*length;
     }
     
-    float yp()
-    {
-        return y+length*sin(orientation);
-    }
     void populate(std::string);
     void display()
     {
@@ -34,8 +36,8 @@ public:
         glBegin(GL_LINES);
         {
             glColor3f(0.0, 0.0, 1.0);
-            glVertex2f(x/xBound, y/yBound);
-            glVertex2f(xp()/xBound, yp()/yBound);
+            glVertex2f(position.XX/xBound, position.YY/yBound);
+            glVertex2f(plus_end().YY/xBound, plus_end().YY/yBound);
         }
         glEnd();
     }

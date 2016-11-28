@@ -1,6 +1,6 @@
 class Object{
 public:
-    float x, y;
+    Vector2 position;
     int identifier;
     std::string *type;
     std::string *name;

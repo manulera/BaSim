@@ -6,8 +6,7 @@ public:
     int attached_id = 0; // this is a bit redundant, but useful for output
     void shuffle()
     {
-        x = srand()*xBound;
-        y = srand()*yBound;
+        position.shuffle();
     }
     
     Ball(): Object()
@@ -38,7 +37,7 @@ public:
             {
                 glColor3f(0.0,1.0,0.0);
             }
-            glVertex2f(x/xBound, y/yBound);
+            glVertex2f(position.XX/xBound, position.YY/yBound);
         }
         glEnd();
     }

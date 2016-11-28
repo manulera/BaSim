@@ -6,32 +6,39 @@ int Ball::within(MT* mti , float* distval)
 //        + Returns 1 if its in range from the minus end
 //        + Returns 2 if its in range from the plus end
 //        + Returns 3 if its in range from the body of the MT
+//        + distval is asigned the value of the square of the distance
 //     */
 {
     // This is based on the notes of the notebook
     
-    float a = dist(x,y,mti->x,mti->y); //Distance from the minus end
-    float b = dist(x,y,mti->xp(),mti->yp()); //Distance from the plus end
+    float a = position.distSqr(mti->position); //Distance_sqrd from the minus end
+    float b = position.distSqr(mti->plus_end()); //Distance_sqrd from the plus end
     float c = mti->length;
-    float h = sqrt(a*a-pow((a*a-b*b+c*c)/2/c,2));
-    if ((b*b+c*c<a*a) && (a>=b)) // Plus end
-    {*distval = dist(x,y,mti->xp(),mti->yp());
-        return (*distval < *(bind_range))*2;}
-    else if ((a*a+c*c<b*b) && (a<=b)) // Minus end
-    {*distval = dist(x,y,mti->x+mti->x,mti->y);
-        return (*distval < *(bind_range))*1;}
+    //float h = a- ((a-b+c*c)/2/c) * ((a-b+c*c)/2/c);
+    
+    if ((b+c*c<a) && (a>=b)) // Plus end
+    {
+        *distval = b;
+        return (*distval < *(bind_range))*2;
+    }
+    else if ((a+c*c<b) && (a<=b)) // Minus end
+    {
+        *distval = a;
+        return (*distval < *(bind_range))*1;
+    }
     else //Body of the microtubule
-    {*distval = h;
+    {
+        *distval = a- ((a-b+c*c)/2/c) * ((a-b+c*c)/2/c); // The h value explained on the notebook
         return (*distval < *(bind_range))*3;}
 }
 
 void Ball::move_along(float dt)
 {
-    // dist0 is the distance that the motors travels in dt
-    float dist0 = *speed * dt;
-    x+=dist0*cos(attached->orientation);
-    y+=dist0*sin(attached->orientation);
-    if (dist(x,y,attached->x,attached->y)>attached->length||dist(x,y,attached->xp(),attached->yp())>attached->length)
+    // The distance that the motors travels in dt
+    position += attached->orientation * *speed * dt;
+    
+    if (position.distSqr(attached->position) > attached->length * attached->length ||
+        position.distSqr(attached->plus_end()) > attached->length * attached->length)
     {
         attached=nullptr;
         attached_id=0;

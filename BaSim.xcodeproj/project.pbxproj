@@ -54,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		322329121DECA1C1002017EF /* vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector2.h; sourceTree = "<group>"; };
 		322A17431D95550C0010C78C /* params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = params.h; sourceTree = "<group>"; };
 		323A589E1DD9C82E003BDC7A /* output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output.h; sourceTree = "<group>"; };
 		323A589F1DD9CA6B003BDC7A /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
@@ -128,6 +129,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		322329101DECA177002017EF /* Maths */ = {
+			isa = PBXGroup;
+			children = (
+				322329121DECA1C1002017EF /* vector2.h */,
+			);
+			name = Maths;
+			sourceTree = "<group>";
+		};
 		328219281D93C51200278D68 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				327A170F1DA54825008854A7 /* Integration.h */,
+				322329101DECA177002017EF /* Maths */,
 				322A17431D95550C0010C78C /* params.h */,
 				32EE90641DDDE90500035A9F /* Object.h */,
 				323A58A81DDC89B2003BDC7A /* Properties.h */,

@@ -33,6 +33,7 @@ void reached(int i)
 
 // Import the objects of the simulation
 #include "params.h"
+#include "vector2.h"
 #include "Object.h"
 #include "Properties.h"
 #include "MT.h"
