@@ -54,7 +54,7 @@ Simulation sim;
 #include "output.h"
 #include "read_output.h"
 
-
+// Just including this message here to see if the commit works
 int main(int argc, char* argv[]) {
 //    EulerIntegration(start, end, step_int, step_out, vals, pars);
     std::string filename = argv[1];
