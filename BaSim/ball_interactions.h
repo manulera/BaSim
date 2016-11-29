@@ -36,7 +36,7 @@ void Ball::move_along(float dt)
 {
     // The distance that the motors travels in dt
     tubref += *speed * dt / attached->length;
-    //position = attached->position + attached->orientation * attached->length;
+    position = attached->position + attached->orientation * attached->length;
     if (tubref<0||tubref>1)
     {
         tubref = -1;
