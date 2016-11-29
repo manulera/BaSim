@@ -7,11 +7,11 @@ public:
     Vector2(const float x, const float y): XX(x), YY(y){}
     ~Vector2() {}
    //Vector2(Vector2 &a): XX(a.XX), YY(a.YY){}
-    float normSqr()
+    float const normSqr()
     {
         return XX*XX + YY*YY;
     }
-    float norm()
+    float const norm()
     {
         return sqrtf(XX*XX+YY*YY);
     }
@@ -29,9 +29,14 @@ public:
         XX *= s;
         YY *= s;
     }
-    float getAngle()
+    float const getAngle()
     {
         return atan2(YY,XX);
+    }
+    void const fromAngle(float ang)
+    {
+        XX = cos(ang);
+        YY = sin(ang);
     }
     friend const Vector2 operator +(Vector2 const &a, Vector2 const &b)
     {
@@ -50,15 +55,15 @@ public:
         return a.XX * b.YY - a.YY * b.XX;
     }
     // Scalar product
-    friend float operator *(Vector2 const &a, Vector2 const &b)
+    friend const float operator *(Vector2 const &a, Vector2 const &b)
     {
         return a.XX*b.XX + a.YY*b.YY;
     }
-    friend const Vector2 operator *(Vector2 const &a, const float b)
+    friend const Vector2 operator *(Vector2 const &a, float const b)
     {
         return Vector2(a.XX*b , a.YY*b);
     }
-    friend const Vector2 operator /(Vector2 const &a, const float b)
+    friend const Vector2 operator /(Vector2 const &a, float const b)
     {
         return Vector2(a.XX/b , a.YY/b);
     }

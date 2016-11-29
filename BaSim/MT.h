@@ -20,8 +20,8 @@ public:
     void shuffle()
     {
         position.shuffle(0.8);
-        orientation = Vector2(rand01(),1);
-        orientation.norm();
+        orientation = Vector2(srand(),srand());
+        orientation.normalize();
     }
     
     Vector2 plus_end()

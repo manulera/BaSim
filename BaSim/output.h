@@ -24,13 +24,15 @@ void Simulation::write()
     for (int i=0; i < balls.size();i++)
     {
         Ball* b = balls.at(i);
-        fprintf(file, "%u %f %f %u \n", b->identifier, b->x, b->y, b->attached_id);
+        fprintf(file, "%u %f %f %u %f \n",
+                b->identifier, b->position.XX, b->position.YY, b->attached_id, b->tubref);
     }
     fprintf(file, "\nmts:\n");
     for (int i=0; i < mts.size();i++)
     {
         MT* b = mts.at(i);
-        fprintf(file, "%u %f %f %f %f\n", b->identifier, b->x, b->y, b->orientation, b->length);
+        fprintf(file, "%u %f %f %f %f %f\n",
+                b->identifier, b->position.XX, b->position.YY, b->orientation.XX, b->orientation.YY, b->length);
     }
     fprintf(file, "\n");
 }

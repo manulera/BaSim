@@ -82,12 +82,14 @@ int Simulation::populate_objs()
 
 void Ball::populate(std::string line)
 {
-    sscanf(line.c_str(),"%u %f %f %u",&identifier,&x,&y,&attached_id);
+    sscanf(line.c_str(),"%u %f %f %u %f",
+           &identifier,&position.XX,&position.YY,&attached_id,&tubref);
 }
 
 void MT::populate(std::string line)
 {
-    sscanf(line.c_str(),"%u %f %f %f %f",&identifier,&x,&y,&orientation,&length);
+    sscanf(line.c_str(),"%u %f %f %f %f %f",
+           &identifier,&position.XX,&position.YY,&orientation.XX,&orientation.YY,&length);
 }
 
 int Simulation::show()

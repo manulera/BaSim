@@ -35,11 +35,11 @@ int Ball::within(MT* mti , float* distval)
 void Ball::move_along(float dt)
 {
     // The distance that the motors travels in dt
-    position += attached->orientation * *speed * dt;
-    
-    if (position.distSqr(attached->position) > attached->length * attached->length ||
-        position.distSqr(attached->plus_end()) > attached->length * attached->length)
+    tubref += *speed * dt / attached->length;
+    //position = attached->position + attached->orientation * attached->length;
+    if (tubref<0||tubref>1)
     {
+        tubref = -1;
         attached=nullptr;
         attached_id=0;
     }
@@ -55,21 +55,16 @@ void Ball::bind(MT * mti, int where, float distval)
         //glVertex2f(x/xBound, y/yBound);
         if (where==1) //Bind to minus end
         {
-            x=mti->x;
-            y=mti->y;
+            tubref = 0;
         }
         else if (where==2) //Bind to plus end
         {
-            x=mti->xp();
-            y=mti->yp();
-            
+            tubref = 1;
         }
         else if (where==3) //Bind to body
         {
-            float a = dist(x,y,mti->x,mti->y); //Distance from the minus end
-            float dist0 = sqrt(std::abs(a*a-distval*distval)); // There are cases where this is negative
-            x=mti->x+dist0*cos(mti->orientation);
-            y=mti->y+dist0*sin(mti->orientation);
+            // Vector from the minus end to the ball * unitary vector of the orientation
+            tubref = (position-mti->position)*mti->orientation/mti->length;
         }
         //glVertex2f(x/xBound, y/yBound);
     }
