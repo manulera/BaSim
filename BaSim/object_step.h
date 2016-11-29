@@ -2,7 +2,7 @@ void Object::diffuse(float dt)
 {
     // calibrate diffusion, I will have to include also the mass at some point
     Vector2 unit = Vector2(srand(),srand());
-    unit.normalize(sqrt( 2 * diff * dt ));
+    unit.normalize(sqrt( 2 * *diff * dt ));
     position += unit;
     boundary();
 }

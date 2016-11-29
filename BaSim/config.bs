@@ -5,13 +5,27 @@ set ball motor1
     bind_rate = 3
     bind_range = 10
     unbind_rate = 1
+    diff = 0
 }
 
 set MT mt1
 
-new 300 mt1
+new 1 mt1
 {
-    length = 100
+    length = 500
+    x = -250
+    y = 0
+    orientation = 0
 }
 
 new 1 motor1
+{
+    x = -10
+    y = 0
+}
+
+new 1 motor1
+{
+    x = 10
+    y = 0
+}

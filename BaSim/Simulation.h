@@ -41,7 +41,6 @@ void Simulation::add_object(std::string keys[3], std::string prop_val)
     Props* p = get_prop(keys[2]);
     if (p->type=="ball")
     {
-        std::cout << "keys[1]: "<< keys[1]<< std::endl;
         for (int i = 0; i < std::stoi(keys[1]); i++)
         {
             Ball* obj = static_cast<Ball*>(p->make(prop_val));

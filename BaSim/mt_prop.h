@@ -18,6 +18,7 @@ public:
             {
                 propname = pairs.at(i);
                 value = pairs.at(i+1);
+                if (propname == "diff") {diff=stof(value); continue;}
                 // No props yet
             }
         }
@@ -31,6 +32,7 @@ public:
         // Properties of the object
         newmt->type = &type;
         newmt->name = &name;
+        newmt->diff = &diff;
         
         // Initialize default values
         newmt->length = 100;
@@ -48,7 +50,7 @@ public:
                 value = pairs.at(i+1);
                 if (propname == "x") {newmt->position.XX=stof(value); continue;}
                 if (propname == "y") {newmt->position.YY=stof(value); continue;}
-                if (propname == "attached") {newmt->length=stof(value); continue;}
+                if (propname == "length") {newmt->length=stof(value); continue;}
                 if (propname == "orientation") {newmt->set_orientation(stof(value)); continue;}
             }
         }

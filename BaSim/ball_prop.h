@@ -3,7 +3,6 @@ public:
     // They must be specified
     float attached,speed, bind_rate, bind_range, unbind_rate;
     
-    
     std::string str_spec()
     {
         using namespace std;
@@ -33,11 +32,11 @@ public:
             value = pairs.at(i+1);
             if (propname == "speed") {speed=stof(value); continue;}
             if (propname == "bind_rate") {bind_rate=stof(value); continue;}
-            if (propname == "bind_range") {bind_range=stof(value); continue;} // We pass the value squared, more useful like that
+            if (propname == "bind_range") {bind_range=stof(value); continue;}
             if (propname == "unbind_rate") {unbind_rate=stof(value); continue;}
+            if (propname == "diff") {diff=stof(value); continue;}
         }
     }
-    
     
     Object* make(std::string prop_val)
     {
@@ -47,6 +46,8 @@ public:
         // Properties of the type
         newball->type = &type;
         newball->name = &name;
+        newball->diff = &diff;
+        
         newball->speed = &speed;
         newball->bind_rate = &bind_rate;
         newball->bind_range = &bind_range;

@@ -1,10 +1,12 @@
 name: mt1
 type: MT
+diff: 50.000000
 
 name: motor1
 type: ball
+diff: 50.000000
 speed: 10.000000
-bind_rate: 1.000000
+bind_rate: 3.000000
 bind_range: 10.000000
 unbind_rate: 1.000000
 

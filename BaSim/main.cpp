@@ -56,8 +56,9 @@ Simulation sim;
 #include "read_output.h"
 
 
-int main(int argc, char* argv[]) {
-//    EulerIntegration(start, end, step_int, step_out, vals, pars);
+int main(int argc, char* argv[])
+{
+//  EulerIntegration(start, end, step_int, step_out, vals, pars);
     std::string filename = argv[1];
     float maxtime = std::stof(argv[2]);
     Parser pars;

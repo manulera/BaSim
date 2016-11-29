@@ -4,6 +4,7 @@ public:
     int identifier;
     std::string *type;
     std::string *name;
+    float *diff;
     virtual void printinfo(){
         std::cout << "No type of object specified"<< std::endl;
     }

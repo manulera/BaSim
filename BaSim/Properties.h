@@ -5,7 +5,7 @@ public:
     std::string name;
     std::string type;
     std::vector<int> ids;
-    float  x , y;
+    float diff = diff_master;
     virtual Object* make(std::string prop_val){return 0;};
     virtual std::string str_spec(){return "";};
     std::string str()
@@ -13,6 +13,7 @@ public:
         std::string result;
         result+="name: " + name + "\n";
         result+="type: " + type + "\n";
+        result+="diff: " + std::to_string(diff) + "\n";
         result+=str_spec();
 //        for (int i = 0; i<ids.size(); i++)
 //        {

@@ -4,7 +4,7 @@
 #include <cmath>
 
 const float PI = 3.14159265358979323846264338327950288;
-float diff     = 50;       // diffusion constant in pixel units
+float diff_master = 50;       // diffusion constant in pixel units
 unsigned long seed = 1;   // seed for random number generator
 
 

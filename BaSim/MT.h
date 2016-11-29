@@ -9,8 +9,9 @@ public:
     
     void set_orientation(float angle)
     {
-        orientation.XX = angle;
-        orientation.YY = sqrt(1-angle*angle);
+        float a = cos(angle);
+        orientation.XX = a;
+        orientation.YY = sqrt(1-a*a);
     }
     std::string str_spec()
     {
