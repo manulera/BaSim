@@ -10,7 +10,7 @@
 		328219351D93C51200278D68 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 328219341D93C51200278D68 /* main.cpp */; };
 		3282193C1D93C53000278D68 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193B1D93C53000278D68 /* OpenGL.framework */; };
 		3282193E1D93C58600278D68 /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */; };
-		328219401D93C5A600278D68 /* libglfw3.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */; };
+		328219401D93C5A600278D68 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,7 @@
 		328219341D93C51200278D68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3282193B1D93C53000278D68 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../../usr/local/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
-		3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.2.dylib; path = ../../../../usr/local/Cellar/glfw3/3.2.1/lib/libglfw3.3.2.dylib; sourceTree = "<group>"; };
+		3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		3295FDB51DA4F881000A02A8 /* BaSimTarget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSimTarget; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D873991D955CE200244DA9 /* MT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MT.h; sourceTree = "<group>"; };
 		32D8739A1D9926BC00244DA9 /* checkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checkers.h; sourceTree = "<group>"; };
@@ -79,17 +79,6 @@
 		32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = BaSim_timer.sh; sourceTree = "<group>"; };
 		32E101C41DE8432F00A6A8E0 /* Output_objs.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_objs.bs; sourceTree = "<group>"; };
 		32E101C51DE8432F00A6A8E0 /* Output_props.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_props.bs; sourceTree = "<group>"; };
-		32E101C91DE843B500A6A8E0 /* config.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.bs; sourceTree = "<group>"; };
-		32E101CA1DE843B500A6A8E0 /* config0000.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0000.bs; sourceTree = "<group>"; };
-		32E101CB1DE843B500A6A8E0 /* config0001.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0001.bs; sourceTree = "<group>"; };
-		32E101CC1DE843B500A6A8E0 /* config0002.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0002.bs; sourceTree = "<group>"; };
-		32E101CD1DE843B500A6A8E0 /* config0003.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0003.bs; sourceTree = "<group>"; };
-		32E101CE1DE843B500A6A8E0 /* config0004.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0004.bs; sourceTree = "<group>"; };
-		32E101CF1DE843B500A6A8E0 /* config0005.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0005.bs; sourceTree = "<group>"; };
-		32E101D01DE843B500A6A8E0 /* config0006.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0006.bs; sourceTree = "<group>"; };
-		32E101D11DE843B500A6A8E0 /* config0007.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0007.bs; sourceTree = "<group>"; };
-		32E101D21DE843B500A6A8E0 /* config0008.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0008.bs; sourceTree = "<group>"; };
-		32E101D31DE843B500A6A8E0 /* config0009.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config0009.bs; sourceTree = "<group>"; };
 		32E101D41DE843B500A6A8E0 /* Output_objs.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_objs.bs; sourceTree = "<group>"; };
 		32E101D51DE843B500A6A8E0 /* Output_props.bs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Output_props.bs; sourceTree = "<group>"; };
 		32E101D61DE843B500A6A8E0 /* Plot_Time.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = Plot_Time.py; sourceTree = "<group>"; };
@@ -106,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				328219401D93C5A600278D68 /* libglfw3.3.2.dylib in Frameworks */,
+				328219401D93C5A600278D68 /* libglfw.3.2.dylib in Frameworks */,
 				3282193E1D93C58600278D68 /* libGLEW.2.0.0.dylib in Frameworks */,
 				3282193C1D93C53000278D68 /* OpenGL.framework in Frameworks */,
 			);
@@ -142,7 +131,7 @@
 			children = (
 				32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */,
 				32E101C81DE843B500A6A8E0 /* ConfigFiles */,
-				3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */,
+				3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */,
 				3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */,
 				328219331D93C51200278D68 /* BaSim */,
 				3282193B1D93C53000278D68 /* OpenGL.framework */,
@@ -193,17 +182,6 @@
 		32E101C81DE843B500A6A8E0 /* ConfigFiles */ = {
 			isa = PBXGroup;
 			children = (
-				32E101C91DE843B500A6A8E0 /* config.bs */,
-				32E101CA1DE843B500A6A8E0 /* config0000.bs */,
-				32E101CB1DE843B500A6A8E0 /* config0001.bs */,
-				32E101CC1DE843B500A6A8E0 /* config0002.bs */,
-				32E101CD1DE843B500A6A8E0 /* config0003.bs */,
-				32E101CE1DE843B500A6A8E0 /* config0004.bs */,
-				32E101CF1DE843B500A6A8E0 /* config0005.bs */,
-				32E101D01DE843B500A6A8E0 /* config0006.bs */,
-				32E101D11DE843B500A6A8E0 /* config0007.bs */,
-				32E101D21DE843B500A6A8E0 /* config0008.bs */,
-				32E101D31DE843B500A6A8E0 /* config0009.bs */,
 				32E101D41DE843B500A6A8E0 /* Output_objs.bs */,
 				32E101D51DE843B500A6A8E0 /* Output_props.bs */,
 				32E101D61DE843B500A6A8E0 /* Plot_Time.py */,

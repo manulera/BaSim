@@ -14,32 +14,36 @@ int Ball::within(MT* mti , float* distval)
     float a = position.distSqr(mti->position); //Distance_sqrd from the minus end
     float b = position.distSqr(mti->plus_end()); //Distance_sqrd from the plus end
     float c = mti->length;
-    //float h = a- ((a-b+c*c)/2/c) * ((a-b+c*c)/2/c);
     
     if ((b+c*c<a) && (a>=b)) // Plus end
     {
         *distval = b;
-        return (*distval < *(bind_range))*2;
+        return (*distval < *(bind_range) * *(bind_range))*2;
     }
     else if ((a+c*c<b) && (a<=b)) // Minus end
     {
         *distval = a;
-        return (*distval < *(bind_range))*1;
+        
+        return (*distval < *(bind_range)* *(bind_range))*1;
     }
     else //Body of the microtubule
     {
-        *distval = a- ((a-b+c*c)/2/c) * ((a-b+c*c)/2/c); // The h value explained on the notebook
-        return (*distval < *(bind_range))*3;}
+        // distval corresponds to the h value explained on the notebook, height calculated with Heron's theorem
+        float term = (a-b+c*c)/2/c;
+        *distval = a - term * term;
+        return (*distval < *(bind_range)* *(bind_range))*3;}
 }
 
 void Ball::move_along(float dt)
 {
     // The distance that the motors travels in dt
+    //std::cout<< "Vals: " << *speed << " " << dt << " " << attached->length << std::endl;
+    //std::cout << *speed * dt / attached->length << std::endl;
     tubref += *speed * dt / attached->length;
-    position = attached->position + attached->orientation * attached->length;
-    if (tubref<0||tubref>1)
+    position = attached->position + attached->orientation * attached->length * tubref;
+    if (tubref<0.0||tubref>1.0)
     {
-        tubref = -1;
+        tubref = -1.0;
         attached=nullptr;
         attached_id=0;
     }
@@ -55,16 +59,16 @@ void Ball::bind(MT * mti, int where, float distval)
         //glVertex2f(x/xBound, y/yBound);
         if (where==1) //Bind to minus end
         {
-            tubref = 0;
+            tubref = 0.0;
         }
         else if (where==2) //Bind to plus end
         {
-            tubref = 1;
+            tubref = 1.0;
         }
         else if (where==3) //Bind to body
         {
             // Vector from the minus end to the ball * unitary vector of the orientation
-            tubref = (position-mti->position)*mti->orientation/mti->length;
+            tubref = (position - mti->position) * mti->orientation / mti->length;
         }
         //glVertex2f(x/xBound, y/yBound);
     }
@@ -73,15 +77,17 @@ void Ball::bind(MT * mti, int where, float distval)
 // BaSim_2
 void Ball::iterate_mts(std::vector<MT*> mts,float dt)
 {
+    int wherebind;
     float distval;
     for (int i = 0; i<mts.size(); i++)
     {
-        if (rand01()<*bind_rate*8*dt)
+        if (rand01()< *bind_rate*8*dt)
         {
-            int wherebind = within(mts.at(i),&distval);
+            wherebind = within(mts.at(i),&distval);
             if (wherebind&&rand01()<0.125)
             {
                 bind(mts.at(i),wherebind, distval);
+                break; // Wow! I cant believe I didnt have this before, this is definitely the reason why I was getting similar times in clearly more efficient methods
             }
         }
         else

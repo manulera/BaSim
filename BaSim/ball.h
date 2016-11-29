@@ -5,7 +5,7 @@ public:
     MT* attached = nullptr;
     int attached_id = 0; // this is a bit redundant, but useful for output
     
-    float tubref = -1; // goes from 0 to 1. Represents the position of a bound motor with respect to the minus end of the MT its bound to. -1 if the ball is not bound
+    float tubref = -1.0; // goes from 0 to 1. Represents the position of a bound motor with respect to the minus end of the MT its bound to. -1 if the ball is not bound
     
     void shuffle()
     {
