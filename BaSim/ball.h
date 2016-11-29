@@ -10,6 +10,8 @@ public:
     void shuffle()
     {
         position.shuffle();
+        position.XX *= xBound;
+        position.YY *= yBound;
     }
     
     Ball(): Object()

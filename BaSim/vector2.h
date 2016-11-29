@@ -97,7 +97,7 @@ public:
     }
     void shuffle(const float mult = 1.0) //By default from 0 to 1, but one can indicate the value
     {
-        XX = rand01()*mult;
-        YY = rand01()*mult;
+        XX = srand()*mult;
+        YY = srand()*mult;
     }
 };

@@ -20,7 +20,9 @@ public:
     void shuffle()
     {
         position.shuffle(0.8);
-        orientation = Vector2(srand(),srand());
+        position.XX *= xBound;
+        position.YY *= yBound;
+        orientation.shuffle();
         orientation.normalize();
     }
     
@@ -37,7 +39,7 @@ public:
         {
             glColor3f(0.0, 0.0, 1.0);
             glVertex2f(position.XX/xBound, position.YY/yBound);
-            glVertex2f(plus_end().YY/xBound, plus_end().YY/yBound);
+            glVertex2f(plus_end().XX/xBound, plus_end().YY/yBound);
         }
         glEnd();
     }
