@@ -6,7 +6,7 @@ public:
     
     Vector2 orientation;
     float length; // This properties should be able to change in time, that is why they are not pointerss
-    
+    float* mobility;
     void set_orientation(float angle)
     {
         float a = cos(angle);
@@ -33,16 +33,6 @@ public:
     }
     
     void populate(std::string);
-    void display()
-    {
-        glLineWidth(2.0f);
-        glBegin(GL_LINES);
-        {
-            glColor3f(0.0, 0.0, 1.0);
-            glVertex2f(position.XX/xBound, position.YY/yBound);
-            glVertex2f(plus_end().XX/xBound, plus_end().YY/yBound);
-        }
-        glEnd();
-    }
+    void display();
 };
 

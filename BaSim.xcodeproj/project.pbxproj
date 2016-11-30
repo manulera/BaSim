@@ -10,7 +10,7 @@
 		328219351D93C51200278D68 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 328219341D93C51200278D68 /* main.cpp */; };
 		3282193C1D93C53000278D68 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193B1D93C53000278D68 /* OpenGL.framework */; };
 		3282193E1D93C58600278D68 /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */; };
-		328219401D93C5A600278D68 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */; };
+		328219401D93C5A600278D68 /* libglfw3.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +56,8 @@
 /* Begin PBXFileReference section */
 		322329121DECA1C1002017EF /* vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector2.h; sourceTree = "<group>"; };
 		322A17431D95550C0010C78C /* params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = params.h; sourceTree = "<group>"; };
+		322D7C231DEECCB400ACBFD7 /* tether.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tether.h; sourceTree = "<group>"; };
+		322D7C241DEECDDF00ACBFD7 /* tether_prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tether_prop.h; sourceTree = "<group>"; };
 		323A589E1DD9C82E003BDC7A /* output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output.h; sourceTree = "<group>"; };
 		323A589F1DD9CA6B003BDC7A /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
 		323A58A01DD9CBCF003BDC7A /* config.bs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.bs; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		328219341D93C51200278D68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3282193B1D93C53000278D68 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../../usr/local/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
-		3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.2.dylib; path = ../../../../usr/local/Cellar/glfw3/3.2.1/lib/libglfw3.3.2.dylib; sourceTree = "<group>"; };
 		3295FDB51DA4F881000A02A8 /* BaSimTarget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaSimTarget; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D873991D955CE200244DA9 /* MT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MT.h; sourceTree = "<group>"; };
 		32D8739A1D9926BC00244DA9 /* checkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checkers.h; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				328219401D93C5A600278D68 /* libglfw.3.2.dylib in Frameworks */,
+				328219401D93C5A600278D68 /* libglfw3.3.2.dylib in Frameworks */,
 				3282193E1D93C58600278D68 /* libGLEW.2.0.0.dylib in Frameworks */,
 				3282193C1D93C53000278D68 /* OpenGL.framework in Frameworks */,
 			);
@@ -131,7 +133,7 @@
 			children = (
 				32E101B11DE73D2100A6A8E0 /* BaSim_timer.sh */,
 				32E101C81DE843B500A6A8E0 /* ConfigFiles */,
-				3282193F1D93C5A600278D68 /* libglfw.3.2.dylib */,
+				3282193F1D93C5A600278D68 /* libglfw3.3.2.dylib */,
 				3282193D1D93C58600278D68 /* libGLEW.2.0.0.dylib */,
 				328219331D93C51200278D68 /* BaSim */,
 				3282193B1D93C53000278D68 /* OpenGL.framework */,
@@ -159,6 +161,8 @@
 				323A58A81DDC89B2003BDC7A /* Properties.h */,
 				32D873991D955CE200244DA9 /* MT.h */,
 				32EC3B4F1D9514EE00F892E4 /* ball.h */,
+				322D7C231DEECCB400ACBFD7 /* tether.h */,
+				322D7C241DEECDDF00ACBFD7 /* tether_prop.h */,
 				32EE90B01DDF64FB00035A9F /* ball_prop.h */,
 				32E101AE1DE3636400A6A8E0 /* mt_prop.h */,
 				326CF6E91DE2FEA800AD2A50 /* props_maker.h */,

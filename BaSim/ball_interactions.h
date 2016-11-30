@@ -37,8 +37,7 @@ int Ball::within(MT* mti , float* distval)
 void Ball::move_along(float dt)
 {
     // The distance that the motors travels in dt
-    //std::cout<< "Vals: " << *speed << " " << dt << " " << attached->length << std::endl;
-    //std::cout << *speed * dt / attached->length << std::endl;
+
     tubref += *speed * dt / attached->length;
     position = attached->position + attached->orientation * attached->length * tubref;
     if (tubref<0.0||tubref>1.0)
@@ -47,6 +46,11 @@ void Ball::move_along(float dt)
         attached=nullptr;
         attached_id=0;
     }
+    if (tethered)
+    {
+        pull_mt();
+    }
+    
 }
 
 void Ball::bind(MT * mti, int where, float distval)
@@ -170,8 +174,22 @@ void Ball::interact(std::vector<MT*> mts,float dt)
 //
 
 
+void Ball::tether(std::vector<Tether*> tethers)
+{
+    for (int i = 0; i < tethers.size();i++)
+        {
+            if (tethers.at(i)->label==tetherlabel)
+            {
+                tethered = tethers.at(i);
+            }
+        }
+}
 
-
+void Ball::pull_mt()
+{
+    Vector2 f = (tethered->position - position) * *tethered->force_k / *attached->mobility ;
+    
+}
 
 
 

@@ -20,6 +20,7 @@ void Simulation::inifile()
 void Simulation::write()
 {
     fprintf(file, "\nframe_%u: time %f\n", fcounter++, t);
+    
     fprintf(file, "\nballs:\n");
     for (int i=0; i < balls.size();i++)
     {
@@ -27,6 +28,7 @@ void Simulation::write()
         fprintf(file, "%u %f %f %u %f \n",
                 b->identifier, b->position.XX, b->position.YY, b->attached_id, b->tubref);
     }
+    
     fprintf(file, "\nmts:\n");
     for (int i=0; i < mts.size();i++)
     {
@@ -34,6 +36,15 @@ void Simulation::write()
         fprintf(file, "%u %f %f %f %f %f\n",
                 b->identifier, b->position.XX, b->position.YY, b->orientation.XX, b->orientation.YY, b->length);
     }
+    
+    fprintf(file, "\ntethers:\n");
+    for (int i=0; i < tethers.size();i++)
+    {
+        Tether* b = tethers.at(i);
+        fprintf(file, "%f %f\n",
+                b->position.XX, b->position.YY);
+    }
+    
     fprintf(file, "\n");
 }
 

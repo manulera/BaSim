@@ -31,6 +31,57 @@ void DrawAxis()
     glEnd();
 }
 
+void Ball::display()
+{
+    glBegin(GL_POINTS);
+    {
+        if (attached_id)
+        {
+            glColor3f(1.0,0.0,0.0);
+        }
+        else
+        {
+            glColor3f(0.0,1.0,0.0);
+        }
+        glVertex2f(position.XX/xBound, position.YY/yBound);
+    }
+    glEnd();
+    
+    if (tethered)
+    {
+        glBegin(GL_LINES);
+        {
+            glColor3f(0.3,0.3,0.3);
+            glVertex2f(position.XX/xBound, position.YY/yBound);
+            glVertex2f(tethered->position.XX/xBound, tethered->position.YY/yBound);
+        }
+        glEnd();
+    }
+}
+
+void Tether::display()
+{
+    glLineWidth(2.0f);
+    glBegin(GL_POINTS);
+    {
+        glColor3f(0.5, 0.5, 0.5);
+        glVertex2f(position.XX/xBound, position.YY/yBound);
+    }
+    glEnd();
+}
+
+void MT::display()
+{
+    glLineWidth(2.0f);
+    glBegin(GL_LINES);
+    {
+        glColor3f(0.0, 0.0, 1.0);
+        glVertex2f(position.XX/xBound, position.YY/yBound);
+        glVertex2f(plus_end().XX/xBound, plus_end().YY/yBound);
+    }
+    glEnd();
+}
+
 //void graphsRefresh()
 //{
 //    glfwMakeContextCurrent(graphs);

@@ -1,10 +1,8 @@
-class MTprops: public Props{
+class Tetherprops: public Props{
 public:
     // They must be specified
-    float length,orientation;
-    float mobility = 1;
-    
-    MTprops(std::string (&keys) [3], std::string prop_val): Props()
+    float force_k;
+    Tetherprops(std::string (&keys) [3], std::string prop_val): Props()
     {
         type = keys[1];
         name = keys[2];
@@ -19,25 +17,23 @@ public:
                 propname = pairs.at(i);
                 value = pairs.at(i+1);
                 if (propname == "diff") {diff=stof(value); continue;}
-                if (propname == "mobility") {mobility=stof(value); continue;}
+                if (propname == "force_k") {force_k=stof(value); continue;}
             }
         }
     }
     
     Object* make(std::string prop_val)
     {
-        MT* newmt = new MT;
+        Tether* newt = new Tether;
         ids.push_back(id_master);
         
         // Properties of the object
-        newmt->type = &type;
-        newmt->name = &name;
-        newmt->diff = &diff;
-        newmt->mobility = &mobility;
+        newt->type = &type;
+        newt->name = &name;
+        newt->diff = &diff;
+        newt->force_k = &force_k;
         
         // Initialize default values
-        newmt->length = 100;
-        newmt->shuffle();
         // If the user gave values
         if (!prop_val.empty())
         {
@@ -49,13 +45,12 @@ public:
             {
                 propname = pairs.at(i);
                 value = pairs.at(i+1);
-                if (propname == "x") {newmt->position.XX=stof(value); continue;}
-                if (propname == "y") {newmt->position.YY=stof(value); continue;}
-                if (propname == "length") {newmt->length=stof(value); continue;}
-                if (propname == "orientation") {newmt->set_orientation(stof(value)); continue;}
+                if (propname == "x") {newt->position.XX=stof(value); continue;}
+                if (propname == "y") {newt->position.YY=stof(value); continue;}
+                if (propname == "label") {newt->label=value; continue;}
             }
         }
-        return newmt;
+        return newt;
     }
     
 };

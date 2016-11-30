@@ -19,4 +19,4 @@ public:
 };
 class MT;
 class Ball;
-
+class Tether;

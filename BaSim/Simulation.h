@@ -7,6 +7,7 @@ public:
     std::vector<Object*> all;
     std::vector<Ball*> balls;
     std::vector<MT*> mts;
+    std::vector<Tether*> tethers;
     FILE * file;
     float t;
     float t_old;
@@ -34,6 +35,7 @@ public:
     int populate_props();
     int populate_objs();
     int show();
+    void inisim();
 };
 
 void Simulation::add_object(std::string keys[3], std::string prop_val)
@@ -59,6 +61,17 @@ void Simulation::add_object(std::string keys[3], std::string prop_val)
             std::pair<int, Object*> newkey (obj->identifier,obj);
         }
     }
+    if (p->type=="tether")
+    {
+        for (int i = 0; i < std::stoi(keys[1]); i++)
+        {
+            Tether* obj = static_cast<Tether*>(p->make(prop_val));
+            tethers.push_back(obj);
+            all.push_back(obj);
+            std::pair<int, Object*> newkey (obj->identifier,obj);
+        }
+    }
+
 }
 
 void Simulation::add_prop(Props& prop)
@@ -104,6 +117,7 @@ void Simulation::play()
 
 int Simulation::run_play()
 {
+    inisim();
     if (!glfwInit())
     {
         return -1;
@@ -129,6 +143,15 @@ int Simulation::run_play()
     return 0;
 }
 
+void Simulation::inisim()
+{
+    for (int i = 0; i < balls.size(); i++)
+        if (!balls.at(i)->tetherlabel.empty())
+        {
+            balls.at(i)->tether(tethers);
+        }
+}
+
 int Simulation::run_write(float maxt)
 {
     unsigned int counter = 0;
@@ -138,6 +161,7 @@ int Simulation::run_write(float maxt)
     float percent = t_max/10;
     int percent_i = 1;
     inifile();
+    inisim();
     while (t < t_max)
     {
         if (counter++%10==0)

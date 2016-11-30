@@ -3,6 +3,10 @@ class Ball: public Object{
 public:
     float *speed, *bind_rate, *bind_range, *unbind_rate;
     MT* attached = nullptr;
+    
+    std::string tetherlabel;
+    Tether* tethered = nullptr;
+    
     int attached_id = 0; // this is a bit redundant, but useful for output
     
     float tubref = -1.0; // goes from 0 to 1. Represents the position of a bound motor with respect to the minus end of the MT its bound to. -1 if the ball is not bound
@@ -17,7 +21,7 @@ public:
     Ball(): Object()
     {
     }
-    
+    void tether(std::vector<Tether* >);
     void printinfo()
     {
         using namespace std;
@@ -30,21 +34,12 @@ public:
     int within(MT*, float * distval);
     void interact(std::vector<MT*> mts,float dt);
     void iterate_mts(std::vector<MT*> mts,float dt);
-    void display()
+    void display();
+    void pull_mt();
+    std::string str_spec()
     {
-        glBegin(GL_POINTS);
-        {
-            if (attached_id)
-            {
-                glColor3f(1.0,0.0,0.0);
-            }
-            else
-            {
-                glColor3f(0.0,1.0,0.0);
-            }
-            glVertex2f(position.XX/xBound, position.YY/yBound);
-        }
-        glEnd();
+        
+        return "";
     }
 };
 
