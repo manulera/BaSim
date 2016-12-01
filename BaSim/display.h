@@ -46,7 +46,7 @@ void Ball::display()
         glVertex2f(position.XX/xBound, position.YY/yBound);
     }
     glEnd();
-    
+
     if (tethered)
     {
         glBegin(GL_LINES);

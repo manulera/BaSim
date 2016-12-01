@@ -66,10 +66,10 @@ int main(int argc, char* argv[])
     Parser pars;
     std::fstream fs(filename);
     pars.readfile(fs);
-//    Simulation sim2;
-//    sim.run_write(maxtime);
-//    sim2.show();
-    sim.run_play();
+    Simulation sim2;
+    sim.run_write(maxtime);
+    sim2.show();
+//    sim.run_play();
     return 0;
 }
 

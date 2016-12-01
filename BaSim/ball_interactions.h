@@ -37,20 +37,23 @@ int Ball::within(MT* mti , float* distval)
 void Ball::move_along(float dt)
 {
     // The distance that the motors travels in dt
-
-    tubref += *speed * dt / attached->length;
-    position = attached->position + attached->orientation * attached->length * tubref;
+    if (*unbind_rate * dt > rand01())
+    {
+        unbind();
+        return;
+    }
+    tubref += *speed * dt / attached->length * stall;
     if (tubref<0.0||tubref>1.0)
     {
-        tubref = -1.0;
-        attached=nullptr;
-        attached_id=0;
+        position = attached->position + attached->orientation * attached->length * tubref;
+        unbind();
+        return;
     }
     if (tethered)
     {
         pull_mt();
     }
-    
+    position = attached->position + attached->orientation * attached->length * tubref;
 }
 
 void Ball::bind(MT * mti, int where, float distval)
@@ -187,12 +190,20 @@ void Ball::tether(std::vector<Tether*> tethers)
 
 void Ball::pull_mt()
 {
-    Vector2 f = (tethered->position - position) * *tethered->force_k / *attached->mobility ;
-    
+    Vector2 f_vect = (tethered->position - position) * *tethered->force_k  ;
+    float f_norm = f_vect * attached->orientation;
+    float shift = f_norm / *attached->mobility;
+    attached->position += attached->orientation * shift ;
+    stall = 1 - f_norm/ *stall_force;
 }
 
 
-
+void Ball::unbind()
+{
+    tubref = -1.0;
+    attached=nullptr;
+    attached_id=0;
+}
 
 
 

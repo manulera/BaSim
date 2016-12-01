@@ -160,8 +160,8 @@ int Simulation::run_write(float maxt)
     t_max = maxt;
     float percent = t_max/10;
     int percent_i = 1;
-    inifile();
     inisim();
+    inifile();
     while (t < t_max)
     {
         if (counter++%10==0)

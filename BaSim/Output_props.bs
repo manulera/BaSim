@@ -2,10 +2,26 @@ name: mt1
 type: MT
 diff: 50.000000
 
+name: tether2
+type: tether
+diff: 50.000000
+
+name: motor2
+type: ball
+diff: 0.000000
+speed: 0.000000
+bind_rate: 30.000000
+bind_range: 10.000000
+unbind_rate: 0.000000
+
+name: tether1
+type: tether
+diff: 50.000000
+
 name: motor1
 type: ball
-diff: 50.000000
-speed: 10.000000
+diff: 0.000000
+speed: -10.000000
 bind_rate: 3.000000
 bind_range: 10.000000
 unbind_rate: 1.000000

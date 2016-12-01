@@ -1,26 +1,40 @@
 
 set ball motor1
 {
-    speed = 10.0
+    speed = -10.0
     bind_rate = 3
     bind_range = 10
     unbind_rate = 1
+    stall_force = 2
     diff = 0
 }
-
+set ball motor2
+{
+    speed = 0.0
+    bind_rate = 30
+    bind_range = 10
+    unbind_rate = 0
+    stall_force = 4
+    diff = 0
+}
 set MT mt1
 
 set tether tether1
 {
-    force_k = 1
+    force_k = 0.1
+}
+
+set tether tether2
+{
+    force_k = 0.07
 }
 
 new 1 mt1
 {
     length = 500
-    x = -250
+    x = 250
     y = 0
-    orientation = 0
+    orientation = 3.1416
 }
 
 new 1 tether1
@@ -37,6 +51,13 @@ new 1 tether1
     label = t2
 }
 
+new 1 tether2
+{
+    x = 260
+    y = 0
+    label = t3
+}
+
 new 1 motor1
 {
     x = -10
@@ -51,3 +72,9 @@ new 1 motor1
     tethered = t2
 }
 
+new 1 motor2
+{
+    x = 249
+    y = 0
+    tethered = t3
+}

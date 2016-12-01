@@ -1,7 +1,7 @@
 class Ballprops: public Props{
 public:
     // They must be specified
-    float attached,speed, bind_rate, bind_range, unbind_rate;
+    float attached,speed, bind_rate, bind_range, unbind_rate, stall_force;
     
     std::string str_spec()
     {
@@ -35,9 +35,9 @@ public:
             if (propname == "bind_range") {bind_range=stof(value); continue;}
             if (propname == "unbind_rate") {unbind_rate=stof(value); continue;}
             if (propname == "diff") {diff=stof(value); continue;}
+            if (propname == "stall_force") {stall_force=stof(value); continue;}
         }
     }
-    
     Object* make(std::string prop_val)
     {
         Ball* newball = new Ball;
@@ -52,7 +52,8 @@ public:
         newball->bind_rate = &bind_rate;
         newball->bind_range = &bind_range;
         newball->unbind_rate = &unbind_rate;
-        
+        newball->stall_force = &stall_force;
+
         // Properties of the object
         
         // Initialize with default values

@@ -31,8 +31,8 @@ public:
     {
         return position + orientation*length;
     }
-    
-    void populate(std::string);
+    void write(FILE* file);
+    void populate(std::string&,std::unordered_map<int, Object*>& ids_dict);
     void display();
 };
 

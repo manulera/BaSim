@@ -45,12 +45,17 @@ int Simulation::populate_objs()
             if (type=="balls")
             {
                 balls.push_back(new Ball);
-                balls.at(balls.size()-1)->populate(line);
+                balls.at(balls.size()-1)->populate(line,ids_dict);
             }
             if (type=="mts")
             {
                 mts.push_back(new MT);
-                mts.at(mts.size()-1)->populate(line);
+                mts.at(mts.size()-1)->populate(line,ids_dict);
+            }
+            if (type=="tethers")
+            {
+                tethers.push_back(new Tether);
+                tethers.at(tethers.size()-1)->populate(line,ids_dict);
             }
         }
         else
@@ -66,30 +71,68 @@ int Simulation::populate_objs()
         }
     }
     all.resize(idmax);
-    for (int i =0; i < balls.size(); i++)
+    for (int i =0; i < tethers.size(); i++)
     {
-        all.at(balls.at(i)->identifier-1)=balls.at(i);
+        all.at(tethers.at(i)->identifier-1)=tethers.at(i);
     }
     for (int i =0; i < mts.size(); i++)
     {
         all.at(mts.at(i)->identifier-1)=mts.at(i);
     }
+    for (int i =0; i < balls.size(); i++)
+    {
+        all.at(balls.at(i)->identifier-1)=balls.at(i);
+    }
+    
 //    cout << "length of ball: " << balls.size()<<endl;
 //    cout << "length of mt: " << mts.size()<<endl;
+//    cout << "length of tethers: " << tethers.size()<<endl;
 //    cout << "length of all: " << all.size()<<endl;
     return 0;
 }
 
-void Ball::populate(std::string line)
+void Object::populate(std::string &line, std::unordered_map<int, Object*> &ids_dict)
 {
-    sscanf(line.c_str(),"%u %f %f %u %f",
-           &identifier,&position.XX,&position.YY,&attached_id,&tubref);
+    sscanf(line.c_str(),"%u %f %f",
+           &identifier, &position.XX, &position.YY);
+    line = line.substr(line.find(',')+1);
+    if (ids_dict.find(identifier)!=ids_dict.end())
+    {
+        std::pair<int, Object*> newkey (identifier,this);
+        ids_dict.insert(newkey);
+    }
+
 }
 
-void MT::populate(std::string line)
+void Ball::populate(std::string &line,std::unordered_map<int, Object*> &ids_dict)
 {
-    sscanf(line.c_str(),"%u %f %f %f %f %f",
-           &identifier,&position.XX,&position.YY,&orientation.XX,&orientation.YY,&length);
+    Object::populate(line, ids_dict);
+    int tube_id;
+    int tether_id;
+    sscanf(line.c_str(),"%u %u %f \n",
+           &tether_id, &tube_id, &tubref);
+    if (tube_id)
+    {
+        attached = static_cast <MT *> (ids_dict[tube_id]);
+    }
+    reached(tether_id);
+    std::cout << ids_dict[tether_id] << std::endl;
+    if (tether_id)
+    {
+        tethered = static_cast <Tether *> (ids_dict[tether_id]);
+    }
+}
+
+void MT::populate(std::string &line,std::unordered_map<int, Object*> &ids_dict)
+{
+    Object::populate(line, ids_dict);
+    sscanf(line.c_str(),"%f %f %f",
+           &orientation.XX,&orientation.YY,&length);
+}
+
+void Tether::populate(std::string line, std::unordered_map<int, Object*> ids_dict)
+{
+    Object::populate(line, ids_dict);
 }
 
 int Simulation::show()
@@ -119,7 +162,7 @@ int Simulation::show()
         if (line=="") continue;
         if (sscanf(line.c_str(), "%u", &idnum))
         {
-            all.at(idnum-1)->populate(line);
+            all.at(idnum-1)->populate(line,ids_dict);
         }
         else if ((line.find("frame")!=std::string::npos))
         {

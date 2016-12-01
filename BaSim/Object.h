@@ -1,3 +1,4 @@
+#include <unordered_map>
 class Object{
 public:
     Vector2 position;
@@ -14,8 +15,9 @@ public:
     }
     virtual void diffuse(float dt);
     virtual void boundary();
-    virtual void populate(std::string){};
+    virtual void populate(std::string&, std::unordered_map<int, Object*> &ids_dict);
     virtual void display(){};
+    virtual void write(FILE* file){};
 };
 class MT;
 class Ball;
