@@ -17,7 +17,7 @@ public:
     virtual void boundary();
     virtual void populate(std::string&, std::unordered_map<int, Object*> &ids_dict);
     virtual void display(){};
-    virtual void write(FILE* file){};
+    virtual void write(FILE* file);
 };
 class MT;
 class Ball;

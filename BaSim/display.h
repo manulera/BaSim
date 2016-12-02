@@ -35,7 +35,7 @@ void Ball::display()
 {
     glBegin(GL_POINTS);
     {
-        if (attached_id)
+        if (attached)
         {
             glColor3f(1.0,0.0,0.0);
         }

@@ -17,27 +17,35 @@ void Simulation::inifile()
     file = fopen("Output_objs.bs", "a");
 }
 
+void Object::write(FILE * file)
+{
+    fprintf(file, "%u %f %f, ",
+            identifier, position.XX, position.YY);
+}
+
 void Tether::write(FILE * file)
 {
-    fprintf(file, "%u %f %f, \n",
-            identifier, position.XX, position.YY);
+    Object::write(file);
+    fprintf(file,"\n");
 }
 
 void MT::write(FILE * file)
 {
-    fprintf(file, "%u %f %f, %f %f %f\n",
-            identifier, position.XX, position.YY, orientation.XX, orientation.YY, length);
+    Object::write(file);
+    fprintf(file, "%f %f %f\n",
+            orientation.XX, orientation.YY, length);
 }
 
 
 void Ball::write(FILE * file)
 {
+    Object::write(file);
     int tube_id = 0;
     int tether_id = 0;
     if (attached) {tube_id = attached->identifier;}
     if (tethered) {tether_id = tethered->identifier;}
-    fprintf(file, "%u %f %f, %u %u %f \n",
-            identifier, position.XX, position.YY, tether_id, tube_id, tubref);
+    fprintf(file, "%u %u %f \n",
+            tether_id, tube_id, tubref);
 
 }
 void Simulation::write()

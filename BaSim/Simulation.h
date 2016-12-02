@@ -14,6 +14,11 @@ public:
     float t_max;
     float dt;
     unsigned int fcounter;
+    Simulation()
+    {
+        std::pair<int, Object*> newkey (0,nullptr);
+        ids_dict.insert(newkey); // referencing to zero returns a nullptr
+    }
     Props* get_prop(std::string name)
     {
         return prop_dict[name];

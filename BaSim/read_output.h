@@ -96,7 +96,7 @@ void Object::populate(std::string &line, std::unordered_map<int, Object*> &ids_d
     sscanf(line.c_str(),"%u %f %f",
            &identifier, &position.XX, &position.YY);
     line = line.substr(line.find(',')+1);
-    if (ids_dict.find(identifier)!=ids_dict.end())
+    if (ids_dict.find(identifier)==ids_dict.end())
     {
         std::pair<int, Object*> newkey (identifier,this);
         ids_dict.insert(newkey);
@@ -109,18 +109,12 @@ void Ball::populate(std::string &line,std::unordered_map<int, Object*> &ids_dict
     Object::populate(line, ids_dict);
     int tube_id;
     int tether_id;
+    
     sscanf(line.c_str(),"%u %u %f \n",
            &tether_id, &tube_id, &tubref);
-    if (tube_id)
-    {
-        attached = static_cast <MT *> (ids_dict[tube_id]);
-    }
-    reached(tether_id);
-    std::cout << ids_dict[tether_id] << std::endl;
-    if (tether_id)
-    {
-        tethered = static_cast <Tether *> (ids_dict[tether_id]);
-    }
+    
+    attached = static_cast <MT *> (ids_dict[tube_id]);
+    tethered = static_cast <Tether *> (ids_dict[tether_id]);
 }
 
 void MT::populate(std::string &line,std::unordered_map<int, Object*> &ids_dict)
@@ -130,7 +124,7 @@ void MT::populate(std::string &line,std::unordered_map<int, Object*> &ids_dict)
            &orientation.XX,&orientation.YY,&length);
 }
 
-void Tether::populate(std::string line, std::unordered_map<int, Object*> ids_dict)
+void Tether::populate(std::string line, std::unordered_map<int, Object*> &ids_dict)
 {
     Object::populate(line, ids_dict);
 }
