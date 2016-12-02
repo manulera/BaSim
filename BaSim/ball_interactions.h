@@ -18,31 +18,31 @@ int Ball::within(MT* mti , float* distval)
     if ((b+c*c<a) && (a>=b)) // Plus end
     {
         *distval = b;
-        return (*distval < *(bind_range) * *(bind_range))*2;
+        return (*distval < props->bind_range * props->bind_range)*2;
     }
     else if ((a+c*c<b) && (a<=b)) // Minus end
     {
         *distval = a;
         
-        return (*distval < *(bind_range)* *(bind_range))*1;
+        return (*distval < props->bind_range * props->bind_range)*1;
     }
     else //Body of the microtubule
     {
         // distval corresponds to the h value explained on the notebook, height calculated with Heron's theorem
         float term = (a-b+c*c)/2/c;
         *distval = a - term * term;
-        return (*distval < *(bind_range)* *(bind_range))*3;}
+        return (*distval < props->bind_range * props->bind_range)*3;}
 }
 
 void Ball::move_along(float dt)
 {
     // The distance that the motors travels in dt
-    if (*unbind_rate * dt > rand01())
+    if (props->unbind_rate * dt > rand01())
     {
         unbind();
         return;
     }
-    tubref += *speed * dt / attached->length * stall;
+    tubref += props->speed * dt / attached->length * stall;
     if (tubref<0.0||tubref>1.0)
     {
         position = attached->position + attached->orientation * attached->length * tubref;
@@ -88,10 +88,10 @@ void Ball::iterate_mts(std::vector<MT*> mts,float dt)
     float distval;
     for (int i = 0; i<mts.size(); i++)
     {
-        if (rand01()< *bind_rate*8*dt)
+        if (rand01()< props->bind_rate*8*dt)
         {
             wherebind = within(mts.at(i),&distval);
-            if (wherebind&&rand01()<0.125)
+            if (wherebind && rand01()<0.125)
             {
                 bind(mts.at(i),wherebind, distval);
                 break; // Wow! I cant believe I didnt have this before, this is definitely the reason why I was getting similar times in clearly more efficient methods
@@ -190,11 +190,11 @@ void Ball::tether(std::vector<Tether*> tethers)
 
 void Ball::pull_mt()
 {
-    Vector2 f_vect = (tethered->position - position) * *tethered->force_k  ;
+    Vector2 f_vect = (tethered->position - position) * tethered->props->force_k  ;
     float f_norm = f_vect * attached->orientation;
-    float shift = f_norm / *attached->mobility;
+    float shift = f_norm / attached->props->mobility;
     attached->position += attached->orientation * shift ;
-    stall = 1 - f_norm/ *stall_force;
+    stall = 1 - f_norm/ props->stall_force;
 }
 
 

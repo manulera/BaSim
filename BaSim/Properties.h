@@ -5,8 +5,12 @@ public:
     std::string name;
     std::string type;
     std::vector<int> ids;
-    float diff = diff_master;
-    virtual Object* make(std::string prop_val){return 0;};
+    float diff;
+    Props()
+    {
+        diff=50;
+    }
+    //virtual Object* make(std::string prop_val){return 0;};
     virtual std::string str_spec(){return "";};
     std::string str()
     {

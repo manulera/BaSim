@@ -20,7 +20,6 @@ public:
     {
         type = keys[1];
         name = keys[2];
-        
         using namespace std;
         vector<string> pairs = split(prop_val, ',');
         string propname;
@@ -38,45 +37,45 @@ public:
             if (propname == "stall_force") {stall_force=stof(value); continue;}
         }
     }
-    Object* make(std::string prop_val)
-    {
-        Ball* newball = new Ball;
-        ids.push_back(id_master);
-        
-        // Properties of the type
-        newball->type = &type;
-        newball->name = &name;
-        newball->diff = &diff;
-        
-        newball->speed = &speed;
-        newball->bind_rate = &bind_rate;
-        newball->bind_range = &bind_range;
-        newball->unbind_rate = &unbind_rate;
-        newball->stall_force = &stall_force;
-
-        // Properties of the object
-        
-        // Initialize with default values
-        newball->attached = 0;
-        newball->shuffle();
-        // If the user gave values
-        if (!prop_val.empty())
-        {
-            using namespace std;
-            string propname;
-            string value;
-            vector<string> pairs = split(prop_val, ',');
-            for (int i = 0;i <= pairs.size()-1;i+=2)
-            {
-                propname = pairs.at(i);
-                value = pairs.at(i+1);
-                if (propname == "x") {newball->position.XX=stof(value); continue;}
-                if (propname == "y") {newball->position.YY=stof(value); continue;}
-                if (propname == "tethered") {newball->tetherlabel=(value); continue;}
-                //if (propname == "attached") {newball->attached=stof(value); continue;} We will have to think about how to set to which mt we attach the objects
-            }
-        }
-        return newball;
-    }
+//    Object* make(std::string prop_val)
+//    {
+//        Ball* newball = new Ball;
+//        ids.push_back(id_master);
+//        
+//        // Properties of the type
+//        newball->type = &type;
+//        newball->name = &name;
+//        newball->diff = &diff;
+//        
+//        newball->speed = &speed;
+//        newball->bind_rate = &bind_rate;
+//        newball->bind_range = &bind_range;
+//        newball->unbind_rate = &unbind_rate;
+//        newball->stall_force = &stall_force;
+//
+//        // Properties of the object
+//        
+//        // Initialize with default values
+//        newball->attached = 0;
+//        newball->shuffle();
+//        // If the user gave values
+//        if (!prop_val.empty())
+//        {
+//            using namespace std;
+//            string propname;
+//            string value;
+//            vector<string> pairs = split(prop_val, ',');
+//            for (int i = 0;i <= pairs.size()-1;i+=2)
+//            {
+//                propname = pairs.at(i);
+//                value = pairs.at(i+1);
+//                if (propname == "x") {newball->position.XX=stof(value); continue;}
+//                if (propname == "y") {newball->position.YY=stof(value); continue;}
+//                if (propname == "tethered") {newball->tetherlabel=(value); continue;}
+//                //if (propname == "attached") {newball->attached=stof(value); continue;} We will have to think about how to set to which mt we attach the objects
+//            }
+//        }
+//        return newball;
+//    }
     
 };

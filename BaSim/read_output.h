@@ -30,32 +30,25 @@ int Simulation::populate_objs()
     string line;
     string type;
     int idnum;
-    int idmax = 0;
     char temp[10];
     bool ended=false;
-    int num = 0;
     // store the objects in the vectors
     while(getline (fs, line)&&!glfwWindowShouldClose(win))
     {
-        num++;
         if (line=="") continue;
         if (sscanf(line.c_str(), "%u", &idnum))
         {
-            if (idmax<idnum) {idmax=idnum;}
             if (type=="balls")
             {
-                balls.push_back(new Ball);
-                balls.at(balls.size()-1)->populate(line,ids_dict);
+                balls.push_back(new Ball(line,ids_dict));
             }
-            if (type=="mts")
+            else if (type=="mts")
             {
-                mts.push_back(new MT);
-                mts.at(mts.size()-1)->populate(line,ids_dict);
+                mts.push_back(new MT(line,ids_dict));
             }
-            if (type=="tethers")
+            else if (type=="tethers")
             {
-                tethers.push_back(new Tether);
-                tethers.at(tethers.size()-1)->populate(line,ids_dict);
+                tethers.push_back(new Tether(line,ids_dict));
             }
         }
         else
@@ -70,18 +63,17 @@ int Simulation::populate_objs()
             }
         }
     }
-    all.resize(idmax);
     for (int i =0; i < tethers.size(); i++)
     {
-        all.at(tethers.at(i)->identifier-1)=tethers.at(i);
+        all.push_back(tethers.at(i));
     }
     for (int i =0; i < mts.size(); i++)
     {
-        all.at(mts.at(i)->identifier-1)=mts.at(i);
+        all.push_back(mts.at(i));
     }
     for (int i =0; i < balls.size(); i++)
     {
-        all.at(balls.at(i)->identifier-1)=balls.at(i);
+        all.push_back(balls.at(i));
     }
     
 //    cout << "length of ball: " << balls.size()<<endl;
@@ -96,12 +88,12 @@ void Object::populate(std::string &line, std::unordered_map<int, Object*> &ids_d
     sscanf(line.c_str(),"%u %f %f",
            &identifier, &position.XX, &position.YY);
     line = line.substr(line.find(',')+1);
+
     if (ids_dict.find(identifier)==ids_dict.end())
     {
         std::pair<int, Object*> newkey (identifier,this);
         ids_dict.insert(newkey);
     }
-
 }
 
 void Ball::populate(std::string &line,std::unordered_map<int, Object*> &ids_dict)
@@ -112,7 +104,6 @@ void Ball::populate(std::string &line,std::unordered_map<int, Object*> &ids_dict
     
     sscanf(line.c_str(),"%u %u %f \n",
            &tether_id, &tube_id, &tubref);
-    
     attached = static_cast <MT *> (ids_dict[tube_id]);
     tethered = static_cast <Tether *> (ids_dict[tether_id]);
 }
@@ -156,7 +147,8 @@ int Simulation::show()
         if (line=="") continue;
         if (sscanf(line.c_str(), "%u", &idnum))
         {
-            all.at(idnum-1)->populate(line,ids_dict);
+            // If at some points objects are destroyed, then  
+            ids_dict[idnum]->populate(line,ids_dict);
         }
         else if ((line.find("frame")!=std::string::npos))
         {

@@ -50,7 +50,7 @@ void Simulation::add_object(std::string keys[3], std::string prop_val)
     {
         for (int i = 0; i < std::stoi(keys[1]); i++)
         {
-            Ball* obj = static_cast<Ball*>(p->make(prop_val));
+            Ball* obj =new Ball(p, prop_val);
             balls.push_back(obj);
             all.push_back(obj);
             std::pair<int, Object*> newkey (obj->identifier,obj);
@@ -60,7 +60,7 @@ void Simulation::add_object(std::string keys[3], std::string prop_val)
     {
         for (int i = 0; i < std::stoi(keys[1]); i++)
         {
-            MT* obj = static_cast<MT*>(p->make(prop_val));
+            MT* obj =new MT(p, prop_val);
             mts.push_back(obj);
             all.push_back(obj);
             std::pair<int, Object*> newkey (obj->identifier,obj);
@@ -70,7 +70,7 @@ void Simulation::add_object(std::string keys[3], std::string prop_val)
     {
         for (int i = 0; i < std::stoi(keys[1]); i++)
         {
-            Tether* obj = static_cast<Tether*>(p->make(prop_val));
+            Tether* obj =new Tether(p, prop_val);
             tethers.push_back(obj);
             all.push_back(obj);
             std::pair<int, Object*> newkey (obj->identifier,obj);

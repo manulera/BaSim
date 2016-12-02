@@ -1,12 +1,11 @@
 
 class Ball: public Object{
 public:
-    float *speed, *bind_rate, *bind_range, *unbind_rate, *stall_force;
+
     MT* attached = nullptr;
-    
     std::string tetherlabel;
     Tether* tethered = nullptr;
-    
+    Ballprops* props;
     int attached_id = 0; // this is a bit redundant, but useful for output
     float tubref = -1.0; // goes from 0 to 1. Represents the position of a bound motor with respect to the minus end of the MT its bound to. -1 if the ball is not bound
     float stall = 1.0;
@@ -15,17 +14,45 @@ public:
         position.shuffle();
         position.XX *= xBound;
         position.YY *= yBound;
+        attached = 0;
+    }
+    void readvals(const std::string& prop_val)
+    {
+        Object::readvals(prop_val);
+        if (!prop_val.empty())
+        {
+            using namespace std;
+            string propname;
+            string value;
+            vector<string> pairs = split(prop_val, ',');
+            for (int i = 0;i <= pairs.size()-1;i+=2)
+            {
+                propname = pairs.at(i);
+                value = pairs.at(i+1);
+                if (propname == "tethered") {tetherlabel=(value); continue;}
+                //if (propname == "attached") {newball->attached=stof(value); continue;} We will have to think about how to set to which mt we attach the objects
+            }
+        }
     }
     
-    Ball(): Object()
+    Ball(Props * p,const std::string& prop_val): Object()
     {
+        props = static_cast<Ballprops *>(p);
+        shuffle();
+        readvals(prop_val);
     }
+    
+    Ball(std::string& line,std::unordered_map<int, Object*>& ids_dict): Object()
+    {
+        populate(line, ids_dict);
+    }
+    
     void tether(std::vector<Tether* >);
     void printinfo()
     {
         using namespace std;
-        cout << "The object "<<  name << "is a " << "with properties:"<<endl;
-        cout << "speed: " << speed << "bind_range" << &bind_range << endl;
+        cout << "The object "<<  props->name << "is a " << "with properties:"<<endl;
+        cout << "speed: " << props->speed << "bind_range" << props->bind_range << endl;
     }
     void populate(std::string&,std::unordered_map<int, Object*>& ids_dict);
     void move_along(float dt);
@@ -37,6 +64,7 @@ public:
     void pull_mt();
     void unbind();
     void write(FILE* file);
+    void diffuse(float dt);
     std::string str_spec()
     {
         
