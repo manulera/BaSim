@@ -136,7 +136,7 @@ int Simulation::run_play()
     glfwGetFramebufferSize(win, &xBound, &yBound);
     while (!glfwWindowShouldClose(win)){
         t = glfwGetTime();
-        dt = t - t_old;
+        dt = 0.001;
         t_old = t;
         step();
         play();

@@ -11,7 +11,7 @@ int Ball::within(MT* mti , float* distval)
 {
     // This is based on the notes of the notebook
     
-    float a = position.distSqr(mti->position); //Distance_sqrd from the minus end
+    float a = position.distSqr(mti->minus_end()); //Distance_sqrd from the minus end
     float b = position.distSqr(mti->plus_end()); //Distance_sqrd from the plus end
     float c = mti->length;
     
@@ -43,7 +43,7 @@ void Ball::move_along(float dt)
         return;
     }
     tubref += props->speed * dt / attached->length * stall;
-    if (tubref<0.0||tubref>1.0)
+    if (tubref<-0.5||tubref>0.5)
     {
         position = attached->position + attached->orientation * attached->length * tubref;
         unbind();
@@ -51,7 +51,7 @@ void Ball::move_along(float dt)
     }
     if (tethered)
     {
-        pull_mt();
+        pull_mt(dt);
     }
     position = attached->position + attached->orientation * attached->length * tubref;
 }
@@ -66,15 +66,15 @@ void Ball::bind(MT * mti, int where, float distval)
         //glVertex2f(x/xBound, y/yBound);
         if (where==1) //Bind to minus end
         {
-            tubref = 0.0;
+            tubref = -0.5;
         }
         else if (where==2) //Bind to plus end
         {
-            tubref = 1.0;
+            tubref = 0.5;
         }
         else if (where==3) //Bind to body
         {
-            // Vector from the minus end to the ball * unitary vector of the orientation
+            // Vector from the center to the ball * unitary vector of the orientation
             tubref = (position - mti->position) * mti->orientation / mti->length;
         }
         //glVertex2f(x/xBound, y/yBound);
@@ -188,19 +188,32 @@ void Ball::tether(std::vector<Tether*> tethers)
         }
 }
 
-void Ball::pull_mt()
+void Ball::pull_mt(float dt)
 {
     Vector2 f_vect = (tethered->position - position) * tethered->props->force_k  ;
+    
+    // Stalling force and movement along the fiber axis
+    
     float f_norm = f_vect * attached->orientation;
     float shift = f_norm / attached->props->mobility;
-    attached->position += attached->orientation * shift ;
+    attached->position += attached->orientation * shift * dt ;
     stall = 1 - f_norm/ props->stall_force;
+    
+    // Net movement and torsion
+    
+    // Displacement of the mass center
+    attached->position += f_vect/attached->props->mobility * dt;
+    // Rotation
+    float ang_acc = vecProd(attached->orientation*attached->length*tubref,f_vect) * attached->inertia();
+    float ang_disp = ang_acc * dt * dt / 2 ;
+    std::cout << ang_disp << std::endl;
+    attached->orientation.rotate(ang_disp*0.00001);
 }
 
 
 void Ball::unbind()
 {
-    tubref = -1.0;
+    tubref = 0.0;
     attached=nullptr;
     attached_id=0;
 }

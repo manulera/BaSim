@@ -76,7 +76,7 @@ void MT::display()
     glBegin(GL_LINES);
     {
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(position.XX/xBound, position.YY/yBound);
+        glVertex2f(minus_end().XX/xBound, minus_end().YY/yBound);
         glVertex2f(plus_end().XX/xBound, plus_end().YY/yBound);
     }
     glEnd();

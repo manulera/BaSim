@@ -62,7 +62,7 @@ public:
     void interact(std::vector<MT*> mts,float dt);
     void iterate_mts(std::vector<MT*> mts,float dt);
     void display();
-    void pull_mt();
+    void pull_mt(float dt);
     void unbind();
     void write(FILE* file);
     void diffuse(float dt);

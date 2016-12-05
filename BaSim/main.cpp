@@ -73,10 +73,10 @@ int main(int argc, char* argv[])
     {
         std::cout << rand01()<<std::endl ;
     }
-    sim.run_write(maxtime);
-    system("python ./Kinesin_Gliding.py");
+//    sim.run_write(maxtime);
+//    system("python ./Kinesin_Gliding.py");
 //    sim2.show();
-//    sim.run_play();
+    sim.run_play();
     return 0;
 }
 

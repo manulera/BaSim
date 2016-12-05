@@ -100,4 +100,8 @@ public:
         XX = srand()*mult;
         YY = srand()*mult;
     }
+    void rotate(float angle)
+    {
+        fromAngle(getAngle()+angle);
+    }
 };
