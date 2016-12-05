@@ -104,7 +104,6 @@ void Simulation::play()
     glClear(GL_COLOR_BUFFER_BIT);
     glPointSize(5);
     
-    
     for (int j=0; j<all.size(); j++)
     {
         all.at(j)->display();

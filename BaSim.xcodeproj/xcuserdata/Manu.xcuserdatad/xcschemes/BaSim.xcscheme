@@ -47,7 +47,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/Manu/Desktop/BaSim/BaSim"
+      customWorkingDirectory = "/Users/manu/Documents/Projects/Xcode/BaSim/BaSim"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -68,7 +68,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "60"
+            argument = "200"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

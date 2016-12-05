@@ -19,8 +19,8 @@ void Simulation::inifile()
 
 void Object::write(FILE * file)
 {
-    fprintf(file, "%u %f %f, ",
-            identifier, position.XX, position.YY);
+    fprintf(file, "%u %s %f %f, ",
+            identifier, props->name.c_str(), position.XX, position.YY);
 }
 
 void Tether::write(FILE * file)

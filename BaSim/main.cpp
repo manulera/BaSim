@@ -16,7 +16,7 @@ int id_master = 1;
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-
+#include <ctime>
 #include <cstdlib>
 #include <cmath>
 
@@ -61,6 +61,7 @@ Simulation sim;
 
 int main(int argc, char* argv[])
 {
+    srand(time(0));
 //  EulerIntegration(start, end, step_int, step_out, vals, pars);
     std::string filename = argv[1];
     float maxtime = std::stof(argv[2]);
@@ -68,8 +69,13 @@ int main(int argc, char* argv[])
     std::fstream fs(filename);
     pars.readfile(fs);
     Simulation sim2;
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << rand01()<<std::endl ;
+    }
     sim.run_write(maxtime);
-    sim2.show();
+    system("python ./Kinesin_Gliding.py");
+//    sim2.show();
 //    sim.run_play();
     return 0;
 }

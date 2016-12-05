@@ -4,7 +4,7 @@ public:
     Tetherprops* props;
     std::string label;
     float* force_k;
-    void populate(std::string,std::unordered_map<int, Object*> &ids_dict);
+    void populate(std::string, Simulation & s);
     void display();
     void write(FILE* file);
     void shuffle(){};
@@ -27,13 +27,14 @@ public:
     }
     Tether(Props * p,std::string prop_val): Object()
     {
+        Object::props = p;
         props = static_cast<Tetherprops *>(p);
         shuffle();
         readvals(prop_val);
     }
-    Tether(std::string& line,std::unordered_map<int, Object*>& ids_dict): Object()
+    Tether(std::string& line,Simulation & s): Object()
     {
-        populate(line, ids_dict);
+        populate(line, s);
     }
 
 };

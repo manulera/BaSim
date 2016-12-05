@@ -37,14 +37,15 @@ public:
     
     Ball(Props * p,const std::string& prop_val): Object()
     {
+        Object::props = p;
         props = static_cast<Ballprops *>(p);
         shuffle();
         readvals(prop_val);
     }
     
-    Ball(std::string& line,std::unordered_map<int, Object*>& ids_dict): Object()
+    Ball(std::string& line, Simulation & s): Object()
     {
-        populate(line, ids_dict);
+        populate(line, s);
     }
     
     void tether(std::vector<Tether* >);
@@ -54,8 +55,8 @@ public:
         cout << "The object "<<  props->name << "is a " << "with properties:"<<endl;
         cout << "speed: " << props->speed << "bind_range" << props->bind_range << endl;
     }
-    void populate(std::string&,std::unordered_map<int, Object*>& ids_dict);
     void move_along(float dt);
+    void populate(std::string&,Simulation&);
     void bind(MT*,int where,float distval);
     int within(MT*, float * distval);
     void interact(std::vector<MT*> mts,float dt);

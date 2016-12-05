@@ -3,9 +3,10 @@
 #include <vector>
 #include <cmath>
 
+
+//std::srand(std::time(NULL));
 const float PI = 3.14159265358979323846264338327950288;
 float diff_master = 50;       // diffusion constant in pixel units
-unsigned long seed = 1;   // seed for random number generator
 
 
 //float release_rate = motor_speed*2/mt_length;
@@ -21,19 +22,19 @@ float dist(float x1, float y1, float x2, float y2)
 float srand()
 {
     const float scale = 2.0 / static_cast<float>(RAND_MAX);
-    return static_cast<float>( random() ) * scale - 1.0;
+    return static_cast<float>( rand() ) * scale - 1.0;
 }
 
 /// positive random real in ]0, 1]
 float prand()
 {
     const float scale = 1.0 / ( 1+static_cast<float>(RAND_MAX) );
-    return static_cast<float>( 1+random() ) * scale;
+    return static_cast<float>( 1+rand() ) * scale;
 }
 /// positive random real in [0, 1]
 float rand01()
 {
-    return random()/static_cast<float>(RAND_MAX);
+    return rand()/static_cast<float>(RAND_MAX);
 }
 
 // Graphics

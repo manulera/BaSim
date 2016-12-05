@@ -33,7 +33,7 @@ public:
         return position + orientation*length;
     }
     void write(FILE* file);
-    void populate(std::string&,std::unordered_map<int, Object*>& ids_dict);
+    void populate(std::string&,Simulation &);
     void display();
     void readvals(const std::string& prop_val)
     {
@@ -56,13 +56,14 @@ public:
 
     MT(Props * p,std::string prop_val): Object()
     {
+        Object::props = p;
         props = static_cast<MTprops *>(p);
         shuffle();
         readvals(prop_val);
     }
-    MT(std::string& line,std::unordered_map<int, Object*>& ids_dict): Object()
+    MT(std::string& line,Simulation & s): Object()
     {
-        populate(line, ids_dict);
+        populate(line, s);
     }
 };
 
