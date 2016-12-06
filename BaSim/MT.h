@@ -13,7 +13,7 @@ public:
     float inertia()
     {
         // I guess mass/density will be included at some point, but so far everything has the same density of mass, being one.
-        return length*length*length/12;
+        return 0.000001*length*length*length/12;
     }
     void set_orientation(float angle)
     {

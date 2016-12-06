@@ -69,10 +69,6 @@ int main(int argc, char* argv[])
     std::fstream fs(filename);
     pars.readfile(fs);
     Simulation sim2;
-    for (int i = 0; i < 10; i++)
-    {
-        std::cout << rand01()<<std::endl ;
-    }
 //    sim.run_write(maxtime);
 //    system("python ./Kinesin_Gliding.py");
 //    sim2.show();

@@ -59,7 +59,6 @@ void Ball::move_along(float dt)
 void Ball::bind(MT * mti, int where, float distval)
 {
     attached = mti;
-    attached_id = mti->identifier;
     //glLineWidth(1);
     //glBegin(GL_LINES);
     {
@@ -197,17 +196,24 @@ void Ball::pull_mt(float dt)
     float f_norm = f_vect * attached->orientation;
     float shift = f_norm / attached->props->mobility;
     attached->position += attached->orientation * shift * dt ;
-    stall = 1 - f_norm/ props->stall_force;
+    stall = 1 + (f_norm / props->stall_force)*sign(props->speed);
+    if (stall < 0)
+    {
+        stall = 0;
+    }
+    if (stall > 1)
+    {
+        stall = 1;
+    }
     
     // Net movement and torsion
     
     // Displacement of the mass center
     attached->position += f_vect/attached->props->mobility * dt;
     // Rotation
-    float ang_acc = vecProd(attached->orientation*attached->length*tubref,f_vect) * attached->inertia();
+    float ang_acc = vecProd(attached->orientation*attached->length*tubref,f_vect) / attached->inertia();
     float ang_disp = ang_acc * dt * dt / 2 ;
-    std::cout << ang_disp << std::endl;
-    attached->orientation.rotate(ang_disp*0.00001);
+    attached->orientation.rotate(ang_disp);
 }
 
 
@@ -215,7 +221,6 @@ void Ball::unbind()
 {
     tubref = 0.0;
     attached=nullptr;
-    attached_id=0;
 }
 
 
